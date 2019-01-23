@@ -18,7 +18,7 @@ app.use(routes);
 // Connect to the Mongo DB
 //change to match your db name!
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/exampledbname"
+  process.env.MONGODB_URI || "mongodb://localhost/photoDB", { useNewUrlParser: true }
 );
 
 // Start the API server
