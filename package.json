@@ -12,15 +12,16 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "",
+  "author": "pholmes10 <pholmes10@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "express": "^4.15.4",
+    "express": "^4.16.4",
     "if-env": "^1.0.4",
-    "mongoose": "^5.0.17"
-  }
+    "mongoose": "^5.4.6"
+  },
+  "repository": "https://github.com/DeanDeo/PhotoProject.git"
 }
