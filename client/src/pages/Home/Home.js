@@ -21,6 +21,7 @@ class Home extends Component {
   authHandler = authData => {
     const { uid, displayName } = authData.user;
     axios.get(`/api/user/${uid}`).then(res => {
+      console.log(res.data)
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
           this.setState({
