@@ -4,6 +4,7 @@ import firebase from "../../firebase";
 import { Col, Row, Container } from "../../components/Grid";
 import LoginLogoutButton from "../../components/LoginLogoutButton";
 import Navbar from "../../components/Navbar";
+
 class Home extends Component {
   state = {
     uid: null,
