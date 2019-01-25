@@ -4,22 +4,21 @@ var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
   name: {
-    type: String,
-    required: true
+    type: String
   },
   email:{
     type: String,
-    required: true,
+    
     unique: true
   },
   uid: {
     type: String,
-    unique: true
+    unique: true,
+    required: true
   },
   photos: [{ type: Schema.Types.ObjectId, ref: 'Photo' }],
   location: {
     type: String,
-    required: true
   },
   instagram: {
     type: String,
@@ -31,6 +30,9 @@ var UserSchema = new Schema({
   },
   bio:{
     type: String
+  },
+  photographer:{
+    type: Boolean
   }
 });
 
