@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import firebase from "../../firebase";
 import { Col, Row, Container } from "../../components/Grid";
+import {Loader} from "../../components/Photo"
 import LoginLogoutButton from "../../components/LoginLogoutButton";
 import Navbar from "../../components/Navbar";
 class Home extends Component {
@@ -76,6 +77,7 @@ class Home extends Component {
         <Container>
           <Row>
             <Col size="md-12">
+            <Loader/>
             </Col>
           </Row>
         </Container>

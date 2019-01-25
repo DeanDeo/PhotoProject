@@ -8,7 +8,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "install": "cd client && yarn install;",
+    "install": "cd client && yarn install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
@@ -19,9 +19,13 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "@google-cloud/storage": "^2.3.4",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "firebase": "^5.8.0",
     "if-env": "^1.0.4",
-    "mongoose": "^5.4.6"
+    "mongoose": "^5.4.6",
+    "multer": "^1.4.1"
   },
   "repository": "https://github.com/DeanDeo/PhotoProject.git"
 }
