@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../../components/Navbar';
 
 class UserProfile extends React.Component {
 //   constructor(props) {
@@ -7,6 +8,7 @@ class UserProfile extends React.Component {
   render() {
     return (
       <div>
+        <Navbar />
           <h1>User</h1>
           <form>
         <div className="form-group form-check">
