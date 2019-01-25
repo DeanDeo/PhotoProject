@@ -5,6 +5,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import {Loader} from "../../components/Photo"
 import LoginLogoutButton from "../../components/LoginLogoutButton";
 import Navbar from "../../components/Navbar";
+
 class Home extends Component {
   state = {
     uid: null,
@@ -70,10 +71,9 @@ class Home extends Component {
 
     return (
       <div>
-        <Navbar>
+        <Navbar />
           {message}
           {authButtons}
-        </Navbar>
         <Container>
           <Row>
             <Col size="md-12">
