@@ -40,7 +40,7 @@ export default class Example extends React.Component {
               <NavItem>
                 <NavLink href="/photogProfile">photogProfile</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
+              {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options
                 </DropdownToggle>
@@ -56,7 +56,7 @@ export default class Example extends React.Component {
                     Reset
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown> */}
             </Nav>
           </Collapse>
         </Navbar>

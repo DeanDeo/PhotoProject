@@ -77,7 +77,7 @@ class Home extends Component {
         <Container>
           <Row>
             <Col size="md-12">
-            <Loader/>
+            <Loader uid={this.state.uid}/>
             </Col>
           </Row>
         </Container>

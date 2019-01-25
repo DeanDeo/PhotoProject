@@ -1,6 +1,10 @@
 import React from "react";
 
 const LoginLogoutButton = props => {
+  console.log(props.authType);
+  console.log(props.login);
+  
+  
   //render a button for each auth type or render a logout button if user is already logged in
   if (props.authType && props.login) {
     return (

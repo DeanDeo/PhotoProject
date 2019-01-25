@@ -8,7 +8,9 @@ module.exports = {
   },
   create: (req, res) => {
     db.User.create({ uid: req.body.uid })
-      .then(result => res.json(result))
+      .then(result =>{ 
+        console.log("1")
+        res.json(result)})
       .catch(err => res.status(422).json(err));
   }
 };

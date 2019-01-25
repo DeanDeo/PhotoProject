@@ -6,33 +6,9 @@ var UserSchema = new Schema({
   name: {
     type: String
   },
-  email:{
-    type: String,
-    
-    unique: true
-  },
   uid: {
     type: String,
-    unique: true,
-    required: true
-  },
-  photos: [{ type: Schema.Types.ObjectId, ref: 'Photo' }],
-  location: {
-    type: String,
-  },
-  instagram: {
-    type: String,
     unique: true
-  },
-  portfolio:{
-    type: String,
-    unique: true
-  },
-  bio:{
-    type: String
-  },
-  photographer:{
-    type: Boolean
   }
 });
 
