@@ -14,6 +14,15 @@ class Home extends Component {
   };
 
 
+  // componentWillMount() {
+  //   firebase.auth().onAuthStateChanged(user => {
+  //     if (user) {
+  //       this.authHandler({ user });
+  //     }
+  //   });
+  // }
+
+
   authHandler = authData => {
     const { uid, displayName } = authData.user;
     axios.get(`/api/user/${uid}`).then(res => {
