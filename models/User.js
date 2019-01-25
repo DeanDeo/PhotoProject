@@ -16,10 +16,10 @@ var UserSchema = new Schema({
     unique: true,
     required: true
   },
-  photos: [{ type: Schema.Types.ObjectId, ref: 'Photo' }],
-  location: {
-    type: String,
-  },
+  // photos: [{ type: Schema.Types.ObjectId, ref: 'Photo' }],
+  // location: {
+  //   type: String,
+  // },
   instagram: {
     type: String,
     unique: true

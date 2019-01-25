@@ -12,6 +12,7 @@ const LoginLogoutButton = props => {
       </button>
     );
   }
+  else{
   return (
     <div>
     <button className="btn btn-default navbar-btn mr-1" onClick={props.logout}>
@@ -19,6 +20,7 @@ const LoginLogoutButton = props => {
     </button>
     </div>
   );
+  }
 };
 
 export default LoginLogoutButton;
