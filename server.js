@@ -1,7 +1,11 @@
+require ("dotenv").config()
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
+const multer  = require('multer');
+
+
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
@@ -17,9 +21,11 @@ app.use(routes);
 
 // Connect to the Mongo DB
 //change to match your db name!
-mongoose.connect(
+const connection = mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/photoApp", { useNewUrlParser: true }
 );
+
+
 
 // Start the API server
 app.listen(PORT, () =>
