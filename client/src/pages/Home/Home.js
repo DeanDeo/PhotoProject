@@ -70,10 +70,9 @@ class Home extends Component {
 
     return (
       <div>
-        <Navbar>
+        <Navbar />
           {message}
           {authButtons}
-        </Navbar>
         <Container>
           <Row>
             <Col size="md-12">
