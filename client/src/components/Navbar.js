@@ -1,5 +1,4 @@
 import React from 'react';
-import LoginLogoutButton from './LoginLogoutButton';
 import {
   Collapse,
   Navbar,
@@ -37,9 +36,6 @@ export default class Example extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink href="/photogProfile">photogProfile</NavLink>
-              </NavItem>
-              <NavItem>
-                <LoginLogoutButton></LoginLogoutButton>
               </NavItem>
             </Nav>
           </Collapse>

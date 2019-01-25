@@ -12,13 +12,14 @@ class Home extends Component {
     displayName: null,
     authTypes: ["Google"]
   };
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        this.authHandler({ user });
-      }
-    });
-  }
+
+  // componentWillMount() {
+  //   firebase.auth().onAuthStateChanged(user => {
+  //     if (user) {
+  //       this.authHandler({ user });
+  //     }
+  //   });
+  // }
 
   authHandler = authData => {
     const { uid, displayName } = authData.user;
