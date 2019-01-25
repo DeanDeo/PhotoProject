@@ -30,10 +30,12 @@ class LandingPage extends React.Component {
             <a className="button">Log in with Google </a>
           </div>
         </div>
+        <div id="split-pane-or">
+          <div>
+            <img src={require("./logo.png")} />
+          </div>
+        </div>
       </div>
-      // <div id="split-pane-or">
-      // <div><img src={require('./logo.png')} /></div>
-      // </div>
     );
   }
 }
