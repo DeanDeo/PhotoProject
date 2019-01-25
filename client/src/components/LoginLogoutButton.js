@@ -17,8 +17,6 @@ const LoginLogoutButton = props => {
     <button className="btn btn-default navbar-btn mr-1" onClick={props.logout}>
       Logout
     </button>
-    <a href="/userProfile">User Profile</a>
-    <a href="/photogProfile">Photographer Profile</a>
     </div>
   );
 };
