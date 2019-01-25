@@ -23,11 +23,11 @@ body {
 }
 
 .photographer-side {
-  background-image: url("../../../public/images/photographer-1.jpg");
+  background-image: url("./photographer-1.jpg");
 }
 
 .client-side {
-  background-image: url("../../../public/images/vino.jpg");
+  background-image: url("./vino.jpg");
 }
 .font-black {
   color: black;
