@@ -1,13 +1,18 @@
 var db = require("../models");
-// const Multer = require("multer")
-// const multer = Multer({
-//   storage: Multer.MemoryStorage,
-//   fileSize: 5 * 1024 * 1024
-// });
 
-// module.exports = {
-//   upload: multer.single("image")
-//     console.log (req)
-//    res.redirect("/") 
-// }
 
+
+module.exports = {
+
+  create: (req, res) => {
+    db.Photo.create(req)
+      .then(result => {
+        res.json(result)
+        console.log(req)
+      })
+      .catch(err => res.status(422).json(err));
+  },
+  findAll:() => {
+    db.Photo.findById("5c4b7b5e28f34f3c50c62604").then(result =>console.log("result"))
+  }
+};

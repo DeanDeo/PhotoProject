@@ -13,6 +13,7 @@ class Home extends Component {
     authTypes: ["Google"]
   };
 
+
   // componentWillMount() {
   //   firebase.auth().onAuthStateChanged(user => {
   //     if (user) {
@@ -21,18 +22,24 @@ class Home extends Component {
   //   });
   // }
 
+
   authHandler = authData => {
     const { uid, displayName } = authData.user;
     axios.get(`/api/user/${uid}`).then(res => {
       console.log(res.data)
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
+          window.localStorage.setItem("uid", res.data[0]._id)
+          window.localStorage.setItem("displayName", displayName)
           this.setState({
             uid,
             displayName
           });
         });
       } else {
+        window.localStorage.setItem("uid", res.data[0]._id)
+        console.log(window.localStorage.getItem("uid"))
+        window.localStorage.setItem("displayName", displayName)
         this.setState({
           uid,
           displayName
@@ -54,6 +61,8 @@ class Home extends Component {
   logout = async () => {
     await firebase.auth().signOut();
     this.setState({ uid: null, displayName: null });
+    window.localStorage.setItem("uid", "")
+    window.localStorage.setItem("displayName", "")
   };
 
   render() {
