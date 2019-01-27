@@ -55,6 +55,7 @@ class LandingPage extends React.Component {
             displayName
           });
         });
+        this.setRedirectUser();
       } else {
         window.localStorage.setItem("uid", res.data[0]._id)
         console.log(window.localStorage.getItem("uid"))
@@ -87,6 +88,7 @@ class LandingPage extends React.Component {
             displayName
           });
         });
+        this.setRedirectPhotog();
       } else {
         window.localStorage.setItem("uid", res.data[0]._id)
         console.log(window.localStorage.getItem("uid"))
