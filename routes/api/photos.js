@@ -17,10 +17,10 @@ router.post("/upload/:uid", multer.single("image"), imgUpload.uploadToGcs,
   //write data.imageUrl to database at this point with ref to photographer
   console.log(data.imageUrl)
   console.log(req.params.uid)
-  axios.post(photoController.create({ path: data.imageUrl, photographer: req.params.uid}))
+  photoController.create({ path: data.imageUrl, photographer: req.params.uid})
   res.json(data);
 })
 
-photoController.findAll()
+
 
 module.exports = router;

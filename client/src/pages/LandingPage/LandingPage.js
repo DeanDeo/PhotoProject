@@ -32,7 +32,7 @@ class LandingPage extends React.Component {
         </div>
         <div id="split-pane-or">
           <div>
-            <img src={require("./logo.png")} />
+            <img src={require("./logo.png")} alt="Logo" />
           </div>
         </div>
       </div>
