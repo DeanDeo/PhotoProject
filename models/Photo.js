@@ -8,7 +8,9 @@ var photoSchema = new Schema({
 
   photographer: [{type: Schema.Types.ObjectId, ref: 'User'}],
 
-  main_photo: {type:Boolean, default: false}
+  main_photo: {type:Boolean, default: false},
+
+  profile_photo: {type:Boolean, default: false}
 
 
   });
