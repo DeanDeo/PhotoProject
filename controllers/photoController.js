@@ -7,12 +7,17 @@ module.exports = {
   create: (req, res) => {
     db.Photo.create(req)
       .then(result => {
-        res.json(result)
-        console.log(req)
       })
-      .catch(err => res.status(422).json(err));
+      .catch(err => console.log(err));
   },
-  findAll:() => {
-    db.Photo.findById("5c4b7b5e28f34f3c50c62604").then(result =>console.log("result"))
-  }
+  findbyid:(req, res) => {
+    db.Photo.findById(req.id).then(result =>{
+      console.log(result)}).catch(err => res.status(422).json(err));
+  },
+  populatePhotos: (req, res)=>{
+    db.Photo.find({photographer: req.uid}).then(result=>{
+      res.json(result) 
+      console.log(result)
+    }).catch(err => res.status(422).json(err));
+    }
 };
