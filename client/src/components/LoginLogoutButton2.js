@@ -1,18 +1,18 @@
 import React from "react";
 // import { Redirect } from 'react-router-dom';
 
-class LoginLogoutButton extends React.Component {
+class LoginLogoutButton2 extends React.Component {
   render(){
   console.log(this.props.authType);
-  console.log(this.props.login1);
+  console.log(this.props.login2);
 
   //render a button for each auth type or render a logout button if user is already logged in
-  if (this.props.authType && this.props.login1) {
+  if (this.props.authType && this.props.login2) {
     return (
       <div>
       <button
         className="btn btn-default navbar-btn"
-        onClick={() => this.props.login1(`${this.props.authType}`)}
+        onClick={() => this.props.login2(`${this.props.authType}`)}
       >
         {`${this.props.authType}`} Login
       </button>
@@ -31,4 +31,4 @@ class LoginLogoutButton extends React.Component {
 }
 };
 
-export default LoginLogoutButton;
+export default LoginLogoutButton2;
