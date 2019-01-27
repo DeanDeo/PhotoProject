@@ -2,9 +2,9 @@ import React from 'react';
 import ResultBox from '../../components/ResultBox';
 
 class Results extends React.Component {
-  //   constructor(props) {
-  //     super(props);
-  //   }
+    // constructor(props) {
+    //   super(props);
+    // }
   render() {
     const myStyles = {
       results: {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
+
 class PhotogProfile extends React.Component {
   render() {
     return (
@@ -28,9 +29,9 @@ class PhotogProfile extends React.Component {
               <label htmlFor="exampleInputPassword1">Portfolio Link</label>
               <input className="form-control" id="portfolioInput" placeholder="yourpage.com"></input>
           </div>
-          <div class="form-group">
-        <label for="exampleFormControlTextarea1">Bio</label>
-        <textarea class="form-control" id="bioInout" rows="3"></textarea>
+          <div className="form-group">
+        <label htmlFor="exampleFormControlTextarea1">Bio</label>
+        <textarea className="form-control" id="bioInput" rows="3"></textarea>
   </div>
                 <button type="photogProfile-submit" className="btn btn-primary">Submit</button>
 </form>

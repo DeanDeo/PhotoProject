@@ -11,10 +11,6 @@ class UserProfile extends React.Component {
         <Navbar />
           <h1>User</h1>
           <form>
-        <div className="form-group form-check">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
-                  <label className="form-check-label" htmlFor="exampleCheck1">Are you a photographer?</label>
-              </div>
             <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email address</label>
             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
