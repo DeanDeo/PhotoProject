@@ -46,7 +46,9 @@ class LandingPage extends React.Component {
       console.log(res.data)
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
+
           window.localStorage.setItem("uid", res.data._id)
+
           window.localStorage.setItem("displayName", displayName)
           this.setState({
             uid,
@@ -75,8 +77,10 @@ class LandingPage extends React.Component {
       console.log(res.data)
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
+
           console.log(res.data._id)
           window.localStorage.setItem("uid", res.data._id)
+
           window.localStorage.setItem("displayName", displayName)
           this.setState({
             uid,
@@ -172,7 +176,11 @@ class LandingPage extends React.Component {
         </div>
         <div id="split-pane-or">
           <div>
+
+
             <img alt="logo" src={require("./logo.png")} />
+
+
           </div>
         </div>
       </div>

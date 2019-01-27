@@ -33,7 +33,7 @@ class PhotogProfile extends React.Component {
               <label htmlFor="exampleInputPassword1">Portfolio Link</label>
               <input className="form-control" id="portfolioInput" placeholder="yourpage.com"></input>
           </div>
-          
+
           <div className="form-group">
         <label htmlFor="exampleFormControlTextarea1">Bio</label>
         <textarea className="form-control" id="bioInput" rows="3"></textarea>
