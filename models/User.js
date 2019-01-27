@@ -13,8 +13,7 @@ var UserSchema = new Schema({
   },
   uid: {
     type: String,
-    unique: true,
-    required: true
+    unique: true
   },
   // photos: [{ type: Schema.Types.ObjectId, ref: 'Photo' }],
   // location: {

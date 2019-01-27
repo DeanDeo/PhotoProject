@@ -3,13 +3,17 @@ import Navbar from '../../components/Navbar';
 
 class PhotogProfile extends React.Component {
   render() {
+
+    const uId = window.localStorage.getItem("uid")
     return (
       <div>
           <Navbar />
         <h1>Photographer</h1>
-        <form>
+        <form action="/api/profile/photographer" method="post">
         <div className="form-group">
+            
               <label htmlFor="exampleInputPassword1">Name</label>
+              <input type="hidden" id="uId" name="uId" value={uId}></input>
               <input className="form-control" id="nameInput" placeholder="John Smith"></input>
               </div>
             <div className="form-group">
@@ -29,6 +33,7 @@ class PhotogProfile extends React.Component {
               <label htmlFor="exampleInputPassword1">Portfolio Link</label>
               <input className="form-control" id="portfolioInput" placeholder="yourpage.com"></input>
           </div>
+
           <div className="form-group">
         <label htmlFor="exampleFormControlTextarea1">Bio</label>
         <textarea className="form-control" id="bioInput" rows="3"></textarea>

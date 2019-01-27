@@ -12,5 +12,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  update: (req, res) => {
+    db.User.findByIdAndUpdate({})
+  }
   
 };

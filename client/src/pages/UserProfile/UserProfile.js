@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 
+
 class UserProfile extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -28,6 +29,8 @@ class UserProfile extends React.Component {
               <label htmlFor="exampleInputPassword1">Sample Question?</label>
               <input className="form-control" id="example3" placeholder="Password"></input>
               </div>
+              <p>Upload a photo for your profile.</p>
+              
                 <button type="photogProfile-submit" className="btn btn-primary">Submit</button>
 </form>
       </div>
