@@ -3,15 +3,44 @@ import "./landing.css";
 import axios from "axios";
 import firebase from "../../firebase";
 import LoginLogoutButton from "../../components/LoginLogoutButton";
+import LoginLogoutButton2 from "../../components/LoginLogoutButton2";
+
+import { Redirect } from 'react-router-dom';
 
 class LandingPage extends React.Component {
   state = {
     uid: null,
     displayName: null,
-    authTypes: ["Google"]
+    authTypes: ["Google"],
+    redirectUser: false,
+    redirectPhotog: false,
   };
 
-  authHandler = authData => {
+  setRedirectUser = () => {
+    this.setState({
+      redirectUser: true
+    })
+  }
+
+  setRedirectPhotog = () => {
+    this.setState({
+      redirectPhotog: true
+    })
+  }
+
+  renderRedirectUser = () => {
+    if (this.state.redirectUser) {
+      return <Redirect to='/userprofile' />
+    }
+  }
+
+  renderRedirectPhotog = () => {
+    if (this.state.redirectPhotog) {
+      return <Redirect to='/photogprofile' />
+    }
+  }
+
+  authHandler1 = authData => {
     const { uid, displayName } = authData.user;
     axios.get(`/api/user/${uid}`).then(res => {
       console.log(res.data)
@@ -32,18 +61,56 @@ class LandingPage extends React.Component {
           uid,
           displayName
         });
+        this.setRedirectUser();
       }
     });
     //check if user exists in mongo db, if not create user, if so set state equal to user
     //set the state of the inventory to reflect current user
   };
 
-  login = provider => {
+
+  authHandler2 = authData => {
+    const { uid, displayName } = authData.user;
+    axios.get(`/api/user/${uid}`).then(res => {
+      console.log(res.data)
+      if (res.data.length === 0) {
+        axios.post("/api/user/create", { uid }).then(res => {
+          window.localStorage.setItem("uid", res.data[0]._id)
+          window.localStorage.setItem("displayName", displayName)
+          this.setState({
+            uid,
+            displayName
+          });
+        });
+      } else {
+        window.localStorage.setItem("uid", res.data[0]._id)
+        console.log(window.localStorage.getItem("uid"))
+        window.localStorage.setItem("displayName", displayName)
+        this.setState({
+          uid,
+          displayName
+        });
+        this.setRedirectPhotog();
+      }
+    });
+    //check if user exists in mongo db, if not create user, if so set state equal to user
+    //set the state of the inventory to reflect current user
+  };
+
+  login1 = provider => {
     const authProvider = new firebase.auth[`${provider}AuthProvider`]();
     firebase
       .auth()
       .signInWithPopup(authProvider)
-      .then(this.authHandler);
+      .then(this.authHandler1);
+  };
+
+  login2 = provider => {
+    const authProvider = new firebase.auth[`${provider}AuthProvider`]();
+    firebase
+      .auth()
+      .signInWithPopup(authProvider)
+      .then(this.authHandler2);
   };
 
   logout = async () => {
@@ -60,11 +127,19 @@ class LandingPage extends React.Component {
     //   </div>
     // );
 
-    const authButtons = this.state.uid ? (
-      <LoginLogoutButton logout={this.logout} />
+    const authButtons1 = this.state.uid ? (
+      <LoginLogoutButton logout={this.logout}/>
     ) : (
       this.state.authTypes.map((type, i) => {
-        return <LoginLogoutButton key={i} login={this.login} authType={type} />;
+        return <LoginLogoutButton key={i} login1={this.login1} authType={type} />;
+      })
+    );
+
+    const authButtons2 = this.state.uid ? (
+      <LoginLogoutButton2 logout={this.logout}/>
+    ) : (
+      this.state.authTypes.map((type, i) => {
+        return <LoginLogoutButton2 key={i} login2={this.login2} authType={type} />;
       })
     );
 
@@ -78,7 +153,8 @@ class LandingPage extends React.Component {
               <div className="big font-black">HIRE A</div>
               <div className="bold font-black">PHOTOGRAPHER</div>
             </div>
-            {authButtons}
+            {this.renderRedirectUser()}
+            {authButtons1}
           </div>
         </div>
         <div className="split-pane hvr-shutter-out-vertical col-sm-6 photographer-side">
@@ -89,7 +165,8 @@ class LandingPage extends React.Component {
               <div className="big">I AM A</div>
               <div className="bold">PHOTOGRAPHER</div>
             </div>
-          {authButtons}
+            {this.renderRedirectPhotog()}
+          {authButtons2}
           </div>
         </div>
         <div id="split-pane-or">
