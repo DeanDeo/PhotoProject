@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar';
 class PhotogProfile extends React.Component {
   render() {
 
-    const uid = window.localStorage.getItem("uid")
+    const uId = window.localStorage.getItem("uid")
     return (
       <div>
           <Navbar />
@@ -13,7 +13,7 @@ class PhotogProfile extends React.Component {
         <div className="form-group">
             
               <label htmlFor="exampleInputPassword1">Name</label>
-              <input type="hidden" id="uId" name="uId" value={uid}></input>
+              <input type="hidden" id="uId" name="uId" value={uId}></input>
               <input className="form-control" id="nameInput" placeholder="John Smith"></input>
               </div>
             <div className="form-group">
