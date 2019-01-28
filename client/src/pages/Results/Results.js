@@ -42,6 +42,7 @@ class Results extends React.Component {
                 <h1>This is our Results Page</h1>
                 {console.log(this.state.data)}
                {this.state.data.map(picObj=> <ResultBox path={picObj.path} uId={picObj.photographer[0]}/> )} 
+
               
 
      

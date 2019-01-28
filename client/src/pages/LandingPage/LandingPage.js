@@ -13,8 +13,18 @@ class LandingPage extends React.Component {
     displayName: null,
     authTypes: ["Google"],
     redirectUser: false,
-    redirectPhotog: false
+    redirectPhotog: false,
+    // user: null
   };
+
+  // componentDidMount() {
+  //   firebase.auth().onAuthStateChanged(user => {
+  //     console.log(user.displayName)
+  //     // API.save(user.displayName)
+  //     // this.setState({ user });
+      
+  //   });
+  // }
 
   setRedirectUser = () => {
     this.setState({
@@ -43,13 +53,16 @@ class LandingPage extends React.Component {
   authHandler1 = authData => {
   
     const { uid, displayName } = authData.user;
+    console.log(authData.user);
     axios.get(`/api/user/${uid}`).then(res => {
       console.log(res.data);
       if (res.data.length === 0) {
-        console.log("here:" + uid)
-        axios.post("/api/user/create", { uid }).then(res => {
 
-          window.localStorage.setItem("uid", res.data[0]._id);
+        console.log({uid})
+
+        axios.post("/api/user/create", { uid }).then(res => {
+          console.log(res.data)
+          window.localStorage.setItem("uid", res.data._id);
           window.localStorage.setItem("displayName", displayName);
 
           this.setState({
