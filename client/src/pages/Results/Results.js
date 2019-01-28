@@ -15,7 +15,6 @@ class Results extends React.Component {
             <div className='results'>
                 {/* <h1>This is our Results Page</h1> */}
                 
-               
                 <ResultBox></ResultBox>
                 <ResultBox></ResultBox>
                 <ResultBox></ResultBox>
