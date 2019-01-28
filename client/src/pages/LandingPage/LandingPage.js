@@ -46,13 +46,16 @@ class LandingPage extends React.Component {
       console.log(res.data);
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
+
           window.localStorage.setItem("uid", res.data[0]._id);
           window.localStorage.setItem("displayName", displayName);
+
           this.setState({
             uid,
             displayName
           });
         });
+        this.setRedirectUser();
       } else {
         window.localStorage.setItem("uid", res.data[0]._id);
         console.log(window.localStorage.getItem("uid"));
@@ -74,13 +77,16 @@ class LandingPage extends React.Component {
       console.log(res.data);
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
+
           window.localStorage.setItem("uid", res.data[0]._id);
           window.localStorage.setItem("displayName", displayName);
+
           this.setState({
             uid,
             displayName
           });
         });
+        this.setRedirectPhotog();
       } else {
         window.localStorage.setItem("uid", res.data[0]._id);
         console.log(window.localStorage.getItem("uid"));
@@ -174,7 +180,9 @@ class LandingPage extends React.Component {
         </div>
         <div id="split-pane-or">
           <div>
+
             <img alt="logo" src={require("./logo.png")} />
+
           </div>
         </div>
       </div>
