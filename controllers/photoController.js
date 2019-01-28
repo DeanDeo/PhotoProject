@@ -15,9 +15,8 @@ module.exports = {
       console.log(result)}).catch(err => res.status(422).json(err));
   },
   populatePhotos: (req, res)=>{
-    db.Photo.find({photographer: req.uid}).then(result=>{
+    db.Photo.find({photographer: req.params.uid}).then(result=>{
       res.json(result) 
-      console.log(result)
     }).catch(err => res.status(422).json(err));
     },
     findAll: (req, res) =>{
@@ -26,7 +25,7 @@ module.exports = {
         res.json(result)
       }).catch(err => res.status(422).json(err));
     },
-    findmain: (req, res) =>{
+    findMain: (req, res) =>{
       db.Photo.find({main_photo: true}).then(result=>{
         // console.log(result)
         res.json(result)
