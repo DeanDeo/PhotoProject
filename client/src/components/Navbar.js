@@ -38,6 +38,9 @@ export default class Example extends React.Component {
               <NavItem>
                 <NavLink href="/photogProfile">photogProfile</NavLink>
               </NavItem>
+              {/* link for chat user as a prop
+               */}
+               {/* pass user prop in chatApp */}
               <NavItem>
                 <LoginLogoutButton></LoginLogoutButton>
               </NavItem>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import firebase from "../../firebase";
 import { Col, Row, Container } from "../../components/Grid";
-import {Loader} from "../../components/Photo"
+import { Loader } from "../../components/Photo";
 import LoginLogoutButton from "../../components/LoginLogoutButton";
 import Navbar from "../../components/Navbar";
 
@@ -14,6 +14,8 @@ class Home extends Component {
   };
   componentDidMount() {
     firebase.auth().onAuthStateChanged(user => {
+      console.log(uid);
+      
       if (user) {
         this.authHandler({ user });
       }
@@ -23,7 +25,7 @@ class Home extends Component {
   authHandler = authData => {
     const { uid, displayName } = authData.user;
     axios.get(`/api/user/${uid}`).then(res => {
-      console.log(res.data)
+      console.log(res.data);
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
           this.setState({
@@ -71,17 +73,17 @@ class Home extends Component {
 
     return (
       <div>
-        <Navbar />
-          {message}
-          {authButtons}
+        <Navbar user="" />
+        {message}
+        {authButtons}
         <Container>
           <Row>
             <Col size="md-12">
-            <Loader/>
+              <Loader />
             </Col>
           </Row>
         </Container>
-        </div>
+      </div>
     );
   }
 }
