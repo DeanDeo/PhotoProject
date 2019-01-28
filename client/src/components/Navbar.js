@@ -46,6 +46,9 @@ export default class Example extends React.Component {
                   Contact
                 </NavLink>
               </NavItem>
+              {/* link for chat user as a prop
+               */}
+               {/* pass user prop in chatApp */}
               <NavItem>
                 <NavLink
                   className="hvr-underline-from-center"

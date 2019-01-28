@@ -6,7 +6,7 @@ const config = {
   databaseURL: "https://photoapp-92661.firebaseio.com"
 };
 
-const firebaseApp = firebase.initializeApp(config);
+// const firebaseApp = firebase.initializeApp(config);
 // export const provider = new firebase.auth.GoogleAuthProvider();
-export { firebaseApp };
-export default firebase;
+// export { firebaseApp };
+export default config;
