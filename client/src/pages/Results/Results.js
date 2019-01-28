@@ -46,6 +46,7 @@ class Results extends React.Component {
 
      
             </div>
+            </div>
             );
           }
         }
