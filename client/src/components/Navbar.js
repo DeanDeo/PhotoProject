@@ -10,7 +10,6 @@ import {
   InputGroup,
   Input
 } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Navbar.css";
 
 export default class Example extends React.Component {
@@ -47,6 +46,9 @@ export default class Example extends React.Component {
                   Contact
                 </NavLink>
               </NavItem>
+              {/* link for chat user as a prop
+               */}
+               {/* pass user prop in chatApp */}
               <NavItem>
                 <NavLink
                   className="hvr-underline-from-center"
@@ -66,10 +68,13 @@ export default class Example extends React.Component {
             </Nav>
           </Collapse>
         </Navbar>
-        <InputGroup className="searchForm">
-          <Input className="input" />
-          <button>search</button>
-        </InputGroup>
+        <div className="search_container">
+          <input
+            className="search_input"
+            type="text"
+            placeholder="Search for genres of photography or location"
+          />
+        </div>
       </div>
     );
   }

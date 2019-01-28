@@ -30,7 +30,8 @@ var UserSchema = new Schema({
     type: String
   },
   photographer:{
-    type: Boolean
+    type: Boolean, 
+    default: false
   }
 });
 

@@ -47,6 +47,10 @@ class PhotogProfile extends React.Component {
       // </form>
       //       </div>
       <div>
+
+
+        
+
       <FormModal>
       </FormModal>
       </div>
@@ -54,5 +58,6 @@ class PhotogProfile extends React.Component {
     );
   }
 }
+
 
 export default PhotogProfile;
