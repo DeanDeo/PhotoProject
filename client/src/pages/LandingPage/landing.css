@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+/* */
+@media (min-width: 500px) {
+  .col-sm-6 {
+    width: 50%;
+    -webkit-box-flex: 50%;
+    -ms-flex: 50%;
+    flex: 50%;
+  }
+  .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+html,
+body {
+  height: 100vh;
+  min-height: 18em;
+}
+
+.photographer-side {
+  background-image: url("./photographer-1.jpg");
+}
+
+.client-side {
+  background-image: url("./vino.jpg");
+}
+.font-black {
+  color: black;
+}
+
+.split-pane {
+  /* padding-top: 1em; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 0%;
+  min-height: 9em;
+  font-size: 26px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+@media (min-width: 500px) {
+  .split-pane {
+    /* padding-top: 2em; */
+    height: 100%;
+  }
+}
+.split-pane > div {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}
+.split-pane > div .text-content {
+  line-height: 1.6em;
+  margin-bottom: 1em;
+}
+.split-pane > div .text-content .big {
+  font-size: 2em;
+}
+.split-pane > div img {
+  height: 1.3em;
+}
+
+@media (max-width: 500px) {
+  .split-pane > div img {
+    display: none;
+  }
+}
+
+/* buttons */
+.split-pane button,
+.split-pane a.button {
+  font-weight: 800;
+  background: none;
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 5px;
+  padding: 0.7em;
+  font-size: 14px;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  color: rgb(196, 196, 196);
+  display: inline-block;
+  cursor: pointer;
+}
+.split-pane button:hover,
+.split-pane a.button:hover {
+  text-decoration: none;
+  background-color: white;
+  border-color: white;
+  cursor: pointer;
+}
+.client-side.split-pane button:hover,
+.split-pane a.button:hover {
+  color: rgb(0, 0, 0);
+}
+.photographer-side.split-pane button:hover,
+.split-pane a.button:hover {
+  color: rgb(0, 0, 0);
+}
+
+#split-pane-or {
+  font-size: 3em;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media (max-width: 925px) {
+  #split-pane-or {
+    top: 15%;
+  }
+}
+#split-pane-or > div img {
+  height: 2.5em;
+}
+
+/* mobile responsive*/
+@media (max-width: 500px) {
+  #split-pane-or {
+    position: absolute;
+    top: 50px;
+  }
+  #split-pane-or > div img {
+    height: 2em;
+  }
+  .col-xs-12 {
+    height: 50vh;
+    width: 100vw;
+  }
+}
+@media (min-width: 500px) {
+  #split-pane-or {
+    font-size: 2em;
+  }
+}
+.big {
+  font-size: 24px;
+}
+
+#slogan {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+  vertical-align: baseline;
+  top: 0.5em;
+  color: white;
+  font-size: 1.4em;
+}
+@media (min-width: 500px) {
+  #slogan {
+    top: 5%;
+    font-size: 1.8em;
+  }
+}
+#slogan img {
+  height: 0.7em;
+}
+.bold {
+  text-transform: uppercase;
+}
+.big {
+  font-weight: 600;
+}
+
+/* shutter style hover animation
+@IanLunn https://github.com/IanLunn/Hover/blob/master/css/hover.css */
+.hvr-shutter-out-vertical {
+  /* display: inline-block; */
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-shutter-out-vertical:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #131313;
+  opacity: 0.2;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-shutter-out-vertical:hover,
+.hvr-shutter-out-vertical:focus,
+.hvr-shutter-out-vertical:active {
+  color: white;
+}
+.hvr-shutter-out-vertical:hover:before,
+.hvr-shutter-out-vertical:focus:before,
+.hvr-shutter-out-vertical:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+/* black */
+.hvr-shutter-out-vertical-white {
+  /* display: inline-block; */
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-shutter-out-vertical-white:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  opacity: 0.2;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-shutter-out-vertical-white:hover,
+.hvr-shutter-out-vertical-white:focus,
+.hvr-shutter-out-vertical-white:active {
+  color: white;
+}
+.hvr-shutter-out-vertical-white:hover:before,
+.hvr-shutter-out-vertical-white:focus:before,
+.hvr-shutter-out-vertical-white:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}

@@ -13,13 +13,12 @@ var UserSchema = new Schema({
   },
   uid: {
     type: String,
-    unique: true,
-    required: true
+    unique: true
   },
-  photos: [{ type: Schema.Types.ObjectId, ref: 'Photo' }],
-  location: {
-    type: String,
-  },
+  // photos: [{ type: Schema.Types.ObjectId, ref: 'Photo' }],
+  // location: {
+  //   type: String,
+  // },
   instagram: {
     type: String,
     unique: true
