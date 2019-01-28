@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "photos-229620",
+  "private_key_id": "c6b56996c2e0eaf5857227038a982a0d8d25919c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCK7Pm1HfZeYwII\n9rC0/fMG9iUJkKP0YoDtycwXLMGawMC8ubRLdFkvZufYiBEk7KCNB2qZLBn4HfV/\nXzOwVH8ug1o6prodcpnGLIvLHZtwG5rULDk68WFKAzYQeSxRjfQ2yXjdHTtD/Jww\nLI8uGjN2zZ/Wbl5l6Xqt8+4zhuLaOb7OAzY4hvreb1TWt9f265NFFoF7DjzqW3hL\nwhxBZ/DKIWGmdnZhVzfoza7pySDk1rA+VIUH4S21kBn0qrgzm8qT5rTbxqyUejQA\n7NVvyvLQqKGqEcnpXClKTmVP6Oi2M0UbNQvoZGGWTI1qo6UhygtYhALSToVHzytq\nOgEghTZxAgMBAAECggEACwNOpz4tD93q5SGDMBHakGB2Xqv950tgu5jt6h9k6Jrj\nnIJfKcUbJdATTH262DG+53chSuutUlczpSl7nDySiXIltrUNV3TEfmp9GXirIAe8\nLhokXkkQxJB9GnC0o/FsHOS7RVICJvlRO1to7Udr8XzK8TF2H7+St1P5O9HzTUe9\nMl6WYsYFcTrL+qh/2Wrc2PjM68/4ktLwNZXTWW69brFshHawJgKZ4Vdm91Q5Gz6B\nxeHL7ALEAcCc87x4xy0zC2CfMSg4640TH0AcMiUP8C96WxBJtRyLuTZya9tRapTf\n6B42dWfh1c+OupSIutG2rZC8mh4O6HzYSb/RUDuSLQKBgQC/of62vRQLpacuNnvi\nfu3dB4hQ4vBS4uJ/Yd9xXq12wP8ofFBkosPQ3TH37ufIpHhPa+mr0bAZKwyOcOil\nPnLnpaybtjN8KuGkt3rXZcoMeuV5RHFHMiqMW8GL7sccNua32MlkmXE7c3aEA47b\n011gRnca4rb3icyPUfQ5+UbgzQKBgQC5ltVdjOWsv6zBbZFEZnmzidbgeoHmfc7I\n0b0SxVsMaaW64FkdDkeF8bAGn3bgEcXYHJxnqka2ILZ8bnAQ7hb546lSk4aYaGnf\n7EpQz1DPA+6EubWDbDh1Sf9leuqFx3Yd0ph3Ufz0jh1fsKlf4C9eizYhFzbS9cpM\nb5WD8EtcNQKBgBPbbnBzIUufq7YvMSEkM/OuXyK6kVqVZhD7DFNMEz91+jqwvwfe\nkdnnwdDGMcBpwonATeNfBBdnjZKJAqJ02SVF1p///k/EhcMyvAjr5EbsyTCKtg5B\nlYUb0O92G63BxqCQVzYUbFZTvZkqYThIK6nZQ2hGy9zUq5zCSkNjoEOVAoGBALdM\nWf/DoTQ1O5LvfIJqE9lXUnrzhEj6CLofLPbVJU/lKGKiImGoMMwCITDpXqd/5j/E\nQlXAv4YyWQocqWKPRPIaAKomOtFcjvUyk1Os7ssHvxQntzbONBTjuPOpqufmUKqz\nzRJMT+HaWvifqymeaiqepB+apfNF/z/vFWTyd/vhAoGAM5YamCb9nAgXyFmMyfkl\nSmJRsBNliTBi6uVpKgghjmjQiWIVrdLH9ssGDOpMw3b+BJHjrskzu3Xuu5gGFU+k\nXbGYdN3kJqLS7Oef9JASM3Omwf8ie26uGYCamDAeQaNo77/l8ft+Q1KmTf0KTGFh\ndaeK64e2Lu0HsJtA96zL4fw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "nw-49-608@photos-229620.iam.gserviceaccount.com",
+  "client_id": "105504979626387371904",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nw-49-608%40photos-229620.iam.gserviceaccount.com"
+}
