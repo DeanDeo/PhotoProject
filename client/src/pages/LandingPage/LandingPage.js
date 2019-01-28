@@ -5,7 +5,7 @@ import firebase from "../../firebase";
 import LoginLogoutButton from "../../components/LoginLogoutButton";
 import LoginLogoutButton2 from "../../components/LoginLogoutButton2";
 
-import { Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 
 class LandingPage extends React.Component {
   state = {
@@ -13,54 +13,58 @@ class LandingPage extends React.Component {
     displayName: null,
     authTypes: ["Google"],
     redirectUser: false,
-    redirectPhotog: false,
+    redirectPhotog: false
   };
 
   setRedirectUser = () => {
     this.setState({
       redirectUser: true
-    })
-  }
+    });
+  };
 
   setRedirectPhotog = () => {
     this.setState({
       redirectPhotog: true
-    })
-  }
+    });
+  };
 
   renderRedirectUser = () => {
     if (this.state.redirectUser) {
-      return <Redirect to='/userprofile' />
+      return <Redirect to="/userprofile" />;
     }
-  }
+  };
 
   renderRedirectPhotog = () => {
     if (this.state.redirectPhotog) {
-      return <Redirect to='/photogprofile' />
+      return <Redirect to="/photogprofile" />;
     }
-  }
+  };
 
   authHandler1 = authData => {
   
     const { uid, displayName } = authData.user;
     axios.get(`/api/user/${uid}`).then(res => {
-      console.log(res.data)
+      console.log(res.data);
       if (res.data.length === 0) {
         console.log("here:" + uid)
         axios.post("/api/user/create", { uid }).then(res => {
-          window.localStorage.setItem("uid", res.data._id)
-          window.localStorage.setItem("displayName", displayName)
+
+          window.localStorage.setItem("uid", res.data[0]._id);
+          window.localStorage.setItem("displayName", displayName);
+
           this.setState({
             uid,
             displayName
           });
           
         });
-        
+
+        this.setRedirectUser();
+
       } else {
-        window.localStorage.setItem("uid", res.data[0]._id)
-        console.log(window.localStorage.getItem("uid"))
-        window.localStorage.setItem("displayName", displayName)
+        window.localStorage.setItem("uid", res.data[0]._id);
+        console.log(window.localStorage.getItem("uid"));
+        window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,
           displayName
@@ -74,27 +78,30 @@ class LandingPage extends React.Component {
     //set the state of the inventory to reflect current user
   };
 
-
   authHandler2 = authData => {
     const { uid, displayName } = authData.user;
     axios.get(`/api/user/${uid}`).then(res => {
-      console.log(res.data)
+      console.log(res.data);
       if (res.data.length === 0) {
         console.log("here:"+ uid)
         axios.post("/api/user/create", { uid }).then(res => {
+
           window.localStorage.setItem("uid", res.data._id)
           window.localStorage.setItem("displayName", displayName)
+
           this.setState({
             uid,
             displayName
           });
           return <Redirect to='/photogprofile' />
         });
-       
+
+        this.setRedirectPhotog();
+
       } else {
-        window.localStorage.setItem("uid", res.data[0]._id)
-        console.log(window.localStorage.getItem("uid"))
-        window.localStorage.setItem("displayName", displayName)
+        window.localStorage.setItem("uid", res.data[0]._id);
+        console.log(window.localStorage.getItem("uid"));
+        window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,
           displayName
@@ -127,8 +134,8 @@ class LandingPage extends React.Component {
   logout = async () => {
     await firebase.auth().signOut();
     this.setState({ uid: null, displayName: null });
-    window.localStorage.setItem("uid", "")
-    window.localStorage.setItem("displayName", "")
+    window.localStorage.setItem("uid", "");
+    window.localStorage.setItem("displayName", "");
   };
 
   render() {
@@ -139,23 +146,27 @@ class LandingPage extends React.Component {
     // );
 
     const authButtons1 = this.state.uid ? (
-      <LoginLogoutButton logout={this.logout}/>
+      <LoginLogoutButton logout={this.logout} />
     ) : (
       this.state.authTypes.map((type, i) => {
-        return <LoginLogoutButton key={i} login1={this.login1} authType={type} />;
+        return (
+          <LoginLogoutButton key={i} login1={this.login1} authType={type} />
+        );
       })
     );
 
     const authButtons2 = this.state.uid ? (
-      <LoginLogoutButton2 logout={this.logout}/>
+      <LoginLogoutButton2 logout={this.logout} />
     ) : (
       this.state.authTypes.map((type, i) => {
-        return <LoginLogoutButton2 key={i} login2={this.login2} authType={type} />;
+        return (
+          <LoginLogoutButton2 key={i} login2={this.login2} authType={type} />
+        );
       })
     );
 
     return (
-        <div className="row">
+      <div className="row">
         <div className="split-pane hvr-shutter-out-vertical-white col-sm-6 client-side">
           <div>
             <i className="far fa-user-circle font-black" /> <br />
@@ -177,12 +188,14 @@ class LandingPage extends React.Component {
               <div className="bold">PHOTOGRAPHER</div>
             </div>
             {this.renderRedirectPhotog()}
-          {authButtons2}
+            {authButtons2}
           </div>
         </div>
         <div id="split-pane-or">
           <div>
+
             <img alt="logo" src={require("./logo.png")} />
+
           </div>
         </div>
       </div>

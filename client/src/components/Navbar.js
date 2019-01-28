@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Collapse,
   Navbar,
@@ -7,7 +7,10 @@ import {
   Nav,
   NavItem,
   NavLink,
- } from 'reactstrap';
+  InputGroup,
+  Input
+} from "reactstrap";
+import "./Navbar.css";
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -26,20 +29,49 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Bokeh</NavbarBrand>
+        <Navbar className="roboto-font" color="black" light expand="md">
+          <NavbarBrand href="/" className="bokehheader">
+            <div className="text-focus-in">BOKEH</div>
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/userProfile">User Profile</NavLink>
+                <NavLink className="hvr-underline-from-center" href="/About">
+                  About
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/photogProfile">photogProfile</NavLink>
+                <NavLink className="hvr-underline-from-center" href="/Contact">
+                  Contact
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  className="hvr-underline-from-center"
+                  href="/userProfile"
+                >
+                  Profile
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  className="hvr-underline-from-center"
+                  href="/photogProfile"
+                >
+                  Log Out
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
+        <div className="search_container">
+          <input
+            className="search_input"
+            type="text"
+            placeholder="Search for genres of photography or location"
+          />
+        </div>
       </div>
     );
   }
