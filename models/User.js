@@ -8,7 +8,6 @@ var UserSchema = new Schema({
   },
   email:{
     type: String,
-    
     unique: true
   },
   uid: {
@@ -31,7 +30,8 @@ var UserSchema = new Schema({
     type: String
   },
   photographer:{
-    type: Boolean
+    type: Boolean, 
+    default: false
   }
 });
 
