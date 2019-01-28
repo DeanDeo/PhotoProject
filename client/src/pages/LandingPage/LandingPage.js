@@ -1,11 +1,14 @@
 import React from "react";
 import "./landing.css";
 import axios from "axios";
-import firebase from "../../firebase";
+// import firebase from "../../firebase";
 import LoginLogoutButton from "../../components/LoginLogoutButton";
 import LoginLogoutButton2 from "../../components/LoginLogoutButton2";
-
+import firebase from 'firebase';
+import firebaseConfig from '../../firebase';
 import { Redirect } from "react-router-dom";
+
+firebase.initializeApp(firebaseConfig);
 
 class LandingPage extends React.Component {
   state = {
@@ -129,7 +132,9 @@ class LandingPage extends React.Component {
   };
 
   login1 = provider => {
-    const authProvider = new firebase.auth[`${provider}AuthProvider`]();
+    // console.log(firebase.auth.auth[`${provider}AuthProvider`]);
+    
+    const authProvider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
       .signInWithPopup(authProvider)

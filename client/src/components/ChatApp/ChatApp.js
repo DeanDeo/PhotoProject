@@ -5,8 +5,8 @@ import React, { Component } from 'react';
 import './ChatApp.css';
 import Form from '../Form/Form.js';
 import firebase from 'firebase';
-import firebaseConfig from '../../firebase';
-firebase.initializeApp(firebaseConfig);
+// import firebaseConfig from '../../firebase';
+// firebase.initializeApp(firebaseConfig);
 class App extends Component {
   constructor(props) {
     super(props);
