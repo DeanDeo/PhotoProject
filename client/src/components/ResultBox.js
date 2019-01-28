@@ -4,7 +4,9 @@ class ResultBox extends React.Component {
 //   constructor(props) {
 //     super(props);
 //   }
+  
   render() {
+    console.log(this.props)
       const myStyles = {
           box: {
               backgroundColor: 'gray',
@@ -15,7 +17,8 @@ class ResultBox extends React.Component {
     return (
         <div>
             <div style={myStyles.box}>
-                <h1>Sample box (photo goes here)</h1>
+                <h1>Sample box {console.log(this.props)}(photo goes here)</h1>
+            <img src={this.props.path}/>
             </div>
         </div>
     );

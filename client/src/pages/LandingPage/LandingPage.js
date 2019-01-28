@@ -41,10 +41,12 @@ class LandingPage extends React.Component {
   }
 
   authHandler1 = authData => {
+  
     const { uid, displayName } = authData.user;
     axios.get(`/api/user/${uid}`).then(res => {
       console.log(res.data)
       if (res.data.length === 0) {
+        console.log("here:" + uid)
         axios.post("/api/user/create", { uid }).then(res => {
           window.localStorage.setItem("uid", res.data._id)
           window.localStorage.setItem("displayName", displayName)
@@ -52,7 +54,9 @@ class LandingPage extends React.Component {
             uid,
             displayName
           });
+          
         });
+        
       } else {
         window.localStorage.setItem("uid", res.data[0]._id)
         console.log(window.localStorage.getItem("uid"))
@@ -61,8 +65,10 @@ class LandingPage extends React.Component {
           uid,
           displayName
         });
+        
         this.setRedirectUser();
       }
+      
     });
     //check if user exists in mongo db, if not create user, if so set state equal to user
     //set the state of the inventory to reflect current user
@@ -74,15 +80,17 @@ class LandingPage extends React.Component {
     axios.get(`/api/user/${uid}`).then(res => {
       console.log(res.data)
       if (res.data.length === 0) {
+        console.log("here:"+ uid)
         axios.post("/api/user/create", { uid }).then(res => {
-          console.log(res.data._id)
           window.localStorage.setItem("uid", res.data._id)
           window.localStorage.setItem("displayName", displayName)
           this.setState({
             uid,
             displayName
           });
+          return <Redirect to='/photogprofile' />
         });
+       
       } else {
         window.localStorage.setItem("uid", res.data[0]._id)
         console.log(window.localStorage.getItem("uid"))
@@ -92,7 +100,9 @@ class LandingPage extends React.Component {
           displayName
         });
         this.setRedirectPhotog();
+        return <Redirect to='/photogprofile' />
       }
+      
     });
     //check if user exists in mongo db, if not create user, if so set state equal to user
     //set the state of the inventory to reflect current user

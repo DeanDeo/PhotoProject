@@ -19,5 +19,17 @@ module.exports = {
       res.json(result) 
       console.log(result)
     }).catch(err => res.status(422).json(err));
+    },
+    findAll: (req, res) =>{
+      db.Photo.find({}).then(result=>{
+        // console.log(result)
+        res.json(result)
+      }).catch(err => res.status(422).json(err));
+    },
+    findmain: (req, res) =>{
+      db.Photo.find({main_photo: true}).then(result=>{
+        // console.log(result)
+        res.json(result)
+      }).catch(err => res.status(422).json(err));
     }
 };
