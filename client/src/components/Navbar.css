@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,900");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,900");
 
 body {
   font-family: "Roboto", sans-serif;
@@ -10,7 +10,7 @@ body {
   font-weight: 900;
   font-size: 60px;
   letter-spacing: 10px;
-  padding: 25px 0 5px 25px;
+  padding: 40px 5px 25px 25px;
 }
 
 /* header hover blur animation */
@@ -55,8 +55,9 @@ body {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
   overflow: hidden;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
+  letter-spacing: 1px;
 }
 .hvr-underline-from-center:before {
   content: "";
@@ -65,8 +66,7 @@ body {
   left: 51%;
   right: 51%;
   bottom: 0;
-  background: #343434;
-  font-weight: 900;
+  background: #6d6d6d;
   height: 4px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
@@ -82,11 +82,74 @@ body {
   right: 0;
 }
 
-.searchForm {
-  border: none;
-  border-width: 0 0 1px 0;
-  border-style: solid;
-  border-color: #fff;
-  width: 100vw;
-  padding: 0 40px 0 40px;
+/* search bar */
+.search_container {
+  padding: 10px 20px 10px 40px;
+}
+.search_input {
+  width: 80vw;
+  padding: 12px 24px;
+  background-color: transparent;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  font-size: 18px;
+  line-height: 18px;
+  color: #575756;
+  background-image: url("./search-solid.svg");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 18px 18px;
+  background-position: 95% center;
+  border-radius: 50px;
+  border: 1px solid #575756;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.search_input::-webkit-input-placeholder {
+  color: color(#575756 a(0.8));
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.search_input:-ms-input-placeholder {
+  color: color(#575756 a(0.8));
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.search_input::-ms-input-placeholder {
+  color: color(#575756 a(0.8));
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.search_input::placeholder {
+  color: color(#575756 a(0.8));
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.search_input:hover,
+.search_input:focus {
+  padding: 12px 0;
+  outline: 0;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #575756;
+  border-radius: 0;
+  background-position: 100% center;
 }
