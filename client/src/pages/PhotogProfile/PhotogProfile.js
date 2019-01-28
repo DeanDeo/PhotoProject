@@ -2,12 +2,15 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 
 class PhotogProfile extends React.Component {
+  
   render() {
 
     const uId = window.localStorage.getItem("uid")
+
+
     return (
       <div>
-          <Navbar />
+        <Navbar />
         <h1>Photographer</h1>
         <form action="/api/profile/photographer" method="post">
         <div className="form-group">
@@ -40,9 +43,9 @@ class PhotogProfile extends React.Component {
   </div>
                 <button type="photogProfile-submit" className="btn btn-primary">Submit</button>
 </form>
-            </div>
-            );
-          }
-        }
-        
+      </div>
+    );
+  }
+}
+
 export default PhotogProfile;
