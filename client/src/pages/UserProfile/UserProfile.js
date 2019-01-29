@@ -15,7 +15,7 @@ class UserProfile extends React.Component {
             <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email address</label>
             <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
-              <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+              <small id="emailUser" className="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div className="form-group">
               <label htmlFor="exampleInputPassword1">Type of Photography?</label>
