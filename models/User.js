@@ -8,7 +8,7 @@ var UserSchema = new Schema({
   },
   email:{
     type: String,
-    unique: true
+    // unique: true
   },
   uid: {
     type: String,
@@ -20,18 +20,18 @@ var UserSchema = new Schema({
   // },
   instagram: {
     type: String,
-    unique: true
+    // unique: true
   },
   portfolio:{
     type: String,
-    unique: true
+    // unique: true
   },
   bio:{
     type: String
   },
   photographer:{
     type: Boolean, 
-    default: false
+    // default: false
   }
 });
 

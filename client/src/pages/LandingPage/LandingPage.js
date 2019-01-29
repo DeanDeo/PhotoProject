@@ -15,7 +15,7 @@ class LandingPage extends React.Component {
     authTypes: ["Google"],
     redirectUser: false,
     redirectPhotog: false,
-    // user: null
+    user: null
   };
 
   // componentDidMount() {
@@ -54,7 +54,7 @@ class LandingPage extends React.Component {
   authHandler1 = authData => {
   
     const { uid, displayName } = authData.user;
-    console.log(authData.user);
+    console.log(authData.user.uid);
     axios.get(`/api/user/${uid}`).then(res => {
       console.log(res.data);
       if (res.data.length === 0) {
@@ -63,8 +63,8 @@ class LandingPage extends React.Component {
 
         axios.post("/api/user/create", { uid }).then(res => {
           console.log(res.data)
-          window.localStorage.setItem("uid", res.data._id);
-          window.localStorage.setItem("displayName", displayName);
+          // window.localStorage.setItem("uid", res.data._id);
+          // window.localStorage.setItem("displayName", displayName);
 
           this.setState({
             uid,
@@ -76,9 +76,9 @@ class LandingPage extends React.Component {
         this.setRedirectUser();
 
       } else {
-        window.localStorage.setItem("uid", res.data[0]._id);
-        console.log(window.localStorage.getItem("uid"));
-        window.localStorage.setItem("displayName", displayName);
+        // window.localStorage.setItem("uid", res.data[0]._id);
+        // console.log(window.localStorage.getItem("uid"));
+        // window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,
           displayName
@@ -100,8 +100,8 @@ class LandingPage extends React.Component {
         console.log("here:"+ uid)
         axios.post("/api/user/create", { uid }).then(res => {
 
-          window.localStorage.setItem("uid", res.data._id)
-          window.localStorage.setItem("displayName", displayName)
+          // window.localStorage.setItem("uid", res.data._id)
+          // window.localStorage.setItem("displayName", displayName)
 
           this.setState({
             uid,
@@ -113,9 +113,9 @@ class LandingPage extends React.Component {
         this.setRedirectPhotog();
 
       } else {
-        window.localStorage.setItem("uid", res.data[0]._id);
+        // window.localStorage.setItem("uid", res.data[0]._id);
         console.log(window.localStorage.getItem("uid"));
-        window.localStorage.setItem("displayName", displayName);
+        // window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,
           displayName
@@ -149,9 +149,9 @@ class LandingPage extends React.Component {
 
   logout = async () => {
     await firebase.auth().signOut();
-    this.setState({ uid: null, displayName: null });
-    window.localStorage.setItem("uid", "");
-    window.localStorage.setItem("displayName", "");
+    this.setState({ uid: null, user: null });
+    // window.localStorage.setItem("uid", "");
+    // window.localStorage.setItem("user", "");
   };
 
   render() {
@@ -191,7 +191,7 @@ class LandingPage extends React.Component {
               <div className="big font-black">HIRE A</div>
               <div className="bold font-black">PHOTOGRAPHER</div>
             </div>
-            {this.renderRedirectUser()}
+            {/* {this.renderRedirectUser()} */}
             {authButtons1}
           </div>
         </div>
