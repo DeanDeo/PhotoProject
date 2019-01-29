@@ -28,7 +28,7 @@ module.exports = {
     const data = req.body
     db.User.findByIdAndUpdate(data.uId,
       { $set: {
-        name: data.nameInput,
+        user: data.nameInput,
         email: data.emailInput,
         instagram: data.instagramInput,
         portfolio: data.portfolioInput,
