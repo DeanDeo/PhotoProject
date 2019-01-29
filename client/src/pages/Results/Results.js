@@ -28,20 +28,12 @@ class Results extends React.Component {
     //   super(props);
     // }
   render() {
-
-    
-
-    const myStyles = {
-      results: {
-         display: 'grid',
-      }
-  }
     return (
            <div>
       <Navbar></Navbar>
-            <div style={myStyles.results}>
-                <h1>This is our Results Page</h1>
-                {console.log(this.state.data)}
+      <h1>This is our Results Page</h1>
+      {console.log(this.state.data)}
+            <div className='results'>
                {this.state.data.map(picObj=> <ResultBox path={picObj.path} uId={picObj.photographer[0]} /> )} 
                 <ResultBox></ResultBox>
                 <ResultBox></ResultBox>
@@ -53,9 +45,6 @@ class Results extends React.Component {
                 <ResultBox></ResultBox>
                 <ResultBox></ResultBox>
                 <ResultBox></ResultBox>
-              
-
-     
             </div>
             </div>
             );
