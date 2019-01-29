@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
+import { Input, TextArea, FormBtn } from "../../components/ProfileForm";
 // import FormModal from '../../components/FormModal';
 // import MainForm from '../../components/MainForm';
 // import { Container } from 'semantic-ui-react';
@@ -14,7 +15,7 @@ class PhotogProfile extends React.Component {
             <div>
               <Navbar />
               <h1>Photographer</h1>
-              <form action="/api/profile/photographer" method="post">
+              {/* <form action="/api/profile/photographer" method="post">
               <div className="form-group">
 
                     <label htmlFor="exampleInputPassword1">Name</label>
@@ -44,7 +45,51 @@ class PhotogProfile extends React.Component {
               <textarea className="form-control" id="bioInput" rows="3"></textarea>
         </div>
                       <button type="photogProfile-submit" className="btn btn-primary">Submit</button>
-      </form>
+      </form> */}
+      <form>
+              <Input
+                // value={this.state.title}
+                // onChange={this.handleInputChange}
+                name="firstName"
+                placeholder="First Name (required)"
+              />
+              <Input
+                // value={this.state.author}
+                // onChange={this.handleInputChange}
+                name="lastName"
+                placeholder="Last Name (required)"
+              />
+              <Input
+                // value={this.state.author}
+                // onChange={this.handleInputChange}
+                name="location"
+                placeholder="Location (City, State) (required)"
+              />
+              <Input
+                // value={this.state.author}
+                // onChange={this.handleInputChange}
+                name="phoneNumber"
+                placeholder="Phone Number (Optional)"
+              />
+              <Input
+                // value={this.state.author}
+                // onChange={this.handleInputChange}
+                name="instagram"
+                placeholder="Instagram (Optional)"
+              />
+              <TextArea
+                // value={this.state.synopsis}
+                // onChange={this.handleInputChange}
+                name="bio"
+                placeholder="Bio (Optional)"
+              />
+              <FormBtn
+                // disabled={!(this.state.author && this.state.title)}
+                // onClick={this.handleFormSubmit}
+              >
+                Save
+              </FormBtn>
+            </form>
             </div>
 //       <div>
 
