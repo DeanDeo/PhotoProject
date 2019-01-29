@@ -22,7 +22,7 @@ const App = () => (
         <Route exact path="/photogProfile" component={PhotogProfile} />
         <Route exact path="/results" component={Results} />
         <Route exact path="/chat" component={ChatApp} />
-        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/profile/:uid" component={Profile} />
         <Route component={NoMatch} />
       </Switch>
     </div>
