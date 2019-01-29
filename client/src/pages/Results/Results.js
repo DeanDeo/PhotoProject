@@ -13,7 +13,7 @@ class Results extends React.Component {
   }
   
   componentDidMount(){
-  axios.get("/api/profile/findAll").then(res=>{
+  axios.get("/api/profile/findMain").then(res=>{
     
     
     this.setState({

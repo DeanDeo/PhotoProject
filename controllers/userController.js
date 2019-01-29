@@ -1,9 +1,20 @@
 var db = require("../models");
 
 module.exports = {
-  findById: (req, res) => {
+  find: (req, res) => {
     db.User.find(req.params)
-      .then(result => res.json(result))
+      .then(result => {
+        res.json(result)
+        console.log(result)
+      })
+      .catch(err => res.status(422).json(err));
+  },
+  findById: (req, res) => {
+    db.User.findById(req.params.uId)
+      .then(result => {
+        res.json(result)
+        console.log(result)
+      })
       .catch(err => res.status(422).json(err));
   },
   create: (req, res) => {
