@@ -8,8 +8,6 @@ import firebase from 'firebase';
 import firebaseConfig from '../../firebase';
 import { Redirect } from "react-router-dom";
 
-firebase.initializeApp(firebaseConfig);
-
 class LandingPage extends React.Component {
   state = {
     uid: null,
@@ -134,7 +132,7 @@ class LandingPage extends React.Component {
   login1 = provider => {
     // console.log(firebase.auth.auth[`${provider}AuthProvider`]);
     
-    const authProvider = new firebase.auth.GoogleAuthProvider();
+    const authProvider = new firebase.auth[`${provider}AuthProvider`]();
     firebase
       .auth()
       .signInWithPopup(authProvider)
