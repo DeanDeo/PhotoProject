@@ -11,6 +11,7 @@ export default {
     return axios.get("/api/customers/" + id);
   },
   saveCustomer: function(customerData) {
+    console.log(customerData)
     return axios.post("/api/customers", customerData);
   },
   // Deletes the book with the given id
