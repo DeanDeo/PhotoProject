@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import { Input, TextArea, FormBtn } from "../../components/ProfileForm";
+import API from "../../utils/API";
 // import FormModal from '../../components/FormModal';
 // import MainForm from '../../components/MainForm';
 // import { Container } from 'semantic-ui-react';
@@ -16,9 +17,9 @@ class PhotogProfile extends React.Component {
     bio: ""
   };
   
-  componentDidMount() {
-    this.loadPhotographers();
-  }
+  // componentDidMount() {
+  //   this.loadPhotographers();
+  // }
   
   handleInputChange = event => {
     const { name, value } = event.target;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import { Input, TextArea, FormBtn } from "../../components/ProfileForm";
+import API from "../../utils/API";
 
 
 class UserProfile extends React.Component {
@@ -20,6 +21,14 @@ state = {
 componentDidMount() {
   this.loadCustomers();
 }
+
+loadCustomers = () => {
+  API.getCustomers()
+    .then(res =>
+      this.setState({ firstName: "", lastName: "", location: "", phoneNumber: "", instagram: "", bio: "" })
+    )
+    .catch(err => console.log(err));
+};
 
 handleInputChange = event => {
   const { name, value } = event.target;
