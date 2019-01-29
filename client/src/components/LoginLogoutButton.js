@@ -14,7 +14,6 @@ class LoginLogoutButton extends React.Component {
         className="btn btn-default navbar-btn"
         onClick={() => this.props.login1(`${this.props.authType}`)}
       >
-      {this.props.authType}
         {`${this.props.authType}`} Login
       </button>
       </div>

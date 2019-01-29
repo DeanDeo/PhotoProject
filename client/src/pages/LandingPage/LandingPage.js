@@ -5,7 +5,7 @@ import axios from "axios";
 import LoginLogoutButton from "../../components/LoginLogoutButton";
 import LoginLogoutButton2 from "../../components/LoginLogoutButton2";
 import firebase from 'firebase';
-import firebaseConfig from '../../firebase';
+// import firebaseConfig from '../../firebase';
 import { Redirect } from "react-router-dom";
 
 class LandingPage extends React.Component {
@@ -191,7 +191,7 @@ class LandingPage extends React.Component {
               <div className="big font-black">HIRE A</div>
               <div className="bold font-black">PHOTOGRAPHER</div>
             </div>
-            {/* {this.renderRedirectUser()} */}
+            {this.renderRedirectUser()}
             {authButtons1}
           </div>
         </div>
