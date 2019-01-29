@@ -22,7 +22,7 @@ class ResultBox extends React.Component {
             <div style={myStyles.box}>
             
                 <h1>Sample box {console.log(this.props)}(photo goes here)</h1>
-            <img src={this.props.path}/>
+            <img alt='path' src={this.props.path}/>
             </div>
         </div>
         </Link>

@@ -7,8 +7,8 @@ import {
   Nav,
   NavItem,
   NavLink,
-  InputGroup,
-  Input
+  // InputGroup,
+  // Input
 } from "reactstrap";
 import "./Navbar.css";
 

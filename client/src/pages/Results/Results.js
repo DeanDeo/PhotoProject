@@ -3,7 +3,7 @@ import ResultBox from '../../components/ResultBox';
 import axios from 'axios';
 import './Results.css';
 import Navbar from '../../components/Navbar';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 class Results extends React.Component {
