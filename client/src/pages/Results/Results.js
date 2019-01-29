@@ -3,6 +3,7 @@ import ResultBox from '../../components/ResultBox';
 import axios from 'axios';
 import './Results.css';
 import Navbar from '../../components/Navbar';
+import { Link } from "react-router-dom";
 
 
 class Results extends React.Component {
@@ -41,8 +42,17 @@ class Results extends React.Component {
             <div style={myStyles.results}>
                 <h1>This is our Results Page</h1>
                 {console.log(this.state.data)}
-               {this.state.data.map(picObj=> <ResultBox path={picObj.path} uId={picObj.photographer[0]}/> )} 
-
+               {this.state.data.map(picObj=> <ResultBox path={picObj.path} uId={picObj.photographer[0]} /> )} 
+                <ResultBox></ResultBox>
+                <ResultBox></ResultBox>
+                <ResultBox></ResultBox>
+                <ResultBox></ResultBox>
+                <ResultBox></ResultBox>
+                <ResultBox></ResultBox>
+                <ResultBox></ResultBox>
+                <ResultBox></ResultBox>
+                <ResultBox></ResultBox>
+                <ResultBox></ResultBox>
               
 
      

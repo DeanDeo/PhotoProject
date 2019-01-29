@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 class ResultBox extends React.Component {
 //   constructor(props) {
@@ -15,12 +16,16 @@ class ResultBox extends React.Component {
           }
       }
     return (
+        <Link to={'./userProfile'}>
         <div>
+            
             <div style={myStyles.box}>
+            
                 <h1>Sample box {console.log(this.props)}(photo goes here)</h1>
             <img src={this.props.path}/>
             </div>
         </div>
+        </Link>
     );
   }
 }

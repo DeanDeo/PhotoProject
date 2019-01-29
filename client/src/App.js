@@ -21,8 +21,7 @@ const App = () => (
         <Route exact path="/userProfile" component={UserProfile} />
         <Route exact path="/photogProfile" component={PhotogProfile} />
         <Route exact path="/results" component={Results} />
-        <Route exact path="/chat" component={ChatApp} />
-        <Route exact path="/profile" component={Profile} />
+        {/* <Route exact path="/chat" component={ChatApp} /> */}
         <Route component={NoMatch} />
       </Switch>
     </div>
