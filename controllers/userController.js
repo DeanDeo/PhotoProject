@@ -45,6 +45,7 @@ module.exports = {
       }).then(result => {
         res.json(result)
       })
+
   }
 
 };
