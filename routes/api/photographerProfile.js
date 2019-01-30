@@ -2,8 +2,9 @@ const router = require("express").Router();
 const photographerController = require("../../controllers/photographerController");
 
 router.route("/")
-    .get(photographerController.findAll)
-    .post(photographerController.create)
+    .get(photographerController.findAll);
+    
+router.route("/edit/:id").post(photographerController.create);
 
 router
 .route("/:id")

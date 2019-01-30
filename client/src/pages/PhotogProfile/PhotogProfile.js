@@ -54,7 +54,6 @@ class PhotogProfile extends React.Component {
     event.preventDefault();
     if (this.state.firstName && this.state.lastName && this.state.location) {
       API.savePhotographer({
-        uid: uid,
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         location: this.state.location,
@@ -62,7 +61,7 @@ class PhotogProfile extends React.Component {
         instagram: this.state.instagram,
         bio: this.state.bio,
         photographer: true
-      })
+      }, uid)
         .then(res =>{ this.loadPhotographers()
         this.setRedirect()})
         .catch(err => console.log(err));
