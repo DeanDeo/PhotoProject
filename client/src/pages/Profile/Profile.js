@@ -41,7 +41,7 @@ class profile extends React.Component {
   }
   render() {
 
-
+console.log(this.state.userData)
 
 
 
@@ -50,11 +50,12 @@ class profile extends React.Component {
         <div>
           <Navbar />
           <div>
-            <h1>{this.state.userData.name}</h1>
-            <h4>{this.state.userData.city}</h4>
-            <h4>{this.state.userData.phonenumber}</h4>
+            <h1>{this.state.userData.firstName} {this.state.userData.lastName}</h1>
+            <h4>{this.state.userData.location}</h4>
+            <h4>{this.state.userData.phoneNumber}</h4>
             <h4>{this.state.userData.instagram}</h4>
             <h4>{this.state.userData.email}</h4>
+            <p>{this.state.userData.bio}</p>
 
             <Loader />
 
@@ -93,11 +94,12 @@ class profile extends React.Component {
         <div>
           <Navbar />
           <div>
-            <h1>{this.state.userData.name}</h1>
-            <h4>{this.state.userData.city}</h4>
-            <h4>{this.state.userData.phonenumber}</h4>
+            <h1>{this.state.userData.firstName} {this.state.userData.lastName}</h1>
+            <h4>{this.state.userData.location}</h4>
+            <h4>{this.state.userData.phoneNumber}</h4>
             <h4>{this.state.userData.instagram}</h4>
             <h4>{this.state.userData.email}</h4>
+            <p>{this.state.userData.bio}</p>
 
 
             {this.state.photos.map(picObj => picObj.profile_picture ? <img className="profile_picture" src={picObj.path} /> : <img src={picObj.path} />)}
