@@ -4,20 +4,20 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     console.log(`this is the customers req.query` + req.query)
-    db.Customer
+    db.User
       .find(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.Customer
+    db.User
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.Customer
-      .create(req.body)
+    db.User
+      .findByIdAndUpdate(req.body.uid, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
