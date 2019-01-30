@@ -2,15 +2,17 @@ const path = require("path");
 const router = require("express").Router();
 const userRoutes = require("./users");
 const photoRoutes = require("./photos")
-// const profileRoutes = require("./profile")
+const profileRoutes = require("./profile")
 const customerRoutes = require("./customerProfile")
 const photographerRoutes = require("./photographerProfile")
+const updateRoutes = require("./update")
 
 router.use("/photos", photoRoutes);
 router.use("/user", userRoutes);
-// router.use("/profile", profileRoutes);
+router.use("/profile", profileRoutes);
 router.use("/customers", customerRoutes);
 router.use("/photographers", photographerRoutes);
+router.use("/update", updateRoutes)
 
 
 // For anything else, render the html page

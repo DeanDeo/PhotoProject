@@ -11,7 +11,7 @@ class Loader extends React.Component {
     let uid = window.localStorage.getItem("uid")
     const image = new FormData();
     image.append("image", acceptedFiles[0]);
-    axios.post(`api/photos/upload/${uid}`, image).then(res =>
+    axios.post(`/api/photos/upload/${uid}`, image).then(res =>
       console.log(res))
   }
 

@@ -10,6 +10,7 @@ class profile extends React.Component {
     photos: []
   }
   componentDidMount() {
+    
     console.log(this.props.match.params.uid + "  " + uid)
     axios.get(`/api/user/findById/${this.props.match.params.uid}`).then(res => {
       this.setState({
@@ -27,17 +28,16 @@ class profile extends React.Component {
 
   profilePic(picId) {
     axios.put("/api/update/profilePic", {uid, picId}).then(res =>{
-      console.log(res)
+     
     })
     
-    console.log(picId)
+   
   }
   mainPic(picId) {
     axios.put("/api/update/mainPic", {uid, picId}).then(res =>{
-      console.log(res)
+      
     })
-   
-    console.log(picId)
+  
   }
   render() {
 
@@ -60,21 +60,30 @@ class profile extends React.Component {
 
             {this.state.photos.map(
               (picObj, e) => picObj.profile_picture ?
-                <img key = {e} className="profile_picture" src={picObj.path} />
+                <img key = {e} className="profile_picture" src={picObj.path} alt="" />
                 :
+
+                this.state.userData.photographer ?
                 
                 <div key={e} className="pictures">
-                  <img src={picObj.path} />
+                  <img src={picObj.path} alt=""/>
                   <div className="dropdown">
                     <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Change photo role
                 </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
                       <button  className="dropdown-item" onClick={()=>this.profilePic(picObj._id)} type="button">Make profile pic</button>
-                      <button  className="dropdown-item" onClick={()=>this.profilePic(picObj._id)} type="button">Make main pic</button>
+                      <button  className="dropdown-item" onClick={()=>this.mainPic(picObj._id)} type="button">Make main pic</button>
                     </div>
                   </div>
-                </div>)}
+                </div>: <div key={e} className="pictures">
+                  <img src={picObj.path} alt=""/>
+                      <button  onClick={()=>this.profilePic(picObj._id)} type="button">Make profile pic</button>
+                     
+                    
+                  </div>
+                
+                )}
           </div>
         </div>
       )
