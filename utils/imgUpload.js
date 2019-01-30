@@ -4,10 +4,10 @@ const fs = require("fs");
 
 
 const gcs = new Storage({
-  projectId: "photo-project-230117",
+  projectId: "final-project",
 });
 
-const bucketName = "photos-project";
+const bucketName = "final-photo-project";
 const bucket = gcs.bucket(bucketName);
 
 function getPublicUrl(filename) {
