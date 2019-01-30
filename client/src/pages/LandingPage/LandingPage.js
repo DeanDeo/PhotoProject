@@ -18,15 +18,6 @@ class LandingPage extends React.Component {
     user: null
   };
 
-  // componentDidMount() {
-  //   firebase.auth().onAuthStateChanged(user => {
-  //     console.log(user.displayName)
-  //     // API.save(user.displayName)
-  //     // this.setState({ user });
-      
-  //   });
-  // }
-
   setRedirectUser = () => {
     this.setState({
       redirectUser: true
@@ -52,29 +43,45 @@ class LandingPage extends React.Component {
   };
 
   authHandler1 = authData => {
-  
     const { uid, displayName } = authData.user;
-    console.log(authData.user.uid);
     axios.get(`/api/user/${uid}`).then(res => {
-      console.log(res.data);
       if (res.data.length === 0) {
-
-        console.log({uid})
-
         axios.post("/api/user/create", { uid }).then(res => {
-          console.log(res.data)
           // window.localStorage.setItem("uid", res.data._id);
           // window.localStorage.setItem("displayName", displayName);
+          this.setState({
+            uid,
+            displayName
+          }); 
+        });
+        this.setRedirectUser();
+      } else {
+        // window.localStorage.setItem("uid", res.data[0]._id);
+        // console.log(window.localStorage.getItem("uid"));
+        // window.localStorage.setItem("displayName", displayName);
+        this.setState({
+          uid,
+          displayName
+        });       
+        this.setRedirectUser();
+      }   
+    });
+  };
 
+  authHandler2 = authData => {
+    const { uid, displayName } = authData.user;
+    axios.get(`/api/user/${uid}`).then(res => {
+      if (res.data.length === 0) {
+        axios.post("/api/user/create", { uid }).then(res => {
+          // window.localStorage.setItem("uid", res.data._id)
+          // window.localStorage.setItem("displayName", displayName)
           this.setState({
             uid,
             displayName
           });
-          
+          return <Redirect to='/photogprofile' />
         });
-
-        this.setRedirectUser();
-
+        this.setRedirectPhotog();
       } else {
         // window.localStorage.setItem("uid", res.data[0]._id);
         // console.log(window.localStorage.getItem("uid"));
@@ -83,55 +90,16 @@ class LandingPage extends React.Component {
           uid,
           displayName
         });
-        
-        this.setRedirectUser();
-      }
-      
-    });
-    //check if user exists in mongo db, if not create user, if so set state equal to user
-    //set the state of the inventory to reflect current user
-  };
-
-  authHandler2 = authData => {
-    const { uid, displayName } = authData.user;
-    axios.get(`/api/user/${uid}`).then(res => {
-      console.log(res.data);
-      if (res.data.length === 0) {
-        console.log("here:"+ uid)
-        axios.post("/api/user/create", { uid }).then(res => {
-
-          // window.localStorage.setItem("uid", res.data._id)
-          // window.localStorage.setItem("displayName", displayName)
-
-          this.setState({
-            uid,
-            displayName
-          });
-          return <Redirect to='/photogprofile' />
-        });
-
-        this.setRedirectPhotog();
-
-      } else {
-        // window.localStorage.setItem("uid", res.data[0]._id);
-        console.log(window.localStorage.getItem("uid"));
-        // window.localStorage.setItem("displayName", displayName);
-        this.setState({
-          uid,
-          displayName
-        });
         this.setRedirectPhotog();
         return <Redirect to='/photogprofile' />
-      }
-      
+      }    
     });
     //check if user exists in mongo db, if not create user, if so set state equal to user
     //set the state of the inventory to reflect current user
   };
 
   login1 = provider => {
-    // console.log(firebase.auth.auth[`${provider}AuthProvider`]);
-    
+    // console.log(firebase.auth.auth[`${provider}AuthProvider`]);  
     const authProvider = new firebase.auth[`${provider}AuthProvider`]();
     firebase
       .auth()
