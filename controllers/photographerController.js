@@ -1,5 +1,5 @@
 const db = require("../models");
-
+console.log(db.Photographer);
 // Defining methods for the PhotographersController
 module.exports = {
   findAll: function(req, res) {

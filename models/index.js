@@ -4,5 +4,5 @@ module.exports = {
   User: require("./User"),
   Photo: require("./Photo"),
   Customer: require("./customer"),
-  photographer: require("./photographer")
+  Photographer: require("./photographer")
 };
