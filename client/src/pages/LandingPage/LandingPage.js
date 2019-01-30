@@ -47,8 +47,8 @@ class LandingPage extends React.Component {
     axios.get(`/api/user/${uid}`).then(res => {
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
-          // window.localStorage.setItem("uid", res.data._id);
-          // window.localStorage.setItem("displayName", displayName);
+          window.localStorage.setItem("uid", res.data._id);
+          window.localStorage.setItem("displayName", displayName);
           this.setState({
             uid,
             displayName
@@ -56,9 +56,9 @@ class LandingPage extends React.Component {
         });
         this.setRedirectUser();
       } else {
-        // window.localStorage.setItem("uid", res.data[0]._id);
+        window.localStorage.setItem("uid", res.data[0]._id);
         // console.log(window.localStorage.getItem("uid"));
-        // window.localStorage.setItem("displayName", displayName);
+        window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,
           displayName
@@ -73,8 +73,8 @@ class LandingPage extends React.Component {
     axios.get(`/api/user/${uid}`).then(res => {
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
-          // window.localStorage.setItem("uid", res.data._id)
-          // window.localStorage.setItem("displayName", displayName)
+          window.localStorage.setItem("uid", res.data._id)
+          window.localStorage.setItem("displayName", displayName)
           this.setState({
             uid,
             displayName
@@ -83,9 +83,9 @@ class LandingPage extends React.Component {
         });
         this.setRedirectPhotog();
       } else {
-        // window.localStorage.setItem("uid", res.data[0]._id);
+        window.localStorage.setItem("uid", res.data[0]._id);
         // console.log(window.localStorage.getItem("uid"));
-        // window.localStorage.setItem("displayName", displayName);
+        window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,
           displayName
@@ -118,8 +118,8 @@ class LandingPage extends React.Component {
   logout = async () => {
     await firebase.auth().signOut();
     this.setState({ uid: null, user: null });
-    // window.localStorage.setItem("uid", "");
-    // window.localStorage.setItem("user", "");
+    window.localStorage.setItem("uid", "");
+    window.localStorage.setItem("user", "");
   };
 
   render() {
