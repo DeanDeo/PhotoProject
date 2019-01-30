@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import { Redirect } from 'react-router-dom'
 
 const uid =window.localStorage.getItem("uid")
+console.log(uid)
 class UserProfile extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -53,14 +54,13 @@ handleFormSubmit = event => {
   event.preventDefault();
   if (this.state.firstName && this.state.lastName && this.state.location) {
     API.saveCustomer({
-      uid: uid,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       location: this.state.location,
       phoneNumber: this.state.phoneNumber,
       instagram: this.state.instagram,
       bio: this.state.bio
-    })
+    }, uid)
       .then(res =>{ 
         this.loadCustomers()
         this.setRedirect()

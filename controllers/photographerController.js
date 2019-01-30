@@ -15,8 +15,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log(req)
     db.User
-      .findByIdAndUpdate(req.body.uid, req.body)
+      .findByIdAndUpdate(req.params.id, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

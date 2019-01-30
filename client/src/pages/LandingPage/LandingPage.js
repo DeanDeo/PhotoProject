@@ -8,6 +8,7 @@ import firebase from 'firebase';
 // import firebaseConfig from '../../firebase';
 import { Redirect } from "react-router-dom";
 
+
 class LandingPage extends React.Component {
   state = {
     uid: null,
@@ -48,6 +49,7 @@ class LandingPage extends React.Component {
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
           window.localStorage.setItem("uid", res.data._id);
+          console.log(window.localStorage.getItem("uid"));
           window.localStorage.setItem("displayName", displayName);
           this.setState({
             uid,
@@ -57,7 +59,7 @@ class LandingPage extends React.Component {
         this.setRedirectUser();
       } else {
         window.localStorage.setItem("uid", res.data[0]._id);
-        // console.log(window.localStorage.getItem("uid"));
+        console.log(window.localStorage.getItem("uid"));
         window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,
@@ -74,6 +76,7 @@ class LandingPage extends React.Component {
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
           window.localStorage.setItem("uid", res.data._id)
+          console.log(window.localStorage.getItem("uid"));
           window.localStorage.setItem("displayName", displayName)
           this.setState({
             uid,
@@ -84,7 +87,7 @@ class LandingPage extends React.Component {
         this.setRedirectPhotog();
       } else {
         window.localStorage.setItem("uid", res.data[0]._id);
-        // console.log(window.localStorage.getItem("uid"));
+        console.log(window.localStorage.getItem("uid"));
         window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,

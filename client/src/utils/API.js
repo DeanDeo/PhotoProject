@@ -7,8 +7,8 @@ export default {
   getCustomer: function(id) {
     return axios.get("/api/customers/" + id);
   },
-  saveCustomer: function(customerData) {
-    return axios.post("/api/customers", customerData);
+  saveCustomer: function(customerData, id) {
+    return axios.post("/api/customers/edit/" +id, customerData);
   },
   // deleteCustomer: function(id) {
   //   return axios.delete("/api/customers/" + id);
@@ -20,9 +20,9 @@ export default {
   getPhotographer: function(id) {
     return axios.get("/api/photographers/" + id);
   },
-  savePhotographer: function(photographerData) {
+  savePhotographer: function(photographerData, id ) {
     
-    return axios.post("/api/photographers", photographerData);
+    return axios.post("/api/photographers/edit/" +id, photographerData);
   }
   // deletePhotographer: function(id) {
   //   return axios.delete("/api/photographers/" + id);
