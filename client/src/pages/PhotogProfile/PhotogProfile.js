@@ -17,9 +17,17 @@ class PhotogProfile extends React.Component {
     bio: ""
   };
   
-  // componentDidMount() {
-  //   this.loadPhotographers();
-  // }
+  componentDidMount() {
+    this.loadPhotographers();
+  }
+  
+  loadPhotographers = () => {
+    API.getPhotographers()
+      .then(res =>
+        this.setState({ firstName: "", lastName: "", location: "", phoneNumber: "", instagram: "", bio: "" })
+      )
+      .catch(err => console.log(err));
+  };
   
   handleInputChange = event => {
     const { name, value } = event.target;
