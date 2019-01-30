@@ -3,8 +3,14 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-  user: {
-    type: String
+  firstName:{
+    type:String
+  },
+  lastName:{
+    type:String
+  },
+  user:{
+    type:String
   },
   email:{
     type: String,
@@ -13,6 +19,12 @@ var UserSchema = new Schema({
   uid: {
     type: String,
     unique: true
+  },
+  location:{
+    type: String
+  },
+  phoneNumber:{
+    type:String
   },
   // photos: [{ type: Schema.Types.ObjectId, ref: 'Photo' }],
   // location: {
@@ -31,7 +43,7 @@ var UserSchema = new Schema({
   },
   photographer:{
     type: Boolean, 
-    // default: false
+    default: false
   }
 });
 

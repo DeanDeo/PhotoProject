@@ -5,7 +5,7 @@ import NoMatch from "./pages/NoMatch";
 import UserProfile from "./pages/UserProfile";
 import PhotogProfile from "./pages/PhotogProfile";
 import Results from "./pages/Results"
-
+import Profile from "./pages/Profile"
 import LandingPage from "./pages/LandingPage";
 
 
@@ -19,7 +19,7 @@ const App = () => (
         <Route exact path="/photogProfile" component={PhotogProfile} />
         <Route exact path="/results" component={Results} />
 
-        {/* <Route exact path="/profile/:uid" component={Profile} /> */}
+        <Route exact path="/profile/:uid" component={Profile} />
 
         {/* <Route exact path="/chat" component={ChatApp} /> */}
 
