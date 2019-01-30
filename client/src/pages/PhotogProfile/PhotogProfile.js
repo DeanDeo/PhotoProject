@@ -2,13 +2,16 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import { Input, TextArea, FormBtn } from "../../components/ProfileForm";
 import API from "../../utils/API";
+import { Redirect } from 'react-router-dom'
 // import FormModal from '../../components/FormModal';
 // import MainForm from '../../components/MainForm';
 // import { Container } from 'semantic-ui-react';
-
-
+const uid =window.localStorage.getItem("uid")
+const path = `/profile/${uid}`
 class PhotogProfile extends React.Component {
+  
   state = {
+    redirect:false,
     firstName: "",
     lastName: "",
     location: "",
@@ -23,11 +26,22 @@ class PhotogProfile extends React.Component {
   
   loadPhotographers = () => {
     API.getPhotographers()
-      .then(res =>
+      .then(res =>{
         this.setState({ firstName: "", lastName: "", location: "", phoneNumber: "", instagram: "", bio: "" })
-      )
+       
+      })
       .catch(err => console.log(err));
   };
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to={path}/>
+    }
+  }
   
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -40,14 +54,17 @@ class PhotogProfile extends React.Component {
     event.preventDefault();
     if (this.state.firstName && this.state.lastName && this.state.location) {
       API.savePhotographer({
+        uid: uid,
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         location: this.state.location,
         phoneNumber: this.state.phoneNumber,
         instagram: this.state.instagram,
-        bio: this.state.bio
+        bio: this.state.bio,
+        photographer: true
       })
-        .then(res => this.loadPhotographers())
+        .then(res =>{ this.loadPhotographers()
+        this.setRedirect()})
         .catch(err => console.log(err));
     }
   };
@@ -135,6 +152,7 @@ class PhotogProfile extends React.Component {
                 Save
               </FormBtn>
             </form>
+            {this.renderRedirect()}
             </div>
 //       <div>
 

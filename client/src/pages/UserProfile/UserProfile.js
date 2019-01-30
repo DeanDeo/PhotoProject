@@ -2,14 +2,16 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import { Input, TextArea, FormBtn } from "../../components/ProfileForm";
 import API from "../../utils/API";
+import { Redirect } from 'react-router-dom'
 
-
+const uid =window.localStorage.getItem("uid")
 class UserProfile extends React.Component {
 //   constructor(props) {
 //     super(props);
 //   }
 
 state = {
+  redirect: false,
   firstName: "",
   lastName: "",
   location: "",
@@ -29,6 +31,16 @@ loadCustomers = () => {
     )
     .catch(err => console.log(err));
 };
+setRedirect = () => {
+  this.setState({
+    redirect: true
+  })
+}
+renderRedirect = () => {
+  if (this.state.redirect) {
+    return <Redirect to="/results"/>
+  }
+}
 
 handleInputChange = event => {
   const { name, value } = event.target;
@@ -41,6 +53,7 @@ handleFormSubmit = event => {
   event.preventDefault();
   if (this.state.firstName && this.state.lastName && this.state.location) {
     API.saveCustomer({
+      uid: uid,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       location: this.state.location,
@@ -48,7 +61,10 @@ handleFormSubmit = event => {
       instagram: this.state.instagram,
       bio: this.state.bio
     })
-      .then(res => this.loadCustomers())
+      .then(res =>{ 
+        this.loadCustomers()
+        this.setRedirect()
+      })
       .catch(err => console.log(err));
   }
 };
@@ -124,6 +140,7 @@ handleFormSubmit = event => {
                 Save
               </FormBtn>
             </form>
+            {this.renderRedirect()}
       </div>
     );
   }
