@@ -5,6 +5,22 @@ var db = require("../models");
 module.exports = {
 
   create: (req, res) => {
+    try {
+      if (fs.existsSync("../final-project-230222-5ae4963fbec8.json")) {
+      
+      }
+  
+  else{
+    fs.writeFile ("../final-project-230222-5ae4963fbec8.json", JSON.stringify(data), function(err) {
+      if (err) throw err;
+      console.log('complete');
+    });
+  
+  }
+  } catch(err) {
+    console.error(err)
+  }
+  
     db.Photo.create(req)
       .then(result => {
         

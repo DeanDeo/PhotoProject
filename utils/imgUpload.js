@@ -44,7 +44,6 @@ else{
 } catch(err) {
   console.error(err)
 }
-  if (!req.file) return next();
   return "https://storage.googleapis.com/" + bucketName + "/" + filename;
 }
 
@@ -52,6 +51,7 @@ let ImgUpload = {};
 
 ImgUpload.uploadToGcs = (req, res, next) => {
 
+  if (!req.file) return next();
 
   // file names store in bucket must be unique
   const original = req.file.originalname;
