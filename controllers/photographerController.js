@@ -1,5 +1,5 @@
 const db = require("../models");
-console.log(db.Photographer);
+// console.log(db.Photographer);
 // Defining methods for the PhotographersController
 module.exports = {
   findAll: function(req, res) {
@@ -15,7 +15,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    console.log(req)
+    // console.log(req)
     db.User
       .findByIdAndUpdate(req.params.id, req.body)
       .then(dbModel => res.json(dbModel))

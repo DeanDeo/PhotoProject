@@ -1,10 +1,14 @@
 import React from "react";
-// import { Redirect } from 'react-router-dom';
 
 class LoginLogoutButton extends React.Component {
+
+  // bringHome = () => {
+  //   return 
+  // }
+
   render(){
-  console.log(this.props.authType);
-  console.log(this.props.login1);
+  // console.log(this.props.authType);
+  // console.log(this.props.login1);
 
   //render a button for each auth type or render a logout button if user is already logged in
   if (this.props.authType && this.props.login1) {

@@ -26,7 +26,15 @@ export default class Example extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  logout = () => {
+    window.localStorage.setItem("uid", "");
+    window.localStorage.setItem("id", "");
+    window.localStorage.setItem("displayName", "");
+  }
+
   render() {
+    
     return (
       <div>
         <Navbar className="roboto-font" color="black" light expand="md">
@@ -58,12 +66,13 @@ export default class Example extends React.Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink
+                { <NavLink
                   className="hvr-underline-from-center"
-                  href="/photogProfile"
+                  href="/" onClick={this.logout}
                 >
+                
                   Log Out
-                </NavLink>
+                </NavLink>}            
               </NavItem>
             </Nav>
           </Collapse>
