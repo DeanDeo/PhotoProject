@@ -30,7 +30,7 @@ class Home extends Component {
   authHandler = authData => {
     const { uid, displayName } = authData.user;
     axios.get(`/api/user/${uid}`).then(res => {
-      console.log(res.data);
+      console.log(res.data[0]._id);
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
           window.localStorage.setItem("uid", res.data[0]._id)

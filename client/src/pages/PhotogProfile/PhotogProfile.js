@@ -7,8 +7,7 @@ import './style.css';
 // import FormModal from '../../components/FormModal';
 // import MainForm from '../../components/MainForm';
 // import { Container } from 'semantic-ui-react';
-const uid =window.localStorage.getItem("uid")
-const path = `/profile/${uid}`
+
 class PhotogProfile extends React.Component {
   
   state = {
@@ -25,10 +24,10 @@ class PhotogProfile extends React.Component {
     this.loadPhotographers();
   }
   
-  loadPhotographers = () => {
+  loadPhotographers = (id) => {
     API.getPhotographers()
       .then(res =>{
-        this.setState({ firstName: "", lastName: "", location: "", phoneNumber: "", instagram: "", bio: "" })
+        this.setState(res)
        
       })
       .catch(err => console.log(err));
@@ -40,7 +39,7 @@ class PhotogProfile extends React.Component {
   }
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to={path}/>
+      return <Redirect to={`/profile/${window.localStorage.getItem("id")}`}/>
     }
   }
   
@@ -62,7 +61,7 @@ class PhotogProfile extends React.Component {
         instagram: this.state.instagram,
         bio: this.state.bio,
         photographer: true
-      }, uid)
+      }, window.localStorage.getItem("id"))
         .then(res =>{ this.loadPhotographers()
         this.setRedirect()})
         .catch(err => console.log(err));
