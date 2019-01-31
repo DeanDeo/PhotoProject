@@ -22,12 +22,13 @@ componentDidMount() {
 }
 
 loadCustomers = () => {
-  API.getCustomers()
+  API.getCustomers(window.localStorage.getItem("id"))
     .then(res =>
-      this.setState({ firstName: "", lastName: "", location: "", phoneNumber: "", instagram: "", bio: "" })
+      this.setState(res)
     )
     .catch(err => console.log(err));
 };
+
 setRedirect = () => {
   this.setState({
     redirect: true
