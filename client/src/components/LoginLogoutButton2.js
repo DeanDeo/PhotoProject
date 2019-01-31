@@ -3,8 +3,8 @@ import React from "react";
 
 class LoginLogoutButton2 extends React.Component {
   render(){
-  console.log(this.props.authType);
-  console.log(this.props.login2);
+  // console.log(this.props.authType);
+  // console.log(this.props.login2);
 
   //render a button for each auth type or render a logout button if user is already logged in
   if (this.props.authType && this.props.login2) {
