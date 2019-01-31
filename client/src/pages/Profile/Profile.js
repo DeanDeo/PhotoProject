@@ -19,7 +19,7 @@ class profile extends React.Component {
       })
 
     })
-    axios.get(`/api/profile/populatePhotos/${id}`).then(res => {
+    axios.get(`/api/profile/populatePhotos/${window.localStorage.getItem("id")}`).then(res => {
       this.setState({
         photos: res.data
       })
@@ -28,6 +28,7 @@ class profile extends React.Component {
   }
 
   profilePic(picId) {
+    const id = window.localStorage.getItem("id")
     axios.put("/api/update/profilePic", {id, picId}).then(res =>{
      
     })
@@ -35,6 +36,7 @@ class profile extends React.Component {
    
   }
   mainPic(picId) {
+    const id = window.localStorage.getItem("id")
     axios.put("/api/update/mainPic", {id, picId}).then(res =>{
       
     })
@@ -44,7 +46,7 @@ class profile extends React.Component {
 
 console.log(this.state.userData)
 
-
+    const id = window.localStorage.getItem("id")
     if (id === this.props.match.params.id) {
       let instagram = `https://www.instagram.com/${this.state.userData.instagram}?hl=en`
       return (
