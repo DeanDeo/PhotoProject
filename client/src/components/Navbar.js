@@ -33,8 +33,10 @@ export default class Example extends React.Component {
     window.localStorage.setItem("displayName", "");
   }
 
+
   render() {
-    
+    let id = window.localStorage.getItem("id")
+
     return (
       <div>
         <Navbar className="roboto-font" color="black" light expand="md">
@@ -60,7 +62,7 @@ export default class Example extends React.Component {
               <NavItem>
                 <NavLink
                   className="hvr-underline-from-center"
-                  href="/Profile"
+                  href={`/Profile/${id}`}
                 >
                   Profile
                 </NavLink>
