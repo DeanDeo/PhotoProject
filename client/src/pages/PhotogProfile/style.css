@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-family:"Roboto", sans-serif;
+}
+
+form {
+    width: 80%;
+    margin: auto;
+}
+
+.btn-success {
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    margin: auto;
+    opacity: 1;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.btn-success:active, .btn-success:hover {
+    background-color: #ffffff;
+    color: black;
+    width: 100%;
+    margin-bottom: 30px;
+    border-color: #ffffff;
+}
+.btn:disabled, .btn-success.disabled {
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    margin: auto;
+    width: 100%;  
+    margin-bottom: 30px;
+}
