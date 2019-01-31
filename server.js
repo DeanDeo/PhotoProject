@@ -20,7 +20,26 @@ const data =
     client_x509_cert_url: process.env.client_x509_cert_url
   }
 
-//   fs.readFile()
+  try {
+    if (fs.existsSync("./final-project-230222-5ae4963fbec8.json")) {
+    
+    }
+
+else{
+  fs.writeFile ("final-project-230222-5ae4963fbec8.json", JSON.stringify(data), function(err) {
+    if (err) throw err;
+    console.log('complete');
+  });
+
+}
+} catch(err) {
+  console.error(err)
+}
+
+
+
+
+
 
 // fs.writeFile ("final-project-230222-5ae4963fbec8.json", JSON.stringify(data), function(err) {
 //   if (err) throw err;
