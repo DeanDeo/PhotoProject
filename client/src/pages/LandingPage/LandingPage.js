@@ -48,7 +48,7 @@ class LandingPage extends React.Component {
     axios.get(`/api/user/${uid}`).then(res => {
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
-          window.localStorage.setItem("uid", res.data._id);
+          window.localStorage.setItem("uid", res.data.uid);
           console.log(window.localStorage.getItem("uid"));
           window.localStorage.setItem("displayName", displayName);
           this.setState({
@@ -56,16 +56,16 @@ class LandingPage extends React.Component {
             displayName
           }); 
         });
-        this.setRedirectUser();
+        // this.setRedirectUser();
       } else {
-        window.localStorage.setItem("uid", res.data[0]._id);
+        window.localStorage.setItem("uid", res.data[0].uid);
         console.log(window.localStorage.getItem("uid"));
         window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,
           displayName
         });       
-        this.setRedirectUser();
+        // this.setRedirectUser();
       }   
     });
   };
@@ -75,18 +75,17 @@ class LandingPage extends React.Component {
     axios.get(`/api/user/${uid}`).then(res => {
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
-          window.localStorage.setItem("uid", res.data._id)
+          window.localStorage.setItem("uid", res.data.uid)
           console.log(window.localStorage.getItem("uid"));
           window.localStorage.setItem("displayName", displayName)
           this.setState({
             uid,
             displayName
           });
-          return <Redirect to='/photogprofile' />
         });
         this.setRedirectPhotog();
       } else {
-        window.localStorage.setItem("uid", res.data[0]._id);
+        window.localStorage.setItem("uid", res.data[0].uid);
         console.log(window.localStorage.getItem("uid"));
         window.localStorage.setItem("displayName", displayName);
         this.setState({
@@ -94,7 +93,6 @@ class LandingPage extends React.Component {
           displayName
         });
         this.setRedirectPhotog();
-        return <Redirect to='/photogprofile' />
       }    
     });
     //check if user exists in mongo db, if not create user, if so set state equal to user
@@ -137,7 +135,7 @@ class LandingPage extends React.Component {
     ) : (
       this.state.authTypes.map((type, i) => {
         return (
-          <LoginLogoutButton key={i} login1={this.login1} authType={type} />
+          <LoginLogoutButton key={i} login1={this.login1} authType={type}/>
         );
       })
     );

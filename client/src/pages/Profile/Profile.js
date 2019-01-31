@@ -43,8 +43,6 @@ class profile extends React.Component {
 
 console.log(this.state.userData)
 
-
-
     if (uid === this.props.match.params.uid) {
       return (
         <div>
@@ -102,7 +100,7 @@ console.log(this.state.userData)
             <p>{this.state.userData.bio}</p>
 
 
-            {this.state.photos.map(picObj => picObj.profile_picture ? <img className="profile_picture" src={picObj.path} /> : <img src={picObj.path} />)}
+            {this.state.photos.map(picObj => picObj.profile_picture ? <img className="profile_picture" src={picObj.path} alt="propic" /> : <img src={picObj.path} alt="propic2"/>)}
           </div>
         </div>
 
