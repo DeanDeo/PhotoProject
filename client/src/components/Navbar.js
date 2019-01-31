@@ -52,6 +52,11 @@ export default class Example extends React.Component {
                 </NavLink>
               </NavItem> */}
               <NavItem>
+                <NavLink className="hvr-underline-from-center" href="/results">
+                  Photographers
+                </NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink className="hvr-underline-from-center" href="/userProfile">
                   Edit
                 </NavLink>
