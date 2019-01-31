@@ -55,11 +55,11 @@ console.log(this.state.userData)
           <div>
             <h1>| {this.state.userData.firstName} {this.state.userData.lastName} |</h1>
             <div className = 'infoBox' >
-            <h4><i class="fas fa-city"></i>{this.state.userData.location}</h4>
-            <h4><i class="fas fa-mobile-alt"></i>{this.state.userData.phoneNumber}</h4>
-            <a href={instagram}><i class="fab fa-instagram"></i> Instagram</a>
-            <h4><i class="fas fa-envelope"></i>{this.state.userData.email}</h4>
-            <p><i class="far fa-user-circle"></i>{this.state.userData.bio}</p>
+            <h4><i className="fas fa-city"></i>{this.state.userData.location}</h4>
+            <h4><i className="fas fa-mobile-alt"></i>{this.state.userData.phoneNumber}</h4>
+            <a href={instagram}><i className="fab fa-instagram"></i> Instagram</a>
+            <h4><i className="fas fa-envelope"></i>{this.state.userData.email}</h4>
+            <p><i className="far fa-user-circle"></i>{this.state.userData.bio}</p>
             </div>
             <Loader />
 
@@ -107,7 +107,7 @@ console.log(this.state.userData)
             <p>{this.state.userData.bio}</p>
 
 
-            {this.state.photos.map(picObj => picObj.profile_picture ? <img className="profile_picture" src={picObj.path} /> : <img src={picObj.path} />)}
+            {this.state.photos.map(picObj => picObj.profile_picture ? <img className="profile_picture" src={picObj.path} alt='propic'/> : <img src={picObj.path} alt="propic1"/>)}
           </span>
         </div>
 
