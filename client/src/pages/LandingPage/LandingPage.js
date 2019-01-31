@@ -56,7 +56,7 @@ class LandingPage extends React.Component {
             displayName
           }); 
         });
-        // this.setRedirectUser();
+        this.setRedirectUser();
       } else {
         window.localStorage.setItem("uid", res.data[0].uid);
         console.log(window.localStorage.getItem("uid"));
@@ -65,7 +65,7 @@ class LandingPage extends React.Component {
           uid,
           displayName
         });       
-        // this.setRedirectUser();
+        this.setRedirectUser();
       }   
     });
   };

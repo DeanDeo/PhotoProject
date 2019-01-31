@@ -44,14 +44,14 @@ export default class Example extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink className="hvr-underline-from-center" href="/About">
                   About
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
-                <NavLink className="hvr-underline-from-center" href="/Contact">
-                  Contact
+                <NavLink className="hvr-underline-from-center" href="/userProfile">
+                  Edit
                 </NavLink>
               </NavItem>
               {/* link for chat user as a prop
@@ -60,7 +60,7 @@ export default class Example extends React.Component {
               <NavItem>
                 <NavLink
                   className="hvr-underline-from-center"
-                  href="/userProfile"
+                  href="/Profile"
                 >
                   Profile
                 </NavLink>
