@@ -15,13 +15,13 @@ form {
     color: #ffffff;
     margin: auto;
     opacity: 1;
-    width: 100%;
+    width: 10%;
     margin-bottom: 30px;
 }
 .btn-success:active, .btn-success:hover {
     background-color: #ffffff;
     color: black;
-    width: 100%;
+    width: 10%;
     margin-bottom: 30px;
     border-color: #ffffff;
 }
@@ -30,6 +30,6 @@ form {
     border-color: black;
     color: #ffffff;
     margin: auto;
-    width: 100%;  
+    width: 10%;  
     margin-bottom: 30px;
 }

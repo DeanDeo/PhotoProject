@@ -131,7 +131,7 @@ class PhotogProfile extends React.Component {
                 value={this.state.phoneNumber}
                 onChange={this.handleInputChange}
                 name="phoneNumber"
-                placeholder="Phone Number (Optional)"
+                placeholder="Phone Number (XXX-XXX-XXXX)"
               />
               <Input
                 value={this.state.instagram}

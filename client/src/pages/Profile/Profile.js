@@ -2,6 +2,7 @@ import React from 'react';
 import { Loader } from "../../components/Photo";
 import Navbar from "../../components/Navbar";
 import axios from "axios"
+import './style.css'
 const uid = window.localStorage.getItem("uid")
 class profile extends React.Component {
 
@@ -44,19 +45,20 @@ class profile extends React.Component {
 console.log(this.state.userData)
 
 
-
     if (uid === this.props.match.params.uid) {
+      let instagram = `https://www.instagram.com/${this.state.userData.instagram}?hl=en`
       return (
         <div>
           <Navbar />
           <div>
-            <h1>{this.state.userData.firstName} {this.state.userData.lastName}</h1>
+            <h1>| {this.state.userData.firstName} {this.state.userData.lastName} |</h1>
+            <div className = 'infoBox' >
             <h4>{this.state.userData.location}</h4>
             <h4>{this.state.userData.phoneNumber}</h4>
-            <h4>{this.state.userData.instagram}</h4>
+            <a href={instagram}>Instagram</a>
             <h4>{this.state.userData.email}</h4>
             <p>{this.state.userData.bio}</p>
-
+            </div>
             <Loader />
 
             {this.state.photos.map(
@@ -90,20 +92,21 @@ console.log(this.state.userData)
       )
     }
     else {
+      let instagram = `https://www.instagram.com/${this.state.userData.instagram}?hl=en`
       return (
         <div>
           <Navbar />
-          <div>
+          <span>
             <h1>{this.state.userData.firstName} {this.state.userData.lastName}</h1>
             <h4>{this.state.userData.location}</h4>
             <h4>{this.state.userData.phoneNumber}</h4>
-            <h4>{this.state.userData.instagram}</h4>
+            <a href={instagram}>Instagram</a>
             <h4>{this.state.userData.email}</h4>
             <p>{this.state.userData.bio}</p>
 
 
             {this.state.photos.map(picObj => picObj.profile_picture ? <img className="profile_picture" src={picObj.path} /> : <img src={picObj.path} />)}
-          </div>
+          </span>
         </div>
 
       )

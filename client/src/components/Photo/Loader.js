@@ -23,7 +23,7 @@ class Loader extends React.Component {
         {({ getRootProps, getInputProps }) => (
           <div {...getRootProps()}>
             <input {...getInputProps()} />
-            <button>Add image.</button>
+            <button>Add image</button>
           </div>
         )}
       </Dropzone>
