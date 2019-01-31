@@ -2,15 +2,12 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import { Input, TextArea, FormBtn } from "../../components/ProfileForm";
 import API from "../../utils/API";
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
+import './style.css';
 
 const uid =window.localStorage.getItem("uid")
 console.log(uid)
 class UserProfile extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
 state = {
   redirect: false,
   firstName: "",
@@ -73,29 +70,7 @@ handleFormSubmit = event => {
     return (
       <div>
         <Navbar />
-          <h1>User</h1>
-          {/* <form>
-            <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email address</label>
-            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
-              <small id="emailUser" className="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div className="form-group">
-              <label htmlFor="exampleInputPassword1">Type of Photography?</label>
-              <input className="form-control" id="example1" placeholder="Password"></input>
-              </div>
-              <div className="form-group">
-              <label htmlFor="exampleInputPassword1">Sample Question?</label>
-              <input className="form-control" id="example2" placeholder="Password"></input>
-              </div>
-              <div className="form-group">
-              <label htmlFor="exampleInputPassword1">Sample Question?</label>
-              <input className="form-control" id="example3" placeholder="Password"></input>
-              </div>
-              <p>Upload a photo for your profile.</p>
-              
-                <button type="photogProfile-submit" className="btn btn-primary">Submit</button>
-</form> */}
+          <h1>| Set Your Profile |</h1>
 <form>
               <Input
                 value={this.state.firstName}

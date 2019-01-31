@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar';
 import { Input, TextArea, FormBtn } from "../../components/ProfileForm";
 import API from "../../utils/API";
 import { Redirect } from 'react-router-dom'
+import './style.css';
 // import FormModal from '../../components/FormModal';
 // import MainForm from '../../components/MainForm';
 // import { Container } from 'semantic-ui-react';
@@ -75,7 +76,7 @@ class PhotogProfile extends React.Component {
     return (
             <div>
               <Navbar />
-              <h1>Photographer</h1>
+              <h1>| Set Your Photography Profile |</h1>
               {/* <form action="/api/profile/photographer" method="post">
               <div className="form-group">
 
