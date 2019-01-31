@@ -29,7 +29,7 @@ export default class Example extends React.Component {
 
   logout = () => {
     window.localStorage.setItem("uid", "");
-    window.localStorage.setItem("user", "");
+    window.localStorage.setItem("id", "");
     window.localStorage.setItem("displayName", "");
   }
 
