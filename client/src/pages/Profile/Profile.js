@@ -53,11 +53,11 @@ console.log(this.state.userData)
           <div>
             <h1>| {this.state.userData.firstName} {this.state.userData.lastName} |</h1>
             <div className = 'infoBox' >
-            <h4>{this.state.userData.location}</h4>
-            <h4>{this.state.userData.phoneNumber}</h4>
-            <a href={instagram}>Instagram</a>
-            <h4>{this.state.userData.email}</h4>
-            <p>{this.state.userData.bio}</p>
+            <h4><i class="fas fa-city"></i>{this.state.userData.location}</h4>
+            <h4><i class="fas fa-mobile-alt"></i>{this.state.userData.phoneNumber}</h4>
+            <a href={instagram}><i class="fab fa-instagram"></i> Instagram</a>
+            <h4><i class="fas fa-envelope"></i>{this.state.userData.email}</h4>
+            <p><i class="far fa-user-circle"></i>{this.state.userData.bio}</p>
             </div>
             <Loader />
 
@@ -100,7 +100,7 @@ console.log(this.state.userData)
             <h1>{this.state.userData.firstName} {this.state.userData.lastName}</h1>
             <h4>{this.state.userData.location}</h4>
             <h4>{this.state.userData.phoneNumber}</h4>
-            <a href={instagram}>Instagram</a>
+            <a href={instagram}>Instagram <i class="fab fa-instagram"></i></a>
             <h4>{this.state.userData.email}</h4>
             <p>{this.state.userData.bio}</p>
 
