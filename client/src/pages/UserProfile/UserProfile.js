@@ -22,10 +22,10 @@ componentDidMount() {
 }
 
 loadCustomers = () => {
-  API.getCustomers(window.localStorage.getItem("id"))
-    .then(res =>
-      this.setState(res)
-    )
+  API.getCustomer(window.localStorage.getItem("id"))
+    .then(res =>{
+      this.setState(res.data)
+    })
     .catch(err => console.log(err));
 };
 
