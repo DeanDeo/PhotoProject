@@ -48,8 +48,10 @@ class LandingPage extends React.Component {
     axios.get(`/api/user/${uid}`).then(res => {
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
-          window.localStorage.setItem("uid", res.data._id);
-          console.log(window.localStorage.getItem("uid"));
+          window.localStorage.setItem("uid", res.data.uid);
+          window.localStorage.setItem("id", res.data._id);
+          console.log("id: " + window.localStorage.getItem("id"));
+          console.log("uid: " + window.localStorage.getItem("uid"));
           window.localStorage.setItem("displayName", displayName);
           this.setState({
             uid,
@@ -58,8 +60,10 @@ class LandingPage extends React.Component {
         });
         this.setRedirectUser();
       } else {
-        window.localStorage.setItem("uid", res.data[0]._id);
-        console.log(window.localStorage.getItem("uid"));
+        window.localStorage.setItem("uid", res.data[0].uid);
+        window.localStorage.setItem("id", res.data[0]._id);
+        console.log("id: " + window.localStorage.getItem("id"));
+        console.log("uid: " + window.localStorage.getItem("uid"));
         window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,
@@ -75,26 +79,30 @@ class LandingPage extends React.Component {
     axios.get(`/api/user/${uid}`).then(res => {
       if (res.data.length === 0) {
         axios.post("/api/user/create", { uid }).then(res => {
-          window.localStorage.setItem("uid", res.data._id)
-          console.log(window.localStorage.getItem("uid"));
+          window.localStorage.setItem("uid", res.data.uid)
+          window.localStorage.setItem("id", res.data._id);
+          console.log("id: " + window.localStorage.getItem("id"));
+          console.log("uid: " + window.localStorage.getItem("uid"));
           window.localStorage.setItem("displayName", displayName)
           this.setState({
             uid,
             displayName
           });
-          return <Redirect to='/photogprofile' />
+          
         });
         this.setRedirectPhotog();
       } else {
-        window.localStorage.setItem("uid", res.data[0]._id);
-        console.log(window.localStorage.getItem("uid"));
+        window.localStorage.setItem("uid", res.data[0].uid);
+        window.localStorage.setItem("id", res.data[0]._id);
+        console.log("id: " + window.localStorage.getItem("id"));
+        console.log("uid: " + window.localStorage.getItem("uid"));
         window.localStorage.setItem("displayName", displayName);
         this.setState({
           uid,
           displayName
         });
         this.setRedirectPhotog();
-        return <Redirect to='/photogprofile' />
+        
       }    
     });
     //check if user exists in mongo db, if not create user, if so set state equal to user

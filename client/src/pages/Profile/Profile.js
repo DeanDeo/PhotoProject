@@ -2,23 +2,23 @@ import React from 'react';
 import { Loader } from "../../components/Photo";
 import Navbar from "../../components/Navbar";
 import axios from "axios"
-const uid = window.localStorage.getItem("uid")
-class profile extends React.Component {
 
+class profile extends React.Component {
+  
   state = {
     userData: {},
     photos: []
   }
   componentDidMount() {
     
-    console.log(this.props.match.params.uid + "  " + uid)
-    axios.get(`/api/user/findById/${this.props.match.params.uid}`).then(res => {
+    console.log(this.props.match.params.id + "  " + window.localStorage.getItem("id"))
+    axios.get(`/api/user/findById/${this.props.match.params.id}`).then(res => {
       this.setState({
         userData: res.data
       })
 
     })
-    axios.get(`/api/profile/populatePhotos/${uid}`).then(res => {
+    axios.get(`/api/profile/populatePhotos/${window.localStorage.getItem("id")}`).then(res => {
       this.setState({
         photos: res.data
       })
@@ -27,14 +27,16 @@ class profile extends React.Component {
   }
 
   profilePic(picId) {
-    axios.put("/api/update/profilePic", {uid, picId}).then(res =>{
+    let id = window.localStorage.getItem("id");
+    axios.put("/api/update/profilePic", {id, picId}).then(res =>{
      
     })
     
    
   }
   mainPic(picId) {
-    axios.put("/api/update/mainPic", {uid, picId}).then(res =>{
+    let id = window.localStorage.getItem("id");
+    axios.put("/api/update/mainPic", {id, picId}).then(res =>{
       
     })
   
@@ -44,8 +46,10 @@ class profile extends React.Component {
 console.log(this.state.userData)
 
 
-
-    if (uid === this.props.match.params.uid) {
+    let id = window.localStorage.getItem("id")
+    console.log(id + "=" + this.props.match.params.id)
+    if (id === this.props.match.params.id) {
+      console.log("true")
       return (
         <div>
           <Navbar />

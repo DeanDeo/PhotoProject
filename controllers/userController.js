@@ -9,7 +9,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findById: (req, res) => {
-    db.User.findById(req.params.uId)
+    db.User.findById(req.params.id)
       .then(result => {
         res.json(result)
       })
@@ -27,7 +27,7 @@ module.exports = {
 
   photographerUpdate: (req, res) => {
     const data = req.body
-    db.User.findByIdAndUpdate(data.uId,
+    db.User.findByIdAndUpdate(data.id,
       {
         $set: {
           name: data.nameInput,

@@ -5,8 +5,7 @@ import API from "../../utils/API";
 import { Redirect } from 'react-router-dom';
 import './style.css';
 
-const uid =window.localStorage.getItem("uid")
-console.log(uid)
+
 class UserProfile extends React.Component {
 state = {
   redirect: false,
@@ -57,7 +56,7 @@ handleFormSubmit = event => {
       phoneNumber: this.state.phoneNumber,
       instagram: this.state.instagram,
       bio: this.state.bio
-    }, uid)
+    }, window.localStorage.getItem("id"))
       .then(res =>{ 
         this.loadCustomers()
         this.setRedirect()

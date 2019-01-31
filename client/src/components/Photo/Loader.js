@@ -8,10 +8,10 @@ class Loader extends React.Component {
 
   onDrop = (acceptedFiles, rejectedFiles) => {
     console.log(acceptedFiles)
-    let uid = window.localStorage.getItem("uid")
+    let id = window.localStorage.getItem("id")
     const image = new FormData();
     image.append("image", acceptedFiles[0]);
-    axios.post(`/api/photos/upload/${uid}`, image).then(res =>
+    axios.post(`/api/photos/upload/${id}`, image).then(res =>
       console.log(res))
   }
 

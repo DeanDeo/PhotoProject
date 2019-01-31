@@ -8,16 +8,16 @@ const multer = Multer({
 });
 const imgUpload = require("../../utils/imgUpload")
 
-router.post("/upload/:uid", multer.single("image"), imgUpload.uploadToGcs,
+router.post("/upload/:id", multer.single("image"), imgUpload.uploadToGcs,
 (req, res) => {
   const data = req.body;
   if (req.file && req.file.cloudStoragePublicUrl) {
     data.imageUrl = req.file.cloudStoragePublicUrl;
   }
   //write data.imageUrl to database at this point with ref to photographer
-  console.log(data.imageUrl)
-  console.log(req.params.uid)
-  photoController.create({ path: data.imageUrl, photographer: req.params.uid})
+  // console.log(data.imageUrl)
+  // console.log(req.params.id)
+  photoController.create({ path: data.imageUrl, photographer: req.params.id})
   res.json(data);
 })
 
