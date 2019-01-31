@@ -16,6 +16,8 @@ class LandingPage extends React.Component {
     authTypes: ["Google"],
     redirectUser: false,
     redirectPhotog: false,
+    redirectUserOld: false,
+    redirectPhotogOld: false,
     user: null
   };
 
@@ -31,6 +33,18 @@ class LandingPage extends React.Component {
     });
   };
 
+  setRedirectUserOld = () => {
+    this.setState({
+      redirectUserOld: true
+    });
+  };
+
+  setRedirectPhotogOld = () => {
+    this.setState({
+      redirectPhotogOld: true
+    });
+  };
+
   renderRedirectUser = () => {
     if (this.state.redirectUser) {
       return <Redirect to="/userprofile" />;
@@ -40,6 +54,20 @@ class LandingPage extends React.Component {
   renderRedirectPhotog = () => {
     if (this.state.redirectPhotog) {
       return <Redirect to="/photogprofile" />;
+    }
+  };
+
+  renderRedirectUserOld = () => {
+    if (this.state.redirectUserOld) {
+      console.log('profile route')
+      return <Redirect to={`/profile/${window.localStorage.getItem("id")}`} />;
+    }
+  };
+
+  renderRedirectPhotogOld = () => {
+    if (this.state.redirectPhotogOld) {
+      console.log('profile route')
+      return <Redirect to={`/profile/${window.localStorage.getItem("id")}`} />;
     }
   };
 
@@ -69,7 +97,9 @@ class LandingPage extends React.Component {
           uid,
           displayName
         });       
-        this.setRedirectUser();
+        this.setRedirectUserOld();
+        console.log("new route")
+
       }   
     });
   };
@@ -101,7 +131,8 @@ class LandingPage extends React.Component {
           uid,
           displayName
         });
-        this.setRedirectPhotog();
+        this.setRedirectPhotogOld();
+        console.log("new route")
         
       }    
     });
@@ -171,6 +202,8 @@ class LandingPage extends React.Component {
               <div className="bold font-black">PHOTOGRAPHER</div>
             </div>
             {this.renderRedirectUser()}
+            {this.renderRedirectUserOld()}
+
             {authButtons1}
           </div>
         </div>
@@ -183,6 +216,8 @@ class LandingPage extends React.Component {
               <div className="bold">PHOTOGRAPHER</div>
             </div>
             {this.renderRedirectPhotog()}
+            {this.renderRedirectPhotogOld()}
+
             {authButtons2}
           </div>
         </div>

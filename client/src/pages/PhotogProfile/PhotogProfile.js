@@ -20,12 +20,14 @@ class PhotogProfile extends React.Component {
     bio: ""
   };
   
+
+
   componentDidMount() {
     this.loadPhotographers();
   }
   
-  loadPhotographers = (id) => {
-    API.getPhotographers()
+  loadPhotographers = () => {
+    API.getPhotographers(window.localStorage.getItem("id"))
       .then(res =>{
         this.setState(res)
        
