@@ -4,7 +4,6 @@ import Navbar from "../../components/Navbar";
 import axios from "axios";
 import "./style.css";
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer";
 
 const id = window.localStorage.getItem("id");
 class profile extends React.Component {
@@ -13,7 +12,6 @@ class profile extends React.Component {
     photos: []
   };
   componentDidMount() {
-    console.log(this.props.match.params.id + "  " + id);
     axios.get(`/api/user/findById/${this.props.match.params.id}`).then(res => {
       this.setState({
         userData: res.data
@@ -88,61 +86,92 @@ class profile extends React.Component {
               </button>
             </Link>
 
-            {this.state.photos.map((picObj, e) =>
-              picObj.profile_photo ? (
-                <img
-                  key={e}
-                  className="profile_picture"
-                  src={picObj.path}
-                  alt=""
-                />
-              ) : this.state.userData.photographer ? (
-                <div key={e} className="pictures">
-                  <img src={picObj.path} alt="" />
-                  <div className="dropdown">
-                    <button
-                      className="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenu2"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Change photo role
-                    </button>
-                    <div
-                      className="dropdown-menu"
-                      aria-labelledby="dropdownMenu2"
-                    >
-                      <button
-                        className="dropdown-item"
-                        onClick={() => this.profilePic(picObj._id)}
-                        type="button"
-                      >
-                        Make profile pic
-                      </button>
-                      <button
-                        className="dropdown-item"
-                        onClick={() => this.mainPic(picObj._id)}
-                        type="button"
-                      >
-                        Make main pic
-                      </button>
+            <div
+              id="carouselExampleFade"
+              className="carousel slide carousel-fade"
+              data-ride="carousel"
+            >
+              <div className="carousel-inner">
+                {this.state.photos.map((picObj, e) =>
+                  picObj.profile_photo ? (
+                    <div class="carousel-item active">
+                      <img
+                        className="profile_picture d-block w-100"
+                        src={picObj.path}
+                        alt="propic"
+                      />{" "}
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Profile picture</h5>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              ) : (
-                <div key={e} className="pictures">
-                  <img src={picObj.path} alt="" />
-                  <button
-                    onClick={() => this.profilePic(picObj._id)}
-                    type="button"
-                  >
-                    Make profile pic
-                  </button>
-                </div>
-              )
-            )}
+                  ) : this.state.userData.photographer ? (
+                    <div className="carousel-item">
+                      {" "}
+                      <img
+                        className="d-block w-100"
+                        src={picObj.path}
+                        alt="propic1"
+                      />
+                      <div className="carousel-caption d-none d-md-block">
+                        <button
+                          onClick={() => this.profilePic(picObj._id)}
+                          type="button"
+                        >
+                          Make profile pic
+                        </button>
+                        <button
+                          onClick={() => this.mainPic(picObj._id)}
+                          type="button"
+                        >
+                          Make main pic
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="carousel-item">
+                      {" "}
+                      <img
+                        className="d-block w-100"
+                        src={picObj.path}
+                        alt="propic1"
+                      />
+                      <div className="carousel-caption d-none d-md-block">
+                        <button
+                          onClick={() => this.profilePic(picObj._id)}
+                          type="button"
+                        >
+                          Make profile pic
+                        </button>
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+              <a
+                className="carousel-control-prev"
+                href="#carouselExampleFade"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                />
+                <span className="sr-only">Previous</span>
+              </a>
+              <a
+                className="carousel-control-next"
+                href="#carouselExampleFade"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                />
+                <span className="sr-only">Next</span>
+              </a>
+            </div>
           </div>
         </div>
       );
@@ -165,19 +194,62 @@ class profile extends React.Component {
             <h4>{this.state.userData.email}</h4>
             <p>{this.state.userData.bio}</p>
 
-            {this.state.photos.map(picObj =>
-              picObj.profile_picture ? (
-                <img
-                  className="profile_picture"
-                  src={picObj.path}
-                  alt="propic"
+            <div
+              id="carouselExampleFade"
+              className="carousel slide carousel-fade"
+              data-ride="carousel"
+            >
+              <div className="carousel-inner">
+                {this.state.photos.map(picObj =>
+                  picObj.profile_photo ? (
+                    <div class="carousel-item active">
+                      <img
+                        className="profile_picture d-block w-100"
+                        src={picObj.path}
+                        alt="propic"
+                      />{" "}
+                      <div class="carousel-caption d-none d-md-block">
+                        <h5>Profile picture</h5>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="carousel-item">
+                      {" "}
+                      <img
+                        className="d-block w-100"
+                        src={picObj.path}
+                        alt="propic1"
+                      />
+                    </div>
+                  )
+                )}
+              </div>
+              <a
+                className="carousel-control-prev"
+                href="#carouselExampleFade"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
                 />
-              ) : (
-                <img src={picObj.path} alt="propic1" />
-              )
-            )}
+                <span className="sr-only">Previous</span>
+              </a>
+              <a
+                className="carousel-control-next"
+                href="#carouselExampleFade"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                />
+                <span className="sr-only">Next</span>
+              </a>
+            </div>
           </span>
-          <Footer />
         </div>
       );
     }

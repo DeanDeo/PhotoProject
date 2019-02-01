@@ -13,12 +13,13 @@
     display: -ms-flexbox;
     display: flex;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
   }
 }
 html,
 body {
   height: 100vh;
+  width: 100vw;
   min-height: 18em;
 }
 
@@ -34,7 +35,7 @@ body {
 }
 
 .split-pane {
-  /* padding-top: 1em; */
+  padding-top: 1em;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
