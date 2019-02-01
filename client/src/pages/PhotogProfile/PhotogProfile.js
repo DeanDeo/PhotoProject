@@ -27,9 +27,9 @@ class PhotogProfile extends React.Component {
   }
   
   loadPhotographers = () => {
-    API.getPhotographers(window.localStorage.getItem("id"))
+    API.getPhotographer(window.localStorage.getItem("id"))
       .then(res =>{
-        this.setState(res)
+        this.setState(res.data)
        
       })
       .catch(err => console.log(err));

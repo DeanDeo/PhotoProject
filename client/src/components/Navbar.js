@@ -58,7 +58,7 @@ export default class Example extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink className="hvr-underline-from-center" href="/userProfile">
-                  Edit
+                  Edit profile.
                 </NavLink>
               </NavItem>
               {/* link for chat user as a prop
