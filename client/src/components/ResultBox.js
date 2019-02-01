@@ -22,7 +22,7 @@ class ResultBox extends React.Component {
     });
   }
   componentWillUpdate(prevProps) {
-    console.log("prev: ", prevProps.id, 'new: ', console.log(this.props.id))
+    console.log("prev: ", prevProps.id, "new: ", console.log(this.props.id));
     if (prevProps.id !== this.state.userData._id) {
       axios.get(`/api/user/findById/${this.props.id}`).then(res => {
         console.log(res);
@@ -47,19 +47,15 @@ class ResultBox extends React.Component {
       }
     };
     return (
-        <figure className="imghvr-blur" style={myStyles.box}>
-         <Link to={`./Profile/${this.props.id}`} className="img-link">
-     <img style={myStyles.img} alt="path" src={this.props.path} />
-            <figcaption>
-              {this.state.userData.firstName +
-                " " +
-                this.state.userData.lastName}{" "}
-              <br /> {this.state.userData.location}
-            </figcaption>
-{/* <a href={`./Profile/${this.props.id}`}></a> */}
-           </Link>
-          </figure>
-
+      <figure className="imghvr-blur" style={myStyles.box}>
+        <Link to={`./Profile/${this.props.id}`} className="img-link">
+          <img style={myStyles.img} alt="path" src={this.props.path} />
+          <figcaption>
+            {this.state.userData.firstName + " " + this.state.userData.lastName}{" "}
+            <br /> {this.state.userData.location}
+          </figcaption>
+        </Link>
+      </figure>
     );
   }
 }
