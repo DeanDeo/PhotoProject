@@ -34,17 +34,23 @@ class ResultBox extends React.Component {
       }
     };
     return (
-      <Link to={"./profile/"+ this.props.id}>
+
+      <Link to={`./Profile/${this.props.id}`}>
+
         <div>
           <div className="image" style={myStyles.box}>
             <div className="title">
               {this.state.userData.firstName + " " + this.state.userData.lastName}
-              <img className="image" alt="path" src={this.props.path} />
+              
          
             </div>
             <br />
             <div className="description">description</div>
+
             
+
+            <img className="image" alt="path" src={this.props.path} />
+
           </div>
         </div>
       </Link>
