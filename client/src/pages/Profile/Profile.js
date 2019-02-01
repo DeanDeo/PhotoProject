@@ -59,7 +59,7 @@ class profile extends React.Component {
     if (currentId === id) {
       let instagram = `https://www.instagram.com/${
         this.state.userData.instagram
-      }?hl=en`;
+        }?hl=en`;
       return (
         <div>
           <Navbar />
@@ -67,32 +67,49 @@ class profile extends React.Component {
           <p><i className="far fa-user-circle"></i>{this.state.userData.bio}</p>
           <div className="container">
 
-           
+
             <div className='infoBox' >
               <h4><i className="fas fa-city"></i>{this.state.userData.location}</h4>
               <h4><i className="fas fa-mobile-alt"></i>{this.state.userData.phoneNumber}</h4>
-              <a className ="instagram" href={instagram}><i className="fab fa-instagram"></i> Instagram</a>
+              <a className="instagram" href={instagram}><i className="fab fa-instagram"></i> Instagram</a>
               {/* <h4><i className="fas fa-envelope"></i>{this.state.userData.email}</h4> */}
             </div>
-           
+
 
             < div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel" >
               <div className="carousel-inner">
                 {this.state.photos.map(
-                  (picObj, e) => picObj.profile_photo ?
+                  (picObj, e) => picObj.profile_photo && e === 0 ?
                     <div class="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
                       <h3 className="proPicture">Profile Picture</h3>
                     </div></div>
                     :
-
-                    this.state.userData.photographer ?
-
-                      <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">    
-                        <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
-                        <button onClick={() => this.mainPic(picObj._id)} type="button">Make Main Picture</button></div></div>
-                      :  <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">    
-                      <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
+                    picObj.profile_photo?
+                    <div class="carousel-item"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
+                    <h3 className="proPicture">Profile Picture</h3>
+                  </div></div>
+                
+                      : this.state.userData.photographer && e ===0 ?
+                        <div className="carousel-item active"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
+                          <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
+                          <button onClick={() => this.mainPic(picObj._id)} type="button">Make main pic</button></div></div>
+                        :this.state.userData.photographer ?
+                        <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
+                        <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
+                        <button onClick={() => this.mainPic(picObj._id)} type="button">Make main pic</button></div></div>
+                        : e === 0 ?
+                        <div className="carousel-item active"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
+                          <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
+                        </div></div>
+                        :
+                        <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
+                        <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
                       </div></div>
+
+
+
+
+
                 )}
               </div>
               <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -105,34 +122,34 @@ class profile extends React.Component {
               </a>
             </div>
 
-           
+
           </div>
           <Loader />
-            <Link to={`../`}>
-              <button className="deleteBtn" onClick={() => { this.deleteProfile(id) }}>Delete Profile</button>
-            </Link>
+          <Link to={`../`}>
+            <button className="deleteBtn" onClick={() => { this.deleteProfile(id) }}>Delete Profile</button>
+          </Link>
         </div>
       );
     } else {
       let instagram = `https://www.instagram.com/${
         this.state.userData.instagram
-      }?hl=en`;
+        }?hl=en`;
       return (
         <div>
           <Navbar />
           <h1>
-              {this.state.userData.firstName} {this.state.userData.lastName}
-            </h1>
+            {this.state.userData.firstName} {this.state.userData.lastName}
+          </h1>
           <span className="container">
-          <div className='infoBox' >
-            <h4>{this.state.userData.location}</h4>
-            <h4>{this.state.userData.phoneNumber}</h4>
-            <a href={instagram}>
-              Instagram <i class="fab fa-instagram" />
-            </a>
-            <h4>{this.state.userData.email}</h4>
-            <p>{this.state.userData.bio}</p>
-          </div>
+            <div className='infoBox' >
+              <h4>{this.state.userData.location}</h4>
+              <h4>{this.state.userData.phoneNumber}</h4>
+              <a href={instagram}>
+                Instagram <i class="fab fa-instagram" />
+              </a>
+              <h4>{this.state.userData.email}</h4>
+              <p>{this.state.userData.bio}</p>
+            </div>
 
 
             < div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel" >
