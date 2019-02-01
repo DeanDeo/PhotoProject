@@ -1,31 +1,35 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
+import "./resultBox.css";
+import { photosample } from "../pages/LandingPage/vino.jpg";
 
 class ResultBox extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-  
+  //   constructor(props) {
+  //     super(props);
+  //   }
+
   render() {
-    console.log(this.props)
-      const myStyles = {
-          box: {
-              backgroundColor: 'gray',
-              height: '300px',
-              width: '400px'
-          }
+    console.log(this.props);
+    const myStyles = {
+      box: {
+        backgroundImage: this.props.path,
+        height: "300px",
+        width: "400px"
       }
+    };
     return (
-        <Link to={'./userProfile'}>
+      <Link to={"./userProfile"}>
         <div>
-            
-            <div style={myStyles.box}>
-            
-                <h1>Sample box {console.log(this.props)}(photo goes here)</h1>
-            <img alt='path' src={this.props.path}/>
+          <div className="image" style={myStyles.box}>
+            <div className="title">
+              Photographer Name {console.log(this.props)}
             </div>
+            <br />
+            <div className="description">description</div>
+            {/* <img className="image" alt="path" src={this.props.path} /> */}
+          </div>
         </div>
-        </Link>
+      </Link>
     );
   }
 }
