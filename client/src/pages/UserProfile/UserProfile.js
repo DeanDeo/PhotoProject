@@ -47,8 +47,14 @@ handleInputChange = event => {
   });
 };
 
+handleDropdown = event => {
+  this.setState({location: event.target.value})
+  console.log(this.state.location);
+}
+
 handleFormSubmit = event => {
   event.preventDefault();
+  console.log(this.state.location)
   if (this.state.firstName && this.state.lastName && this.state.location) {
     API.saveCustomer({
       firstName: this.state.firstName,
@@ -66,12 +72,28 @@ handleFormSubmit = event => {
   }
 };
 
+
+
   render() {
     return (
       <div>
         <Navbar />
           <h1>| Set Your Profile |</h1>
 <form>
+{/* <Dropdown
+                id="dropdown"
+                onChange={this.handleInputChange}
+                name="location"
+                placeholder="Location (City, State) (required)"
+              /> */}
+             <div className="form-group">
+     <select name="location" value={this.state.location} onChange={this.handleDropdown}className="form-control">
+   <option value="Chicago, Il">Chicago, Il</option>
+   <option value="Boston, Ma">Boston, Ma</option>
+   <option value="Los Angeles, California">Los Angeles, California</option>
+   <option value="New York City, NY">New York City, NY</option>
+ </select>
+   </div>
               <Input
                 value={this.state.firstName}
                 onChange={this.handleInputChange}
@@ -83,12 +105,6 @@ handleFormSubmit = event => {
                 onChange={this.handleInputChange}
                 name="lastName"
                 placeholder="Last Name (required)"
-              />
-              <Input
-                value={this.state.location}
-                onChange={this.handleInputChange}
-                name="location"
-                placeholder="Location (City, State) (required)"
               />
               <Input
                 value={this.state.phoneNumber}

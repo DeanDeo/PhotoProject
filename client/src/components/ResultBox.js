@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./resultBox.css";
-import { photosample } from "../pages/LandingPage/vino.jpg";
+
+// import { photosample } from "../pages/LandingPage/vino.jpg";
 import axios from "axios";
+
 
 class ResultBox extends React.Component {
   //   constructor(props) {
