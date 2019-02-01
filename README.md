@@ -36,11 +36,11 @@ The landing page includes 2 options which both use Google Log in:
   
   ### Team Members
   
-  Dean Deolitsis [DeanDeo](https://github.com/DeanDeo)
-  Patrick Holmes [Pholmes10](https://github.com/pholmes10)
-  Nathan Walker  [Nathanw88](https://github.com/nathanw88)
-  May Zhou       [maydeyn](https://github.com/maydeyn)
-  Phillip Sturm  [PhillipSturm](https://github.com/PhillipSturm)
+  - Dean Deolitsis [DeanDeo](https://github.com/DeanDeo)
+  - Patrick Holmes [Pholmes10](https://github.com/pholmes10)
+  - Nathan Walker  [Nathanw88](https://github.com/nathanw88)
+  - May Zhou       [maydeyn](https://github.com/maydeyn)
+  - Phillip Sturm  [PhillipSturm](https://github.com/PhillipSturm)
   
   
   
