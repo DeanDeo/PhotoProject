@@ -16,8 +16,14 @@ The landing page includes 2 options which both use Google Log in:
   
   Whether you sign in as a client or a photographer, you will be prompted to create your user profile which includes:
   
-  Required: First and Last name, phone number, and location
-  Optional: Instagram profile link and bio
+  ##### Required 
+  
+  First and Last name, phone number, and location
+  ##### Optional
+  
+  Instagram profile link and bio
+  
+  
   
   
   
