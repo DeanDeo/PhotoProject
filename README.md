@@ -1,4 +1,9 @@
 # Bokeh
+
+
+
+
+
 ## Bokeh is an interface where clients can interact with Photographers quickly and easily.
 
 ### Clients and Photographers both can easily communicate with each other by entering in basic information such as location and specific photography needs and interests.
@@ -31,3 +36,4 @@ The landing page includes 2 options which both use Google Log in:
   
   
   
+
