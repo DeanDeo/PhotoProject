@@ -1,0 +1,26 @@
+footer {
+  margin-top: 60px;
+  background: rgb(255, 255, 255);
+  padding: 10px 0 10px 0;
+  position: relative; /* for the :before */
+}
+/* .social-links > * {
+  font-size: 3em;
+  color: #ddd;
+  margin: 0 0.4em;
+} */
+.bokeh-logo {
+  width: 150px;
+  margin: 4em 0;
+}
+.github-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.footer > h1 {
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+  color: #838383;
+  font-size: 12px;
+}

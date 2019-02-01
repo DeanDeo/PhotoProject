@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./resultBox.css";
-import { photosample } from "../pages/LandingPage/vino.jpg";
+
+// import { photosample } from "../pages/LandingPage/vino.jpg";
 import axios from "axios";
 
 class ResultBox extends React.Component {
@@ -10,47 +11,39 @@ class ResultBox extends React.Component {
   //   }
   state = {
     userData: {}
-    
-  }
+  };
   componentDidMount() {
-    
-    console.log(this.props.id)
+    console.log(this.props.id);
     axios.get(`/api/user/findById/${this.props.id}`).then(res => {
-      console.log(res)
+      console.log(res);
       this.setState({
         userData: res.data
-      })
-
-    })
+      });
+    });
   }
 
   render() {
     console.log(this.props);
     const myStyles = {
       box: {
-        backgroundImage: this.props.path,
+        // backgroundImage: this.props.path,
         height: "300px",
         width: "400px"
       }
     };
     return (
-
       <Link to={`./Profile/${this.props.id}`}>
-
         <div>
           <div className="image" style={myStyles.box}>
             <div className="title">
-              {this.state.userData.firstName + " " + this.state.userData.lastName}
-              
-         
+              {this.state.userData.firstName +
+                " " +
+                this.state.userData.lastName}
             </div>
             <br />
             <div className="description">{this.state.userData.location}</div>
 
-            
-
             <img className="image" alt="path" src={this.props.path} />
-
           </div>
         </div>
       </Link>

@@ -1,35 +1,43 @@
+body {
+  background-image: url("../../components/chicago_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 h1 {
-    text-align: center;
-    font-weight: bold;
-    font-family:"Roboto", sans-serif;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
 }
 
 form {
-    width: 60%;
-    margin: auto;
+  width: 60%;
+  margin: auto;
 }
 
 .btn-success {
-    background-color: black;
-    border-color: black;
-    color: #ffffff;
-    margin: auto;
-    opacity: 1;
-    width: 10%;
-    margin-bottom: 30px;
+  background-color: black;
+  border-color: black;
+  color: #ffffff;
+  margin: auto;
+  opacity: 1;
+  width: 10%;
+  margin-bottom: 30px;
 }
-.btn-success:active, .btn-success:hover {
-    background-color: #ffffff;
-    color: black;
-    width: 10%;
-    margin-bottom: 30px;
-    border-color: #ffffff;
+.btn-success:active,
+.btn-success:hover {
+  background-color: #ffffff;
+  color: black;
+  width: 10%;
+  margin-bottom: 30px;
+  border-color: #ffffff;
 }
-.btn:disabled, .btn-success.disabled {
-    background-color: black;
-    border-color: black;
-    color: #ffffff;
-    margin: auto;
-    width: 10%;  
-    margin-bottom: 30px;
+.btn:disabled,
+.btn-success.disabled {
+  background-color: black;
+  border-color: black;
+  color: #ffffff;
+  margin: auto;
+  width: 10%;
+  margin-bottom: 30px;
 }
