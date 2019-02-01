@@ -91,19 +91,19 @@ class profile extends React.Component {
                 
                       : this.state.userData.photographer && e ===0 ?
                         <div className="carousel-item active"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
-                          <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
-                          <button onClick={() => this.mainPic(picObj._id)} type="button">Make main pic</button></div></div>
+                          <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
+                          <button onClick={() => this.mainPic(picObj._id)} type="button">Make Main Picture</button></div></div>
                         :this.state.userData.photographer ?
                         <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
-                        <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
-                        <button onClick={() => this.mainPic(picObj._id)} type="button">Make main pic</button></div></div>
+                        <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
+                        <button onClick={() => this.mainPic(picObj._id)} type="button">Make Main Picture</button></div></div>
                         : e === 0 ?
                         <div className="carousel-item active"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
-                          <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
+                          <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
                         </div></div>
                         :
                         <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
-                        <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
+                        <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
                       </div></div>
 
 
