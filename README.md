@@ -32,10 +32,19 @@ The landing page includes 2 options which both use Google Log in:
   
   
   ![Profilepage](client/src/components/Profilepage.PNG)
+
+  When you hit save it will take you to your User Profile
+
+
+  ![Profilepage](client/src/components/Photoprofile.PNG)
+
   
   ### Search Page
   
   You can search by location or photography keyword interests to load photographers that you can reach out to
+
+
+  
   
   
   
