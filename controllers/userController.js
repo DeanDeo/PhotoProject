@@ -24,6 +24,13 @@ module.exports = {
         res.status(422).json(err)
       })
   },
+  delete: (req, res) => {
+    db.User.findByIdAndDelete(req.params.id).then(result =>{
+      db.Photo.deleteMany({photographer: req.params.id,}).then(response =>{
+        res.json(response)
+      })
+    })
+  },
 
   photographerUpdate: (req, res) => {
     const data = req.body
