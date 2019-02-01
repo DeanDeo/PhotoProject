@@ -21,10 +21,10 @@ class Loader extends React.Component {
       <Dropzone multiple={false} accept="image/*" onDrop={this.onDrop}>
 
         {({ getRootProps, getInputProps }) => (
-          <div {...getRootProps()}>
+          <span {...getRootProps()}>
             <input {...getInputProps()} />
             <button>Add image</button>
-          </div>
+          </span>
         )}
       </Dropzone>
     );
