@@ -46,6 +46,11 @@ class PhotogProfile extends React.Component {
     });
   };
 
+  handleDropdown = event => {
+    this.setState({ location: event.target.value });
+    console.log(this.state.location);
+  };
+
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.firstName && this.state.lastName && this.state.location) {
@@ -76,7 +81,53 @@ class PhotogProfile extends React.Component {
       <div>
         <Navbar />
         <h1>| Set Your Photography Profile |</h1>
+        {/* <form action="/api/profile/photographer" method="post">
+              <div className="form-group">
+
+                    <label htmlFor="exampleInputPassword1">Name</label>
+                    <input type="hidden" id="uId" name="uId" value={uId}></input>
+                    <input className="form-control" id="nameInput" placeholder="John Smith"></input>
+                    </div>
+                  <div className="form-group">
+                  <label htmlFor="exampleInputEmail2">Email address</label>
+                  <input type="email" className="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email"></input>
+                    <small id="emailPhotog" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                    <div className="form-group">
+                    <label htmlFor="Location">Location</label>
+                    <input className="form-control" id="locationInput" placeholder="Chicago"></input>
+                    </div>
+                    <div className="form-group">
+                    <label htmlFor="instagramLink">Instagram Link</label>
+                    <input className="form-control" id="instagramInput" placeholder="@instagram"></input>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="portfolioLink">Portfolio Link</label>
+                    <input className="form-control" id="portfolioInput" placeholder="yourpage.com"></input>
+                </div>
+
+                <div className="form-group">
+              <label htmlFor="bioInput">Bio</label>
+              <textarea className="form-control" id="bioInput" rows="3"></textarea>
+        </div>
+                      <button type="photogProfile-submit" className="btn btn-primary">Submit</button>
+      </form> */}
         <form>
+          <div className="form-group">
+            <select
+              name="location"
+              value={this.state.location}
+              onChange={this.handleDropdown}
+              className="form-control"
+            >
+              <option value="Chicago, Il">Chicago, Il</option>
+              <option value="Boston, Ma">Boston, Ma</option>
+              <option value="Los Angeles, California">
+                Los Angeles, California
+              </option>
+              <option value="New York City, NY">New York City, NY</option>
+            </select>
+          </div>
           <Input
             value={this.state.firstName}
             onChange={this.handleInputChange}
@@ -89,12 +140,12 @@ class PhotogProfile extends React.Component {
             name="lastName"
             placeholder="Last Name (required)"
           />
-          <Input
-            value={this.state.location}
-            onChange={this.handleInputChange}
-            name="location"
-            placeholder="Location (City, State) (required)"
-          />
+          {/* <Input
+                value={this.state.location}
+                onChange={this.handleInputChange}
+                name="location"
+                placeholder="Location (City, State) (required)"
+              /> */}
           <Input
             value={this.state.phoneNumber}
             onChange={this.handleInputChange}
@@ -129,6 +180,13 @@ class PhotogProfile extends React.Component {
         {this.renderRedirect()}
         <Footer />
       </div>
+
+      //       <div>
+
+      // // {/*
+      // //       <FormModal>
+      // //       </FormModal> */}
+      //       </div>
     );
   }
 }

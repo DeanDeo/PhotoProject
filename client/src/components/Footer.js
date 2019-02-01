@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import Bokehlogo from "../pages/LandingPage/logo.png";
 import GithubLogo from "../components/github-brands.svg";
 
 class Footer extends React.PureComponent {

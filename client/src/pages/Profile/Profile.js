@@ -3,6 +3,7 @@ import { Loader } from "../../components/Photo";
 import Navbar from "../../components/Navbar";
 import axios from "axios";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 const id = window.localStorage.getItem("id");
 class profile extends React.Component {
@@ -18,7 +19,7 @@ class profile extends React.Component {
       });
     });
     axios
-      .get(`/api/profile/populatePhotos/${window.localStorage.getItem("id")}`)
+      .get(`/api/profile/populatePhotos/${this.props.match.params.id}`)
       .then(res => {
         this.setState({
           photos: res.data
@@ -34,12 +35,16 @@ class profile extends React.Component {
     const id = window.localStorage.getItem("id");
     axios.put("/api/update/mainPic", { id, picId }).then(res => {});
   }
+  deleteProfile(id) {
+    axios.put("/api/user/delete/" + id).then(res => {});
+  }
   render() {
     console.log(this.state.photos);
     console.log(this.state.userData);
 
-    const id = window.localStorage.getItem("id");
-    if (id === this.props.match.params.id) {
+    const currentId = window.localStorage.getItem("id");
+    const id = this.props.match.params.id;
+    if (currentId === id) {
       let instagram = `https://www.instagram.com/${
         this.state.userData.instagram
       }?hl=en`;
@@ -72,6 +77,15 @@ class profile extends React.Component {
               </p>
             </div>
             <Loader />
+            <Link to={`../`}>
+              <button
+                onClick={() => {
+                  this.deleteProfile(id);
+                }}
+              >
+                Delete Profile
+              </button>
+            </Link>
 
             {this.state.photos.map((picObj, e) =>
               picObj.profile_photo ? (

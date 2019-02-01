@@ -32,8 +32,9 @@ class Results extends React.Component {
         {console.log(this.state.data)}
         <div className="results">
           {this.state.data.map(picObj => (
-            <ResultBox path={picObj.path} uId={picObj.photographer[0]} />
+            <ResultBox path={picObj.path} id={picObj.photographer[0]} />
           ))}
+          {/* <ResultBox />
           <ResultBox />
           <ResultBox />
           <ResultBox />
@@ -42,8 +43,7 @@ class Results extends React.Component {
           <ResultBox />
           <ResultBox />
           <ResultBox />
-          <ResultBox />
-          <ResultBox />
+          <ResultBox /> */}
         </div>
         <Pages />
       </div>
@@ -52,3 +52,5 @@ class Results extends React.Component {
 }
 
 export default Results;
+
+

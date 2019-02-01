@@ -13,10 +13,23 @@ export function Input(props) {
 export function TextArea(props) {
   return (
     <div className="form-group">
-      <textarea className="form-control" rows="20" {...props} />
+      <textarea className="form-control" rows="8" {...props} />
     </div>
   );
 }
+
+// export function Dropdown(props) {
+//   return (  
+//     <div className="form-group">
+//       <select name="location" id="location" className="form-control">
+//     <option value="Chicago, Il">Chicago, Il</option>
+//     <option value="Boston, Ma">Boston, Ma</option>
+//     <option value="Los Angeles, California">Los Angeles, California</option>
+//     <option value="New York City, NY">New York City, NY</option>
+//   </select>
+//     </div>
+//   );
+// }
 
 export function FormBtn(props) {
   return (
