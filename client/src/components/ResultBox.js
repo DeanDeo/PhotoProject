@@ -12,7 +12,7 @@ class ResultBox extends React.Component {
     console.log(this.props);
     const myStyles = {
       box: {
-        backgroundImage: this.props.path,
+        // backgroundImage: this.props.path,
         height: "300px",
         width: "400px"
       }
@@ -26,7 +26,7 @@ class ResultBox extends React.Component {
             </div>
             <br />
             <div className="description">description</div>
-            {/* <img className="image" alt="path" src={this.props.path} /> */}
+            <img className="image" alt="path" src={this.props.path} />
           </div>
         </div>
       </Link>

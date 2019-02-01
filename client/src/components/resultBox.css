@@ -19,6 +19,7 @@
     transition: all ease-in-out 0.5s;
     font-family: "Roboto", sans-serif;
     font-weight: 900;
+    text-decoration: none;
   }
   .description {
     position: absolute;
@@ -28,6 +29,7 @@
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 0.8em;
+    text-decoration: none;
   }
   image:hover {
     background: #333;
