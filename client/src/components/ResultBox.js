@@ -26,7 +26,7 @@ class ResultBox extends React.Component {
     console.log(this.props);
     const myStyles = {
       box: {
-        // backgroundImage: this.props.path,
+        // backgroundColor: "grey",
         height: "300px",
         width: "400px"
       }
@@ -34,13 +34,12 @@ class ResultBox extends React.Component {
     return (
       <Link to={`./Profile/${this.props.id}`}>
         <div>
-          <div className="image" style={myStyles.box}>
+          <div style={myStyles.box}>
             <div className="title">
               {this.state.userData.firstName +
                 " " +
                 this.state.userData.lastName}
             </div>
-            <br />
             <div className="description">{this.state.userData.location}</div>
 
             <img className="image" alt="path" src={this.props.path} />

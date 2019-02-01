@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import axios from "axios";
 import "./style.css";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 const id = window.localStorage.getItem("id");
 class profile extends React.Component {
@@ -137,6 +138,7 @@ class profile extends React.Component {
             <p>{this.state.userData.bio}</p>
           </div>
 
+
             < div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel" >
               <div className="carousel-inner">
                 {this.state.photos.map(picObj => picObj.profile_photo ?
@@ -159,6 +161,7 @@ class profile extends React.Component {
         </div >
 
       )
+
     }
   }
 }
