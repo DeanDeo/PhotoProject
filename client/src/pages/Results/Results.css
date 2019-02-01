@@ -1,5 +1,5 @@
 .results {
-    display: grid;
-    grid-column-gap: 15px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
+  display: grid;
+  grid-column-gap: 0px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}

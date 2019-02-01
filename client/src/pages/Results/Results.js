@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Results.css";
 import Navbar from "../../components/Navbar";
 // import Footer from "../../components/Footer";
-import Pages from "../../components/Pagination";
+// import Pages from "../../components/Pagination";
 
 // import { Link } from "react-router-dom";
 
@@ -36,6 +36,8 @@ class Results extends React.Component {
             placeholder="Search for genres of photography or location"
           />
         </div>
+
+        <br />
         {console.log(this.state.data)}
         <div className="results">
           {this.state.data.map(picObj => (
@@ -52,12 +54,10 @@ class Results extends React.Component {
           <ResultBox />
           <ResultBox /> */}
         </div>
-        <Pages />
+        {/* <Footer /> */}
       </div>
     );
   }
 }
 
 export default Results;
-
-

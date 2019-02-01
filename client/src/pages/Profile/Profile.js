@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import axios from "axios";
 import "./style.css";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 const id = window.localStorage.getItem("id");
 class profile extends React.Component {
@@ -62,9 +63,10 @@ class profile extends React.Component {
       return (
         <div>
           <Navbar />
-          <div>
+          <h1>| {this.state.userData.firstName} {this.state.userData.lastName} |</h1>
+          <div className="container">
 
-            <h1>| {this.state.userData.firstName} {this.state.userData.lastName} |</h1>
+           
             <div className='infoBox' >
               <h4><i className="fas fa-city"></i>{this.state.userData.location}</h4>
               <h4><i className="fas fa-mobile-alt"></i>{this.state.userData.phoneNumber}</h4>
@@ -72,17 +74,14 @@ class profile extends React.Component {
               <h4><i className="fas fa-envelope"></i>{this.state.userData.email}</h4>
               <p><i className="far fa-user-circle"></i>{this.state.userData.bio}</p>
             </div>
-            <Loader />
-            <Link to={`../`}>
-              <button onClick={() => { this.deleteProfile(id) }}>Delete Profile</button>
-            </Link>
+           
 
             < div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel" >
               <div className="carousel-inner">
                 {this.state.photos.map(
                   (picObj, e) => picObj.profile_photo ?
                     <div class="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
-                      <h5>Profile picture</h5>
+                      <h1>Profile picture</h1>
                     </div></div>
                     :
 
@@ -112,6 +111,10 @@ class profile extends React.Component {
 
            
           </div>
+          <Loader />
+            <Link to={`../`}>
+              <button onClick={() => { this.deleteProfile(id) }}>Delete Profile</button>
+            </Link>
         </div>
       );
     } else {
@@ -121,10 +124,11 @@ class profile extends React.Component {
       return (
         <div>
           <Navbar />
-          <span>
-            <h1>
+          <h1>
               {this.state.userData.firstName} {this.state.userData.lastName}
             </h1>
+          <span className="container">
+          <div className='infoBox' >
             <h4>{this.state.userData.location}</h4>
             <h4>{this.state.userData.phoneNumber}</h4>
             <a href={instagram}>
@@ -132,6 +136,7 @@ class profile extends React.Component {
             </a>
             <h4>{this.state.userData.email}</h4>
             <p>{this.state.userData.bio}</p>
+          </div>
 
 
             < div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel" >
@@ -156,6 +161,7 @@ class profile extends React.Component {
         </div >
 
       )
+
     }
   }
 }

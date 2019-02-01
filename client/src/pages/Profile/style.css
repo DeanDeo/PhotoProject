@@ -15,7 +15,16 @@ body {
   border-radius: 5px;
   padding-top: 25px;
 }
+.carousel{
+  
+  width: 65%;
+  margin: auto;
 
+}
+.container{
+  display: flex;
+  
+}
 h1,
 h1:first-child {
   margin-top: 10px;
