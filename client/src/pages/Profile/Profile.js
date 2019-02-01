@@ -64,15 +64,15 @@ class profile extends React.Component {
         <div>
           <Navbar />
           <h1>| {this.state.userData.firstName} {this.state.userData.lastName} |</h1>
+          <p><i className="far fa-user-circle"></i>{this.state.userData.bio}</p>
           <div className="container">
 
            
             <div className='infoBox' >
               <h4><i className="fas fa-city"></i>{this.state.userData.location}</h4>
               <h4><i className="fas fa-mobile-alt"></i>{this.state.userData.phoneNumber}</h4>
-              <a href={instagram}><i className="fab fa-instagram"></i> Instagram</a>
-              <h4><i className="fas fa-envelope"></i>{this.state.userData.email}</h4>
-              <p><i className="far fa-user-circle"></i>{this.state.userData.bio}</p>
+              <a className ="instagram" href={instagram}><i className="fab fa-instagram"></i> Instagram</a>
+              {/* <h4><i className="fas fa-envelope"></i>{this.state.userData.email}</h4> */}
             </div>
            
 
@@ -81,17 +81,17 @@ class profile extends React.Component {
                 {this.state.photos.map(
                   (picObj, e) => picObj.profile_photo ?
                     <div class="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
-                      <h1>Profile picture</h1>
+                      <h3 className="proPicture">Profile Picture</h3>
                     </div></div>
                     :
 
                     this.state.userData.photographer ?
 
                       <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">    
-                        <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
-                        <button onClick={() => this.mainPic(picObj._id)} type="button">Make main pic</button></div></div>
+                        <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
+                        <button onClick={() => this.mainPic(picObj._id)} type="button">Make Main Picture</button></div></div>
                       :  <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">    
-                      <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
+                      <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
                       </div></div>
 
 
@@ -113,7 +113,7 @@ class profile extends React.Component {
           </div>
           <Loader />
             <Link to={`../`}>
-              <button onClick={() => { this.deleteProfile(id) }}>Delete Profile</button>
+              <button className="deleteBtn" onClick={() => { this.deleteProfile(id) }}>Delete Profile</button>
             </Link>
         </div>
       );
