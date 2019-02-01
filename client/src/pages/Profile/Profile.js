@@ -19,7 +19,7 @@ class profile extends React.Component {
       })
 
     })
-    axios.get(`/api/profile/populatePhotos/${window.localStorage.getItem("id")}`).then(res => {
+    axios.get(`/api/profile/populatePhotos/${this.props.match.params.id}`).then(res => {
       this.setState({
         photos: res.data
       })
@@ -46,8 +46,9 @@ class profile extends React.Component {
 console.log(this.state.photos)
 console.log(this.state.userData)
 
-    const id = window.localStorage.getItem("id")
-    if (id === this.props.match.params.id) {
+    const currentId = window.localStorage.getItem("id")
+    const id = this.props.match.params.id
+    if (currentId === id) {
       let instagram = `https://www.instagram.com/${this.state.userData.instagram}?hl=en`
       return (
         <div>
