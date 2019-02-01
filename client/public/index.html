@@ -23,64 +23,7 @@
 
   <body>
     <div id="root"></div>
-
-    <script
-      src="https://js.api.here.com/v3/3.0/mapsjs-core.js"
-      type="text/javascript"
-      charset="utf-8"
-    ></script>
-    <script
-      src="https://js.api.here.com/v3/3.0/mapsjs-service.js"
-      type="text/javascript"
-      charset="utf-8"
-    ></script>
-    <script type="text/javascript">
-      var platform = new H.service.Platform({
-        app_id: "HERE_API_ID",
-        app_code: "HERE_API_CODE"
-      });
-      var geocoder = platform.getGeocodingService();
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-          geocoder.reverseGeocode(
-            {
-              mode: "retrieveAddresses",
-              maxresults: 1,
-              prox: position.coords.latitude + "," + position.coords.longitude
-            },
-            data => {
-              alert(
-                "The nearest address to your location is:\n" +
-                  data.Response.View[0].Result[0].Location.Address.Label
-              );
-            },
-            error => {
-              console.error(error);
-            }
-          );
-        });
-      } else {
-        console.error("Geolocation is not supported by this browser!");
-      }
-
-      function showError(error) {
-        switch (error.code) {
-          case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation.";
-            break;
-          case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable.";
-            break;
-          case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out.";
-            break;
-          case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred.";
-            break;
-            
-        }
-      }
-    </script>
+ 
   </body>
 </html>
 
