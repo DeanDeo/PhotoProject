@@ -1,75 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:900");
 
-.image {
-  width: 100%;
-  position: relative;
-  -webkit-transition: all ease-in-out 0.5s;
-  transition: all ease-in-out 0.5s;
-}
-.image.img {
-  width: 100%;
-  min-height: 100%;
-  display: block;
-}
-.image.title {
-  text-align: center;
-  color: #fff;
-  -webkit-transition: all ease-in-out 0.5s;
-  transition: all ease-in-out 0.5s;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  text-decoration: none;
-}
-.image.description {
-  text-align: center;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  font-size: 0.8em;
-  text-decoration: none;
-}
-.image:hover {
-  background: #333;
-  color: white;
-  text-decoration: none;
-}
-.image.title:hover {
-  bottom: 30%;
-  text-align: center;
-}
-.image.description:hover {
-  text-align: center;
-  display: block;
-  -webkit-animation-name: slide-up;
-  animation-name: slide-up;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+.imghvr-blur figcaption {
   opacity: 0;
 }
 
-@-webkit-keyframes slide-up {
-  0% {
-    bottom: 0;
-    opacity: 0;
-  }
-  100% {
-    bottom: 15%;
-    opacity: 1;
-  }
+.imghvr-blur:hover > img {
+  -webkit-filter: blur(30px);
+  filter: blur(30px);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 0;
 }
 
-@keyframes slide-up {
-  0% {
-    bottom: 0;
-    opacity: 0;
-  }
-  100% {
-    bottom: 15%;
-    opacity: 1;
-  }
+.imghvr-blur:hover figcaption {
+  opacity: 1;
+  -webkit-transition-delay: 0.21s;
+  transition-delay: 0.21s;
+}
+
+figcaption {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
