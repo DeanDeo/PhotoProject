@@ -11,7 +11,7 @@ class PhotogProfile extends React.Component {
     redirect: false,
     firstName: "",
     lastName: "",
-    location: "Chicago, Il",
+    location: "Chicago, IL",
     phoneNumber: "",
     instagram: "",
     bio: ""
@@ -120,10 +120,10 @@ class PhotogProfile extends React.Component {
               onChange={this.handleDropdown}
               className="form-control"
             >
-              <option value="Chicago, Il">Chicago, Il</option>
-              <option value="Boston, Ma">Boston, Ma</option>
-              <option value="Los Angeles, California">
-                Los Angeles, California
+              <option value="Chicago, IL">Chicago, IL</option>
+              <option value="Boston, MA">Boston, MA</option>
+              <option value="Los Angeles, CA">
+                Los Angeles, CA
               </option>
               <option value="New York City, NY">New York City, NY</option>
             </select>
