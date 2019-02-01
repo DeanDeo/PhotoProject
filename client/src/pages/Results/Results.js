@@ -27,8 +27,10 @@ class Results extends React.Component {
   async fetchPhotos() {
     const data = [];
     for (let i = 0; i < this.state.searchedUsers.length; i++) {
-      const photo = await axios.get("/api/photos/searchedMainPhotos/" + this.state.searchedUsers[i]._id);
-      data.push(photo.data[0])
+      const photo = await axios.get(
+        "/api/photos/searchedMainPhotos/" + this.state.searchedUsers[i]._id
+      );
+      data.push(photo.data[0]);
     }
     return data;
   }
@@ -38,16 +40,13 @@ class Results extends React.Component {
   handleSearchSubmit = event => {
     event.preventDefault();
     API.getPhotographers({ location: this.state.search }).then(res => {
-
       this.setState({
-
         searchedUsers: res.data
-      })
+      });
       this.fetchPhotos().then(photos => {
-        console.log('photos', photos)
-        this.setState({ data: photos })
-      }
-      )
+        console.log("photos", photos);
+        this.setState({ data: photos });
+      });
       // const data = []
       // for (let i = 0; i < this.state.searchedUsers.length; i++) {
       //   axios.get("/api/photos/searchedMainPhotos/" + this.state.searchedUsers[i]._id).then(res => {
@@ -60,8 +59,8 @@ class Results extends React.Component {
       //     }
       //   })
       // }
-    })
-  }
+    });
+  };
 
   handleSearchChange = event => {
     const { name, value } = event.target;
@@ -71,6 +70,18 @@ class Results extends React.Component {
   };
 
   render() {
+    // const myStyle = {
+    //   button: {
+    //     backgroundColor: "black",
+    //     border: "none",
+    //     color: "white",
+    //     padding: "10px 22px",
+    //     textAlign: "center",
+    //     textDecoration: "none",
+    //     display: "inline-block",
+    //     fontSize: "14px"
+    //   }
+    // };
     return (
       <div>
         <Navbar />
@@ -78,12 +89,17 @@ class Results extends React.Component {
           <div className="search_container">
             <input
               className="search_input"
-              type="text" name="search"
+              type="text"
+              name="search"
               placeholder="Search for genres of photography or location"
               onChange={this.handleSearchChange}
               value={this.state.search}
             />
-            <button type="submit" onClick={this.handleSearchSubmit}></button>
+            <button
+              style={myStyle.button}
+              type="submit"
+              onClick={this.handleSearchSubmit}
+            />
             {/* <select className="search_input"
               name="location"
               value={this.state.location}
@@ -100,15 +116,15 @@ class Results extends React.Component {
           </div>
         </form>
 
-
         <br />
         <div className="results">
-          {this.state.data && this.state.data.map(picObj => {
-            console.log('pic id, ', picObj.photographer[0])
-            return (
-              <ResultBox path={picObj.path} id={picObj.photographer[0]} />
-            )
-          })}
+          {this.state.data &&
+            this.state.data.map(picObj => {
+              console.log("pic id, ", picObj.photographer[0]);
+              return (
+                <ResultBox path={picObj.path} id={picObj.photographer[0]} />
+              );
+            })}
           {/* <ResultBox />
           <ResultBox />
           <ResultBox />

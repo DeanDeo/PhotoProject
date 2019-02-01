@@ -1,6 +1,6 @@
 .results {
-  display: inline-flex;
-  /* grid-column-gap: none;
+  display: grid;
+  grid-column-gap: none;
   grid-row-gap: none;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
