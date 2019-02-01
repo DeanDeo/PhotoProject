@@ -11,7 +11,7 @@ class PhotogProfile extends React.Component {
     redirect: false,
     firstName: "",
     lastName: "",
-    location: "",
+    location: "Chicago, Il",
     phoneNumber: "",
     instagram: "",
     bio: ""
