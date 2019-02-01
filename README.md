@@ -17,6 +17,8 @@ The landing page includes 2 options which both use Google Log in:
   1. Log in as a client
   2. Log in as a photographer
   
+  ![intro](https://deandeo.github.io/PhotoProject/client/src/components/Landingpage.png)
+  
  #### Create your profile 
   
   Whether you sign in as a client or a photographer, you will be prompted to create your user profile which includes:
@@ -27,6 +29,18 @@ The landing page includes 2 options which both use Google Log in:
   ##### Optional
   
   Instagram profile link and bio
+  
+  ### Search Page
+  
+  You can search by location or photography keyword interests to load photographers that you can reach out to
+  
+  ### Team Members
+  
+  Dean Deolitsis [DeanDeo](https://github.com/DeanDeo)
+  Patrick Holmes [Pholmes10](https://github.com/pholmes10)
+  Nathan Walker  [Nathanw88](https://github.com/nathanw88)
+  May Zhou       [maydeyn](https://github.com/maydeyn)
+  Phillip Sturm  [PhillipSturm](https://github.com/PhillipSturm)
   
   
   
