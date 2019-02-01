@@ -51,6 +51,11 @@ class PhotogProfile extends React.Component {
       [name]: value
     });
   };
+
+  handleDropdown = event => {
+    this.setState({location: event.target.value})
+    console.log(this.state.location);
+  }
   
   handleFormSubmit = event => {
     event.preventDefault();
@@ -110,6 +115,14 @@ class PhotogProfile extends React.Component {
                       <button type="photogProfile-submit" className="btn btn-primary">Submit</button>
       </form> */}
       <form>
+      <div className="form-group">
+     <select name="location" value={this.state.location} onChange={this.handleDropdown}className="form-control">
+   <option value="Chicago, Il">Chicago, Il</option>
+   <option value="Boston, Ma">Boston, Ma</option>
+   <option value="Los Angeles, California">Los Angeles, California</option>
+   <option value="New York City, NY">New York City, NY</option>
+ </select>
+   </div>
               <Input
                 value={this.state.firstName}
                 onChange={this.handleInputChange}
@@ -122,12 +135,12 @@ class PhotogProfile extends React.Component {
                 name="lastName"
                 placeholder="Last Name (required)"
               />
-              <Input
+              {/* <Input
                 value={this.state.location}
                 onChange={this.handleInputChange}
                 name="location"
                 placeholder="Location (City, State) (required)"
-              />
+              /> */}
               <Input
                 value={this.state.phoneNumber}
                 onChange={this.handleInputChange}
