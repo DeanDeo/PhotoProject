@@ -142,7 +142,7 @@ class profile extends React.Component {
             < div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel" >
               <div className="carousel-inner">
                 {this.state.photos.map(picObj => picObj.profile_photo ?
-                  <div class="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
+                  <div className="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div className="carousel-caption d-none d-md-block">
                     <h5>Profile picture</h5>
                   </div></div> :
                   <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /></div>
@@ -166,3 +166,5 @@ class profile extends React.Component {
   }
 }
 export default profile
+
+
