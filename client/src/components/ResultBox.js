@@ -29,6 +29,10 @@ class ResultBox extends React.Component {
         // backgroundColor: "black",
         height: "300px",
         width: "400px"
+      },
+      img: {
+        height: "300px",
+        width: "400px"
       }
     };
     return (
@@ -42,7 +46,7 @@ class ResultBox extends React.Component {
               <br />+ {this.state.userData.location}
             </figcaption>
 
-            <img alt="path" src={this.props.path} />
+            <img style={myStyles.img} alt="path" src={this.props.path} />
           </div>
         </div>
       </Link>
