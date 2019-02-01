@@ -137,18 +137,21 @@ class profile extends React.Component {
       return (
         <div>
           <Navbar />
-          <h1>
-            {this.state.userData.firstName} {this.state.userData.lastName}
-          </h1>
+          <h1>| {this.state.userData.firstName} {this.state.userData.lastName} |</h1>
+          <p><i className="far fa-user-circle"></i>{this.state.userData.bio}</p>
           <span className="container">
             <div className='infoBox' >
-              <h4>{this.state.userData.location}</h4>
+              {/* <h4>{this.state.userData.location}</h4>
               <h4>{this.state.userData.phoneNumber}</h4>
               <a href={instagram}>
                 Instagram <i class="fab fa-instagram" />
               </a>
               <h4>{this.state.userData.email}</h4>
-              <p>{this.state.userData.bio}</p>
+              <p>{this.state.userData.bio}</p> */}
+              <h4><i className="fas fa-city"></i>{this.state.userData.location}</h4>
+              <h4><i className="fas fa-mobile-alt"></i>{this.state.userData.phoneNumber}</h4>
+              <a className="instagram" href={instagram}><i className="fab fa-instagram"></i> Instagram</a>
+              {/* <h4><i className="fas fa-envelope"></i>{this.state.userData.email}</h4> */}
             </div>
 
 
@@ -156,7 +159,7 @@ class profile extends React.Component {
               <div className="carousel-inner">
                 {this.state.photos.map(picObj => picObj.profile_photo ?
                   <div className="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div className="carousel-caption d-none d-md-block">
-                    <h5>Profile picture</h5>
+                    {/* <h5>Profile picture</h5> */}
                   </div></div> :
                   <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /></div>
                 )}
