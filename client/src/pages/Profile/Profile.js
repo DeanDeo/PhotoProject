@@ -54,12 +54,12 @@ console.log(this.state.userData)
           <Navbar />
           <div>
             <h1>| {this.state.userData.firstName} {this.state.userData.lastName} |</h1>
+            <p><i className="far fa-user-circle"></i> | {this.state.userData.bio}</p>
             <div className = 'infoBox' >
-            <h4><i className="fas fa-city"></i>{this.state.userData.location}</h4>
-            <h4><i className="fas fa-mobile-alt"></i>{this.state.userData.phoneNumber}</h4>
-            <a href={instagram}><i className="fab fa-instagram"></i> Instagram</a>
-            <h4><i className="fas fa-envelope"></i>{this.state.userData.email}</h4>
-            <p><i className="far fa-user-circle"></i>{this.state.userData.bio}</p>
+            <span><i className="fas fa-city"></i> | {this.state.userData.location}</span>
+            <span><i className="fas fa-mobile-alt"></i> | {this.state.userData.phoneNumber}</span>
+            <a href={instagram}><i className="fab fa-instagram"></i>   Instagram</a>
+            {/* <span><i className="fas fa-envelope"></i> | {this.state.userData.email}</span> */}
             </div>
             <Loader />
 
@@ -74,16 +74,16 @@ console.log(this.state.userData)
                   <img src={picObj.path} alt=""/>
                   <div className="dropdown">
                     <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Change photo role
+                      Change Photo Role
                 </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                      <button  className="dropdown-item" onClick={()=>this.profilePic(picObj._id)} type="button">Make profile pic</button>
-                      <button  className="dropdown-item" onClick={()=>this.mainPic(picObj._id)} type="button">Make main pic</button>
+                      <button  className="dropdown-item" onClick={()=>this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
+                      <button  className="dropdown-item" onClick={()=>this.mainPic(picObj._id)} type="button">Make Main Picture</button>
                     </div>
                   </div>
                 </div>: <div key={e} className="pictures">
                   <img src={picObj.path} alt=""/>
-                      <button  onClick={()=>this.profilePic(picObj._id)} type="button">Make profile pic</button>
+                      <button  onClick={()=>this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
                      
                     
                   </div>
@@ -98,17 +98,19 @@ console.log(this.state.userData)
       return (
         <div>
           <Navbar />
-          <span>
-            <h1>{this.state.userData.firstName} {this.state.userData.lastName}</h1>
-            <h4>{this.state.userData.location}</h4>
-            <h4>{this.state.userData.phoneNumber}</h4>
-            <a href={instagram}>Instagram <i class="fab fa-instagram"></i></a>
-            <h4>{this.state.userData.email}</h4>
-            <p>{this.state.userData.bio}</p>
+          <div>
+          <h1>| {this.state.userData.firstName} {this.state.userData.lastName} |</h1>
+            <p><i className="far fa-user-circle"></i> | {this.state.userData.bio}</p>
+            <div className = 'infoBox' >
+            <span><i className="fas fa-city"></i> | {this.state.userData.location}</span>
+            <span><i className="fas fa-mobile-alt"></i> | {this.state.userData.phoneNumber}</span>
+            <a href={instagram}><i className="fab fa-instagram"></i>   Instagram</a>
+            {/* <span><i className="fas fa-envelope"></i> | {this.state.userData.email}</span> */}
+            </div>
 
 
             {this.state.photos.map(picObj => picObj.profile_picture ? <img className="profile_picture" src={picObj.path} alt='propic'/> : <img src={picObj.path} alt="propic1"/>)}
-          </span>
+          </div>
         </div>
 
       )

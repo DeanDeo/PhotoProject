@@ -138,7 +138,7 @@ class PhotogProfile extends React.Component {
                 value={this.state.instagram}
                 onChange={this.handleInputChange}
                 name="instagram"
-                placeholder="Instagram (Optional)"
+                placeholder="Instagram @"
               />
               <TextArea
                 value={this.state.bio}

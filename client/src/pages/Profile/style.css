@@ -6,11 +6,11 @@ body {
     background-color: black;
     color: #ffffff;
     text-align: center;
-    width: 15%;
-    height: 500px;
-    margin-left: 5%;
+    margin: auto;
+    width: 70%;
+    height: 50px;
     border-radius: 5px;
-    padding-top: 25px;
+    padding-top: 10px;
 }
 
 h1, h1:first-child {
@@ -19,15 +19,17 @@ margin-top: 10px;
 
 p {
     margin: 4px;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 a {
-    font-size: 20px;
+    font-size: 16px;
     color: #ffffff;
 }
 
 a:hover, a:active {
-    font-size: 22px;
     color: #ea3463;
     text-decoration: underline;
 }
@@ -38,7 +40,7 @@ button {
     border-color: black;
     color: #ffffff;
     margin-bottom: 10px;
-    margin-left: 9.5%;
+    margin-left: 10%;
     border-radius: 2px;
 }
 
@@ -46,5 +48,44 @@ button:hover , button:active {
     background-color: #ffffff;
     color: black;
     margin-bottom: 10px;
-    margin-left: 9.5%;
+}
+
+.pictures {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+span {
+margin-left: 20px;
+margin-right: 20px;
+}
+.btn, .btn-secondary, .dropdown-toggle {
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
+    margin-left: 0;
+    border-radius: 2px;
+}
+
+/* .dropdown-toggle:hover, .dropdown-toggle:active  */
+
+#dropdownMenu2 {
+    background-color: #ffffff;
+    color: black;
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+.dropdown-item {
+    margin-left: 0;
+}
+.dropdown-item:hover, .dropdown-item:active {
+    background-color: black;
+    border-color: black;
+    color: #ffffff;
 }

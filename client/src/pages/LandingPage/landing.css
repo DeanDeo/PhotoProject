@@ -277,3 +277,7 @@ body {
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
 }
+
+.logo {
+  width: 5%;
+}
