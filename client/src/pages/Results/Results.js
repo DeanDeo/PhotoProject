@@ -29,6 +29,13 @@ class Results extends React.Component {
     return (
       <div>
         <Navbar />
+        <div className="search_container">
+          <input
+            className="search_input"
+            type="text"
+            placeholder="Search for genres of photography or location"
+          />
+        </div>
         {console.log(this.state.data)}
         <div className="results">
           {this.state.data.map(picObj => (
