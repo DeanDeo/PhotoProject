@@ -29,13 +29,20 @@ class Results extends React.Component {
     return (
       <div>
         <Navbar />
+        <div className="search_container">
+          <input
+            className="search_input"
+            type="text"
+            placeholder="Search for genres of photography or location"
+          />
+        </div>
+
         <br />
         {console.log(this.state.data)}
         <div className="results">
           {this.state.data.map(picObj => (
             <ResultBox path={picObj.path} id={picObj.photographer[0]} />
           ))}
-          {/* <ResultBox />
           <ResultBox />
           <ResultBox />
           <ResultBox />
@@ -44,7 +51,8 @@ class Results extends React.Component {
           <ResultBox />
           <ResultBox />
           <ResultBox />
-          <ResultBox /> */}
+          <ResultBox />
+          <ResultBox />
         </div>
         {/* <Footer /> */}
       </div>

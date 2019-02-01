@@ -10,29 +10,33 @@ body {
   color: #ffffff;
   text-align: center;
   width: 15%;
-  height: 500px;
+  height: 482px;
   margin-left: 5%;
   border-radius: 5px;
-  padding-top: 25px;
+  padding-top: 30px;
 }
+.carousel{
+  
+  width: 60%;
+  margin: auto;
 
+}
+.container{
+  display: flex;
+  
+}
 h1,
 h1:first-child {
   margin-top: 10px;
 }
 
-p {
-  margin: 4px;
-}
-
-a {
+.instagram {
   font-size: 20px;
   color: #ffffff;
 }
 
-a:hover,
-a:active {
-  font-size: 22px;
+.instagram:hover,
+.instagram:active {
   color: #ea3463;
   text-decoration: underline;
 }
@@ -43,8 +47,8 @@ button {
   border-color: black;
   color: #ffffff;
   margin-bottom: 10px;
-  margin-left: 9.5%;
-  border-radius: 2px;
+  margin-left: 11%;
+  border-radius: 4px;
 }
 
 button:hover,
@@ -52,5 +56,39 @@ button:active {
   background-color: #ffffff;
   color: black;
   margin-bottom: 10px;
-  margin-left: 9.5%;
+}
+
+#carouselExampleFade {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+p {
+  margin: 4px;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.proPicture{
+  color: black;
+  background: #ffffff;
+  opacity: .7;
+}
+.deleteBtn {
+  background-color: black;
+  border-color: black;
+  color: #ffffff;
+  margin-bottom: 100px;
+  margin-left: 0;
+  margin-right: 13%;
+  float: right;
+  border-radius: 4px;
+}
+.deleteBtn:hover, .deleteBtn:active {
+  background-color: #b30000;
+  color: #ffffff;
+  margin-bottom: 100px;
+  margin-left: 0;
+  margin-right: 13%;
+  float: right;
+  border-radius: 4px;
 }

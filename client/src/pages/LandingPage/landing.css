@@ -13,7 +13,7 @@
     display: -ms-flexbox;
     display: flex;
     height: 100vh;
-    width: 100%;
+    margin-left: 0px !important;
   }
 }
 html,
@@ -92,6 +92,7 @@ body {
   color: rgb(196, 196, 196);
   display: inline-block;
   cursor: pointer;
+  margin-left: 0px !important;
 }
 .split-pane button:hover,
 .split-pane a.button:hover {
