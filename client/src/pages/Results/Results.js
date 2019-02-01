@@ -43,6 +43,7 @@ class Results extends React.Component {
           {this.state.data.map(picObj => (
             <ResultBox path={picObj.path} id={picObj.photographer[0]} />
           ))}
+          {/* <ResultBox />
           <ResultBox />
           <ResultBox />
           <ResultBox />
@@ -51,8 +52,7 @@ class Results extends React.Component {
           <ResultBox />
           <ResultBox />
           <ResultBox />
-          <ResultBox />
-          <ResultBox />
+          <ResultBox /> */}
         </div>
         {/* <Footer /> */}
       </div>
