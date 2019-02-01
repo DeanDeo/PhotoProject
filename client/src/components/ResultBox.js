@@ -38,16 +38,15 @@ class ResultBox extends React.Component {
     return (
       <Link to={`./Profile/${this.props.id}`}>
         <div>
-          <div className="imghvr-blur" style={myStyles.box}>
+          <figure className="imghvr-blur">
             <figcaption>
               {this.state.userData.firstName +
                 " " +
                 this.state.userData.lastName}{" "}
               <br />+ {this.state.userData.location}
             </figcaption>
-
             <img style={myStyles.img} alt="path" src={this.props.path} />
-          </div>
+          </figure>
         </div>
       </Link>
     );
