@@ -6,7 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
+  NavLink
   // InputGroup,
   // Input
 } from "reactstrap";
@@ -31,11 +31,10 @@ export default class Example extends React.Component {
     window.localStorage.setItem("uid", "");
     window.localStorage.setItem("id", "");
     window.localStorage.setItem("displayName", "");
-  }
-
+  };
 
   render() {
-    let id = window.localStorage.getItem("id")
+    let id = window.localStorage.getItem("id");
 
     return (
       <div>
@@ -57,13 +56,16 @@ export default class Example extends React.Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="hvr-underline-from-center" href="/userProfile">
-                  Edit profile.
+                <NavLink
+                  className="hvr-underline-from-center"
+                  href="/userProfile"
+                >
+                  Edit Profile
                 </NavLink>
               </NavItem>
               {/* link for chat user as a prop
                */}
-               {/* pass user prop in chatApp */}
+              {/* pass user prop in chatApp */}
               <NavItem>
                 <NavLink
                   className="hvr-underline-from-center"
@@ -73,13 +75,15 @@ export default class Example extends React.Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                { <NavLink
-                  className="hvr-underline-from-center"
-                  href="/" onClick={this.logout}
-                >
-                
-                  Log Out
-                </NavLink>}            
+                {
+                  <NavLink
+                    className="hvr-underline-from-center"
+                    href="/"
+                    onClick={this.logout}
+                  >
+                    Log Out
+                  </NavLink>
+                }
               </NavItem>
             </Nav>
           </Collapse>
