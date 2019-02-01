@@ -36,9 +36,9 @@ class ResultBox extends React.Component {
       }
     };
     return (
-      <Link to={`./Profile/${this.props.id}`}>
-      <figure className="imghvr-blur" style={myStyles.box}>
-          <img style={myStyles.img} alt="path" src={this.props.path} />
+        <figure className="imghvr-blur" style={myStyles.box}>
+         <Link to={`./Profile/${this.props.id}`} className="img-link">
+     <img style={myStyles.img} alt="path" src={this.props.path} />
             <figcaption>
               {this.state.userData.firstName +
                 " " +
@@ -46,8 +46,9 @@ class ResultBox extends React.Component {
               <br /> {this.state.userData.location}
             </figcaption>
 {/* <a href={`./Profile/${this.props.id}`}></a> */}
+           </Link>
           </figure>
-         </Link>
+
     );
   }
 }
