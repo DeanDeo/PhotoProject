@@ -17,7 +17,7 @@ The landing page includes 2 options which both use Google Log in:
   1. Log in as a client
   2. Log in as a photographer
   
-  ![intro](https://deandeo.github.io/PhotoProject/client/src/components/Landingpage.png)
+ ![Login](client/src/components/Landingpage.PNG)
   
  #### Create your profile 
   
@@ -30,9 +30,14 @@ The landing page includes 2 options which both use Google Log in:
   
   Instagram profile link and bio
   
+  
+  ![Profilepage](client/src/components/Profilepage.PNG)
+  
   ### Search Page
   
   You can search by location or photography keyword interests to load photographers that you can reach out to
+  
+  
   
   ### Team Members
   
