@@ -5,11 +5,8 @@
 }
 
 .imghvr-blur:hover > img {
-  -webkit-filter: blur(30px);
-  filter: blur(30px);
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-  opacity: 0;
+  filter: blur(1px);
+  background-color: rgba(68, 68, 68, 0.8);
 }
 
 .imghvr-blur:hover figcaption {
@@ -23,6 +20,10 @@ figcaption {
   font-size: 18px;
   font-weight: 900;
   color: white;
+  background-color: black;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  width: 200px;
+  position: relative;
+  bottom: 200px;
 }
