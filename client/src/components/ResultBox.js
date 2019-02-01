@@ -45,7 +45,7 @@ class ResultBox extends React.Component {
          
             </div>
             <br />
-            <div className="description">description</div>
+            <div className="description">{this.state.userData.location}</div>
 
             
 

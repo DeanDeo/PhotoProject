@@ -3,6 +3,8 @@ import { Loader } from "../../components/Photo";
 import Navbar from "../../components/Navbar";
 import axios from "axios"
 import './style.css'
+import { Link } from "react-router-dom";
+
 const id = window.localStorage.getItem("id")
 class profile extends React.Component {
 
@@ -26,7 +28,7 @@ class profile extends React.Component {
 
     })
   }
-
+  
   profilePic(picId) {
     const id = window.localStorage.getItem("id")
     axios.put("/api/update/profilePic", {id, picId}).then(res =>{
@@ -41,6 +43,11 @@ class profile extends React.Component {
       
     })
   
+  }
+  deleteProfile(id){
+    axios.put("/api/user/delete/" + id).then(res=>{
+
+    })
   }
   render() {
 console.log(this.state.photos)
@@ -63,6 +70,9 @@ console.log(this.state.userData)
             <p><i className="far fa-user-circle"></i>{this.state.userData.bio}</p>
             </div>
             <Loader />
+            <Link to={`../`}>
+            <button onClick={()=>{this.deleteProfile(id)}}>Delete Profile</button>
+            </Link>
 
             {this.state.photos.map(
               (picObj, e) => picObj.profile_photo ?
