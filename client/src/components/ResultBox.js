@@ -18,7 +18,7 @@ class ResultBox extends React.Component {
       }
     };
     return (
-      <Link to={"./userProfile"}>
+      <Link to={`./Profile/${this.props.uId}`}>
         <div>
           <div className="image" style={myStyles.box}>
             <div className="title">
@@ -26,7 +26,7 @@ class ResultBox extends React.Component {
             </div>
             <br />
             <div className="description">description</div>
-            {/* <img className="image" alt="path" src={this.props.path} /> */}
+            <img className="image" alt="path" src={this.props.path} />
           </div>
         </div>
       </Link>
