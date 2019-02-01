@@ -4,6 +4,11 @@
   opacity: 0;
 }
 
+img {
+  height: 300px;
+  width: 400px;
+}
+
 .imghvr-blur:hover > img {
   -webkit-filter: blur(30px);
   filter: blur(30px);
