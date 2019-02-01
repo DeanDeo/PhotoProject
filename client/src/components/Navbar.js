@@ -88,13 +88,6 @@ export default class Example extends React.Component {
             </Nav>
           </Collapse>
         </Navbar>
-        <div className="search_container">
-          <input
-            className="search_input"
-            type="text"
-            placeholder="Search for genres of photography or location"
-          />
-        </div>
       </div>
     );
   }
