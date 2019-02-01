@@ -43,7 +43,7 @@ class profile extends React.Component {
   
   }
   render() {
-
+console.log(this.state.photos)
 console.log(this.state.userData)
 
     const id = window.localStorage.getItem("id")
@@ -64,7 +64,7 @@ console.log(this.state.userData)
             <Loader />
 
             {this.state.photos.map(
-              (picObj, e) => picObj.profile_picture ?
+              (picObj, e) => picObj.profile_photo ?
                 <img key = {e} className="profile_picture" src={picObj.path} alt="" />
                 :
 
