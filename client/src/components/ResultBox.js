@@ -21,6 +21,17 @@ class ResultBox extends React.Component {
       });
     });
   }
+  componentWillUpdate(prevProps) {
+    console.log("prev: ", prevProps.id, 'new: ', console.log(this.props.id))
+    if (prevProps.id !== this.state.userData._id) {
+      axios.get(`/api/user/findById/${this.props.id}`).then(res => {
+        console.log(res);
+        this.setState({
+          userData: res.data
+        });
+      });
+    }
+  }
 
   render() {
     console.log(this.props);

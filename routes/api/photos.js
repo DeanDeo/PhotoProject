@@ -21,6 +21,8 @@ router.post("/upload/:id", multer.single("image"), imgUpload.uploadToGcs,
   res.json(data);
 })
 
+router.route("/searchedMainPhotos/:id").get(photoController.searchMainPhotos)
+
 
 
 module.exports = router;

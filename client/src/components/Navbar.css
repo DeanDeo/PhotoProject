@@ -128,13 +128,13 @@ body {
   font-weight: 300;
 }
 
-.search_input::-ms-input-placeholder {
+/* .search_input::-ms-input-placeholder {
   color: color(#575756 a(0.8));
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-}
+} */
 
 .search_input::placeholder {
   color: color(#575756 a(0.8));
