@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const multer  = require('multer');
+const fs = require("fs")
 
 
 
@@ -11,6 +12,11 @@ const multer  = require('multer');
 
 
 
+// fs.writeFile ("final-project-230222-5ae4963fbec8.json", JSON.stringify(data), function(err) {
+//   if (err) throw err;
+//   console.log('complete');
+//   }
+// );
 
 const PORT = process.env.PORT || 3001;
 
