@@ -26,7 +26,7 @@ class ResultBox extends React.Component {
     console.log(this.props);
     const myStyles = {
       box: {
-        // backgroundColor: "grey",
+        backgroundColor: "grey",
         height: "300px",
         width: "400px"
       }

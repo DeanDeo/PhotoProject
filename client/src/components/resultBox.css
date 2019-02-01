@@ -6,7 +6,7 @@
   -webkit-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s;
 }
-.image img {
+.image.img {
   width: 100%;
   min-height: 100%;
   display: block;
@@ -32,11 +32,11 @@
   color: white;
   text-decoration: none;
 }
-.title {
+.image.title:hover {
   bottom: 30%;
   text-align: center;
 }
-.description {
+.image.description:hover {
   text-align: center;
   display: block;
   -webkit-animation-name: slide-up;
