@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:900");
+
+.image {
+  width: 50%;
+  position: relative;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+  img {
+    width: 100%;
+    min-height: 100%;
+    display: block;
+  }
+  .title {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #fff;
+    -webkit-transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.5s;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+  }
+  .description {
+    position: absolute;
+    display: none;
+    left: 30px;
+    right: 30px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8em;
+  }
+  image:hover {
+    background: #333;
+    img {
+      opacity: 0.3;
+    }
+    .title {
+      bottom: 30%;
+    }
+    .description {
+      display: block;
+      -webkit-animation-name: slide-up;
+      animation-name: slide-up;
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+  }
+}
+
+@-webkit-keyframes slide-up {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  100% {
+    bottom: 15%;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  100% {
+    bottom: 15%;
+    opacity: 1;
+  }
+}
