@@ -13,7 +13,7 @@ class profile extends React.Component {
     photos: []
   };
   componentDidMount() {
-    console.log(this.props.match.params.id + "  " + id);
+
     axios.get(`/api/user/findById/${this.props.match.params.id}`).then(res => {
       this.setState({
         userData: res.data
@@ -29,19 +29,30 @@ class profile extends React.Component {
   }
 
   profilePic(picId) {
-    const id = window.localStorage.getItem("id");
-    axios.put("/api/update/profilePic", { id, picId }).then(res => {});
+
+    const id = window.localStorage.getItem("id")
+    axios.put("/api/update/profilePic", { id, picId }).then(res => {
+
+    })
+
+
   }
   mainPic(picId) {
-    const id = window.localStorage.getItem("id");
-    axios.put("/api/update/mainPic", { id, picId }).then(res => {});
+    const id = window.localStorage.getItem("id")
+    axios.put("/api/update/mainPic", { id, picId }).then(res => {
+
+    })
+
   }
   deleteProfile(id) {
-    axios.put("/api/user/delete/" + id).then(res => {});
+    axios.put("/api/user/delete/" + id).then(res => {
+
+    })
   }
   render() {
-    console.log(this.state.photos);
-    console.log(this.state.userData);
+    console.log(this.state.photos)
+    console.log(this.state.userData)
+
 
     const currentId = window.localStorage.getItem("id");
     const id = this.props.match.params.id;
@@ -53,96 +64,54 @@ class profile extends React.Component {
         <div>
           <Navbar />
           <div>
-            <h1>
-              | {this.state.userData.firstName} {this.state.userData.lastName} |
-            </h1>
-            <div className="infoBox">
-              <h4>
-                <i className="fas fa-city" />
-                {this.state.userData.location}
-              </h4>
-              <h4>
-                <i className="fas fa-mobile-alt" />
-                {this.state.userData.phoneNumber}
-              </h4>
-              <a href={instagram}>
-                <i className="fab fa-instagram" /> Instagram
-              </a>
-              <h4>
-                <i className="fas fa-envelope" />
-                {this.state.userData.email}
-              </h4>
-              <p>
-                <i className="far fa-user-circle" />
-                {this.state.userData.bio}
-              </p>
+
+            <h1>| {this.state.userData.firstName} {this.state.userData.lastName} |</h1>
+            <div className='infoBox' >
+              <h4><i className="fas fa-city"></i>{this.state.userData.location}</h4>
+              <h4><i className="fas fa-mobile-alt"></i>{this.state.userData.phoneNumber}</h4>
+              <a href={instagram}><i className="fab fa-instagram"></i> Instagram</a>
+              <h4><i className="fas fa-envelope"></i>{this.state.userData.email}</h4>
+              <p><i className="far fa-user-circle"></i>{this.state.userData.bio}</p>
             </div>
             <Loader />
             <Link to={`../`}>
-              <button
-                onClick={() => {
-                  this.deleteProfile(id);
-                }}
-              >
-                Delete Profile
-              </button>
+              <button onClick={() => { this.deleteProfile(id) }}>Delete Profile</button>
             </Link>
 
-            {this.state.photos.map((picObj, e) =>
-              picObj.profile_photo ? (
-                <img
-                  key={e}
-                  className="profile_picture"
-                  src={picObj.path}
-                  alt=""
-                />
-              ) : this.state.userData.photographer ? (
-                <div key={e} className="pictures">
-                  <img src={picObj.path} alt="" />
-                  <div className="dropdown">
-                    <button
-                      className="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenu2"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Change photo role
-                    </button>
-                    <div
-                      className="dropdown-menu"
-                      aria-labelledby="dropdownMenu2"
-                    >
-                      <button
-                        className="dropdown-item"
-                        onClick={() => this.profilePic(picObj._id)}
-                        type="button"
-                      >
-                        Make profile pic
-                      </button>
-                      <button
-                        className="dropdown-item"
-                        onClick={() => this.mainPic(picObj._id)}
-                        type="button"
-                      >
-                        Make main pic
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div key={e} className="pictures">
-                  <img src={picObj.path} alt="" />
-                  <button
-                    onClick={() => this.profilePic(picObj._id)}
-                    type="button"
-                  >
-                    Make profile pic
-                  </button>
-                </div>
-              )
-            )}
+            < div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel" >
+              <div className="carousel-inner">
+                {this.state.photos.map(
+                  (picObj, e) => picObj.profile_photo ?
+                    <div class="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
+                      <h5>Profile picture</h5>
+                    </div></div>
+                    :
+
+                    this.state.userData.photographer ?
+
+                      <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">    
+                        <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
+                        <button onClick={() => this.mainPic(picObj._id)} type="button">Make main pic</button></div></div>
+                      :  <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">    
+                      <button onClick={() => this.profilePic(picObj._id)} type="button">Make profile pic</button>
+                      </div></div>
+
+
+                      
+
+                )}
+              </div>
+              <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
+              </a>
+              <a className="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
+              </a>
+            </div>
+
+           
           </div>
         </div>
       );
@@ -165,22 +134,35 @@ class profile extends React.Component {
             <h4>{this.state.userData.email}</h4>
             <p>{this.state.userData.bio}</p>
 
-            {this.state.photos.map(picObj =>
-              picObj.profile_picture ? (
-                <img
-                  className="profile_picture"
-                  src={picObj.path}
-                  alt="propic"
-                />
-              ) : (
-                <img src={picObj.path} alt="propic1" />
-              )
-            )}
-          </span>
-          <Footer />
-        </div>
-      );
+
+
+            < div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel" >
+              <div className="carousel-inner">
+                {this.state.photos.map(picObj => picObj.profile_photo ?
+                  <div class="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
+                    <h5>Profile picture</h5>
+                  </div></div> :
+                  <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /></div>
+                )}
+              </div>
+              <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
+              </a>
+              <a className="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
+              </a>
+            </div>
+          </span >
+        </div >
+
+      )
+
     }
   }
 }
-export default profile;
+export default profile
+
+ 
+

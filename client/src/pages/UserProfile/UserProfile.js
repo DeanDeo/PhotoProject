@@ -11,7 +11,7 @@ state = {
   redirect: false,
   firstName: "",
   lastName: "",
-  location: "",
+  location: "Chicago, IL",
   phoneNumber: "",
   instagram: "",
   bio: ""
@@ -88,9 +88,9 @@ handleFormSubmit = event => {
               /> */}
              <div className="form-group">
      <select name="location" value={this.state.location} onChange={this.handleDropdown}className="form-control">
-   <option value="Chicago, Il">Chicago, Il</option>
-   <option value="Boston, Ma">Boston, Ma</option>
-   <option value="Los Angeles, California">Los Angeles, California</option>
+   <option value="Chicago, IL">Chicago, IL</option>
+   <option value="Boston, MA">Boston, MA</option>
+   <option value="Los Angeles, CA">Los Angeles, CA</option>
    <option value="New York City, NY">New York City, NY</option>
  </select>
    </div>
