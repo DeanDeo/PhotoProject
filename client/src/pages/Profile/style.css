@@ -17,7 +17,7 @@ body {
 }
 .carousel{
   
-  width: 60%;
+  width: 65%;
   margin: auto;
 
 }
@@ -92,3 +92,10 @@ p {
   float: right;
   border-radius: 4px;
 }
+/* @media only screen and (max-width: 600px) {
+  .infoBox {
+    background-color: none;
+    color: black;
+    opacity: .5;
+  }
+} */
