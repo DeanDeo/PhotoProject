@@ -11,6 +11,10 @@
 
 ## Instructions
 
+## Live link
+
+https://stark-inlet-23885.herokuapp.com/
+
 ### Landing Page
 
 The landing page includes 2 options which both use Google Log in:
