@@ -81,29 +81,29 @@ class profile extends React.Component {
               <div className="carousel-inner">
                 {this.state.photos.map(
                   (picObj, e) => picObj.profile_photo && e === 0 ?
-                    <div class="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
+                    <div key={e} class="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
                       <h3 className="proPicture">Profile Picture</h3>
                     </div></div>
                     :
                     picObj.profile_photo?
-                    <div class="carousel-item"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
+                    <div key={e} class="carousel-item"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
                     <h3 className="proPicture">Profile Picture</h3>
                   </div></div>
                 
                       : this.state.userData.photographer && e ===0 ?
-                        <div className="carousel-item active"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
+                        <div key={e} className="carousel-item active"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
                           <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
                           <button onClick={() => this.mainPic(picObj._id)} type="button">Make Main Picture</button></div></div>
                         :this.state.userData.photographer ?
-                        <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
+                        <div key={e} className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
                         <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
                         <button onClick={() => this.mainPic(picObj._id)} type="button">Make Main Picture</button></div></div>
                         : e === 0 ?
-                        <div className="carousel-item active"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
+                        <div key={e} className="carousel-item active"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
                           <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
                         </div></div>
                         :
-                        <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
+                        <div key={e} className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /><div className="carousel-caption d-none d-md-block">
                         <button onClick={() => this.profilePic(picObj._id)} type="button">Make Profile Picture</button>
                       </div></div>
 
@@ -178,11 +178,18 @@ class profile extends React.Component {
               data-ride="carousel"
             >
               <div className="carousel-inner">
-                {this.state.photos.map(picObj => picObj.profile_photo ?
-                  <div className="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div className="carousel-caption d-none d-md-block">
-                    {/* <h5>Profile picture</h5> */}
-                  </div></div> :
-                  <div className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /></div>
+                {this.state.photos.map((picObj, e) =>  picObj.profile_photo && e === 0 ?
+                    <div key= {e} class="carousel-item active"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
+                      <h3 className="proPicture">Profile Picture</h3>
+                    </div></div>
+                    :
+                    picObj.profile_photo?
+                    <div key={e} class="carousel-item"><img className="profile_picture d-block w-100" src={picObj.path} alt='propic' /> <div class="carousel-caption d-none d-md-block">
+                    <h3 className="proPicture">Profile Picture</h3>
+                  </div></div> : e ===0?
+                  <div key={e} className="carousel-item active"> <img className="d-block w-100" src={picObj.path} alt="propic1" /></div>
+                  :
+                  <div key={e} className="carousel-item"> <img className="d-block w-100" src={picObj.path} alt="propic1" /></div>
                 )}
               </div>
               <a
