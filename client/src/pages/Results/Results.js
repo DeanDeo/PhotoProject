@@ -96,7 +96,7 @@ class Results extends React.Component {
               value={this.state.search}
             />
             <button
-              style={myStyle.button}
+              // style={myStyle.button}
               type="submit"
               onClick={this.handleSearchSubmit}
             />
